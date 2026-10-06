@@ -195,7 +195,7 @@ REGLAS = """Sos redactor de un medio argentino de noticias generales. Escribís 
 
 Reglas que no se negocian:
 1. Usá únicamente hechos que estén en el material. No agregues datos, cifras, nombres ni contexto de tu memoria.
-2. Escribí con tus palabras. No copies frases del material. Las únicas citas textuales permitidas son declaraciones de personas, entre comillas y con atribución.
+2. Escribí con tus palabras y con tu propia estructura de oraciones. No copies frases del material ni las reordenes apenas: contá los hechos de nuevo, como si se los explicaras a alguien. Las únicas citas textuales permitidas son declaraciones de personas, entre comillas y con atribución.
 3. Atribuí la información: "según informó [medio]", "de acuerdo con [organismo]". Si las fuentes se contradicen, decilo.
 4. En hechos policiales o judiciales, no nombres a personas que no estén condenadas: usá descripciones ("un hombre de 34 años"). Los funcionarios y figuras públicas en ejercicio de su rol sí se nombran.
 5. Nunca identifiques a menores de edad ni a víctimas de delitos sexuales.
@@ -235,9 +235,15 @@ def palabras(texto):
     return re.findall(r"[a-záéíóúñü0-9]+", texto.lower())
 
 
+COMILLAS = re.compile(r"“[^”]*”|«[^»]*»|\"[^\"]*\"")
+
+
 def copias_textuales(nota, tema, largo=12):
-    """Secuencias de 12 o más palabras seguidas que la nota comparte con alguna fuente."""
-    cuerpo = palabras(" ".join(nota["cuerpo"]))
+    """Secuencias de 12 o más palabras seguidas que la nota comparte con alguna fuente.
+
+    Las declaraciones entre comillas no cuentan: citar textualmente a una persona está permitido.
+    """
+    cuerpo = palabras(COMILLAS.sub(" | ", " ".join(nota["cuerpo"])).replace("|", " corte "))
     hallazgos = []
     for fuente in tema["fuentes"]:
         origen = palabras(fuente["texto"])
@@ -250,6 +256,22 @@ def copias_textuales(nota, tema, largo=12):
             else:
                 i += 1
     return hallazgos[:5]
+
+
+def reescribir(cliente, modelo, nota, copias):
+    """Devuelve el cuerpo de la nota con las frases copiadas dichas de otra manera."""
+    sistema = (
+        "Sos editor de un medio argentino. Recibís el cuerpo de una nota y una lista de frases que quedaron "
+        "demasiado parecidas a las de otros medios. Reescribí esas partes con otras palabras y otra estructura, "
+        "sin cambiar ningún hecho, cifra, nombre ni cita entre comillas, y sin agregar información. "
+        "El resto del texto dejalo como está. "
+        'Respondé solo con JSON: {"cuerpo": ["párrafo 1", "párrafo 2"]}.'
+    )
+    usuario = ("FRASES A CAMBIAR:\n" + "\n".join(f"- {c['fragmento']}" for c in copias)
+               + "\n\nCUERPO:\n" + "\n\n".join(nota["cuerpo"]))
+    datos = pedir_json(cliente, modelo, sistema, usuario)
+    cuerpo = [str(p).strip() for p in datos.get("cuerpo", []) if str(p).strip()]
+    return cuerpo or nota["cuerpo"]
 
 
 # ---------- Paso 6: foto de archivo con licencia libre ----------
@@ -448,6 +470,16 @@ def main():
         except Exception as error:
             nota["observaciones"] = [{"dato": "verificación", "problema": f"no se pudo verificar: {str(error)[:80]}"}]
         nota["copias"] = copias_textuales(nota, tema)
+        for _ in range(2):  # hasta dos intentos de reescritura
+            if not nota["copias"]:
+                break
+            try:
+                nota["cuerpo"] = reescribir(cliente, modelo, nota, nota["copias"])
+            except Exception as error:
+                print(f"     no se pudo reescribir: {str(error)[:80]}")
+                break
+            nota["copias"] = copias_textuales(nota, tema)
+            print(f"     reescritura: quedan {len(nota['copias'])} frases copiadas")
         nota["imagen"] = buscar_imagen(borrador.get("imagen"))
 
         observada = bool(nota["observaciones"] or nota["copias"])

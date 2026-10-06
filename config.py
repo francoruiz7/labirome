@@ -15,8 +15,8 @@ RUTA_BASE = ""
 INDEXABLE = False
 
 # Leyenda al pie de cada nota y texto del pie de página.
-AVISO_IA = "Nota elaborada de forma automática con inteligencia artificial a partir de las fuentes citadas."
-SOBRE = "Un medio experimental. Las notas se elaboran de forma automática con inteligencia artificial a partir de fuentes periodísticas, citadas en cada artículo."
+AVISO_IA = "Nota elaborada con inteligencia artificial a partir de las fuentes citadas."
+SOBRE = "Un medio digital que tiene como premisa la objetividad y el respaldo de cada dato. Las notas se elaboran con inteligencia artificial, contrastan al menos dos fuentes periodísticas y las citan al pie."
 
 # Secciones, en el orden en que aparecen en la barra.
 SECCIONES = [
@@ -26,9 +26,9 @@ SECCIONES = [
 
 # ---------- La redacción automática ----------
 
-# Cuántas notas genera en cada corrida. La frecuencia de las corridas se define en
-# .github/workflows/publicar.yml (por defecto, cada cuatro horas).
-N_NOTAS = 3
+# Cuántas notas genera en cada corrida. La cantidad de corridas por día se define en
+# .github/workflows/publicar.yml. Con dos corridas diarias, esto da hasta cuatro notas por día.
+N_NOTAS = 2
 
 # Un tema solo se redacta si lo cubren al menos estos medios distintos.
 MIN_MEDIOS = 2
@@ -57,10 +57,8 @@ FUENTES = [
     ("Clarín", "https://www.clarin.com/rss/lo-ultimo/"),
     ("La Nación", "https://www.lanacion.com.ar/arc/outboundfeeds/rss/?outputType=xml"),
     ("Infobae", "https://www.infobae.com/arc/outboundfeeds/rss/"),
-    ("Página 12", "https://www.pagina12.com.ar/rss/portada"),
     ("Ámbito", "https://www.ambito.com/rss/pages/home.xml"),
     ("Perfil", "https://www.perfil.com/feed"),
     ("El Cronista", "https://www.cronista.com/files/rss/news.xml"),
     ("TN", "https://tn.com.ar/arc/outboundfeeds/rss/?outputType=xml"),
-    ("La Voz", "https://www.lavoz.com.ar/arc/outboundfeeds/feeds/rss/?outputType=xml"),
 ]
