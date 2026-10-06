@@ -1,0 +1,79 @@
+name: Publicar La Birome
+
+on:
+  # Horarios en UTC. Equivalen a las 7:15, 10:15, 13:15, 16:15, 19:15 y 22:15 de Argentina.
+  schedule:
+    - cron: "15 1,10,13,16,19,22 * * *"
+  # Botón "Run workflow" de la pestaña Actions.
+  workflow_dispatch:
+    inputs:
+      generar:
+        description: "Generar notas nuevas (si se destilda, solo rearma el sitio)"
+        type: boolean
+        default: true
+  # Cuando se borra o edita una nota a mano, el sitio se rearma solo.
+  push:
+    branches: [main]
+    paths:
+      - "notas/**"
+      - "estatico/**"
+      - "construir.py"
+      - "config.py"
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: publicar
+  cancel-in-progress: false
+
+jobs:
+  publicar:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.despliegue.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Instalar librerías
+        run: pip install -r requirements.txt
+
+      - name: Generar notas nuevas
+        if: github.event_name == 'schedule' || (github.event_name == 'workflow_dispatch' && inputs.generar)
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          PEXELS_API_KEY: ${{ secrets.PEXELS_API_KEY }}
+        run: python generar.py
+
+      - name: Guardar las notas en el repositorio
+        if: github.event_name != 'push'
+        run: |
+          git config user.name "La Birome"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          mkdir -p notas retenidas
+          git add notas retenidas
+          if [ -f vistos.json ]; then git add vistos.json; fi
+          git diff --cached --quiet || git commit -m "Notas nuevas"
+          git pull --rebase
+          git push
+
+      - name: Armar el sitio
+        run: python construir.py
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: sitio
+
+      - name: Publicar
+        id: despliegue
+        uses: actions/deploy-pages@v4
