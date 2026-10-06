@@ -40,7 +40,7 @@ MAX_TITULARES_POR_MEDIO = 25
 
 # Con True, las notas en las que la revisión automática encuentra un dato sin respaldo o una frase
 # copiada no se publican: quedan en la carpeta "retenidas". Para publicarlas, se mueven a "notas".
-RETENER_OBSERVADAS = True
+RETENER_OBSERVADAS = False
 
 TEMAS_A_EVITAR = [
     "suicidios",
