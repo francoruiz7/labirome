@@ -315,9 +315,44 @@ def imagen_pexels(consulta):
     }
 
 
+def imagen_commons(consulta):
+    """Foto de archivo buscada por tema en Wikimedia Commons. No necesita ninguna clave."""
+    if not consulta:
+        return None
+    resp = requests.get("https://commons.wikimedia.org/w/api.php", headers=IDENTIFICACION, timeout=20, params={
+        "action": "query", "format": "json", "generator": "search", "gsrnamespace": 6, "gsrlimit": 12,
+        "gsrsearch": f"{consulta} filetype:bitmap", "prop": "imageinfo",
+        "iiprop": "url|mime|size|extmetadata", "iiurlwidth": 1280,
+    }).json()
+    candidatas = []
+    for pagina in sorted(resp.get("query", {}).get("pages", {}).values(), key=lambda p: p.get("index", 99)):
+        for info in pagina.get("imageinfo", []):
+            ancho, alto = info.get("width", 0), info.get("height", 1) or 1
+            meta = info.get("extmetadata", {})
+            licencia = limpiar(meta.get("LicenseShortName", {}).get("value", ""))
+            # Solo fotos apaisadas, de buen tamaño y con licencia libre.
+            if info.get("mime") != "image/jpeg" or ancho < 1000 or not 1.2 <= ancho / alto <= 2.2:
+                continue
+            if not LICENCIAS_LIBRES.match(licencia):
+                continue
+            autor = limpiar(meta.get("Artist", {}).get("value", ""))[:80]
+            candidatas.append({
+                "url": info.get("thumburl") or info["url"],
+                "credito": f"{autor} / Wikimedia Commons" if autor else "Wikimedia Commons",
+                "licencia": licencia,
+                "enlace": info.get("descriptionurl", ""),
+            })
+    return random.choice(candidatas[:5]) if candidatas else None
+
+
 def buscar_imagen(pedido):
     pedido = pedido if isinstance(pedido, dict) else {}
-    for buscador, consulta in ((imagen_wikipedia, pedido.get("entidad")), (imagen_pexels, pedido.get("generica"))):
+    buscadores = (
+        (imagen_wikipedia, pedido.get("entidad")),
+        (imagen_pexels, pedido.get("generica")),
+        (imagen_commons, pedido.get("generica")),
+    )
+    for buscador, consulta in buscadores:
         try:
             imagen = buscador(str(consulta or "").strip())
             if imagen:
@@ -361,7 +396,7 @@ def main():
     historial = json.loads(ARCHIVO_VISTOS.read_text(encoding="utf-8")) if ARCHIVO_VISTOS.exists() else []
     vistos = set(historial)
     print(f"Modelo: {modelo}")
-    print(f"Fotos de banco (Pexels): {'activadas' if os.environ.get('PEXELS_API_KEY') else 'sin clave, solo Wikimedia'}")
+    print(f"Fotos: Wikipedia y Wikimedia Commons{', más Pexels' if os.environ.get('PEXELS_API_KEY') else ''}")
 
     print("\n1. Leyendo titulares...")
     titulares = [t for t in leer_fuentes() if t["link"] not in vistos]
