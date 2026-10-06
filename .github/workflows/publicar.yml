@@ -3,7 +3,7 @@ name: Publicar La Birome
 on:
   # Horarios en UTC. Equivalen a las 7:15, 10:15, 13:15, 16:15, 19:15 y 22:15 de Argentina.
   schedule:
-    - cron: "15 1,10,13,16,19,22 * * *"
+    - cron: "15 11,21 * * *"
   # Botón "Run workflow" de la pestaña Actions.
   workflow_dispatch:
     inputs:
