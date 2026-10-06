@@ -492,9 +492,17 @@ def main():
             retenidas += 1
             print(f"     retenida: {nota['titulo']} [{len(nota['observaciones'])} datos, {len(nota['copias'])} copias]")
         else:
+            # El detalle de la revisión se informa acá, en el registro de la corrida, y no se guarda
+            # en el archivo de la nota publicada.
+            pendientes = nota.pop("observaciones") + nota.pop("copias")
             guardar(nota, CARPETA_NOTAS)
             publicadas += 1
             print(f"     publicada: {nota['titulo']} [{'con foto' if nota['imagen'] else 'sin foto'}]")
+            for item in pendientes:
+                if "fragmento" in item:
+                    print(f"       frase parecida a {item['medio']}: {item['fragmento']}")
+                else:
+                    print(f"       dato a revisar: {item.get('dato')} ({item.get('problema', '')})")
 
     # Se conservan los últimos 6000 artículos usados para que el archivo no crezca sin límite.
     ARCHIVO_VISTOS.write_text(json.dumps(historial[-6000:], ensure_ascii=False, indent=0), encoding="utf-8")
