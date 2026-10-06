@@ -125,13 +125,19 @@ def pagina(titulo, cuerpo, ruta, ultimas, descripcion=None, imagen=None, seccion
 
     cinta = ""
     if ultimas:
+        # Con pocas notas, los titulares se repiten hasta llenar el ancho de la pantalla.
+        titulares = ultimas[:6]
+        tramo = [titulares[i % len(titulares)] for i in range(max(6, len(titulares)))]
         enlaces = ""
-        for repetida in (False, True):  # se repiten una vez para que el recorrido no tenga corte
-            for n in ultimas[:6]:
-                extra = ' aria-hidden="true" tabindex="-1"' if repetida else ""
+        for repetida in (False, True):  # el tramo va dos veces para que el recorrido no tenga corte
+            for posicion, n in enumerate(tramo):
+                oculto = repetida or posicion >= len(titulares)
+                extra = ' aria-hidden="true" tabindex="-1"' if oculto else ""
                 enlaces += f'<a href="{e(url_nota(n))}"{extra}>{e(n["titulo"])}</a>'
+        # La duración depende del largo del texto, para que la velocidad sea siempre la misma.
+        segundos = max(24, round(sum(len(n["titulo"]) + 6 for n in tramo) / 9))
         cinta = (f'<div class="cinta sobre-negro" aria-label="Últimas noticias"><div class="cinta-rotulo">Últimas noticias</div>'
-                 f'<div class="cinta-pista"><div class="cinta-lista">{enlaces}</div></div></div>')
+                 f'<div class="cinta-pista"><div class="cinta-lista" style="animation-duration:{segundos}s">{enlaces}</div></div></div>')
 
     robots = "" if config.INDEXABLE else '<meta name="robots" content="noindex, nofollow">\n'
     og_imagen = f'<meta property="og:image" content="{e(imagen)}">\n' if imagen else ""
