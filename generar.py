@@ -482,8 +482,12 @@ def main():
             print(f"     reescritura: quedan {len(nota['copias'])} frases copiadas")
         nota["imagen"] = buscar_imagen(borrador.get("imagen"))
 
-        observada = bool(nota["observaciones"] or nota["copias"])
-        if observada and config.RETENER_OBSERVADAS:
+        # Cada control se puede activar o apagar por separado en config.py.
+        retener = bool(
+            (nota["observaciones"] and config.RETENER_DATOS_SIN_RESPALDO)
+            or (nota["copias"] and config.RETENER_FRASES_COPIADAS)
+        )
+        if retener:
             guardar(nota, CARPETA_RETENIDAS)
             retenidas += 1
             print(f"     retenida: {nota['titulo']} [{len(nota['observaciones'])} datos, {len(nota['copias'])} copias]")

@@ -38,9 +38,14 @@ MAX_CARACTERES_POR_FUENTE = 3500
 VENTANA_HORAS = 12
 MAX_TITULARES_POR_MEDIO = 25
 
-# Con True, las notas en las que la revisión automática encuentra un dato sin respaldo o una frase
-# copiada no se publican: quedan en la carpeta "retenidas". Para publicarlas, se mueven a "notas".
-RETENER_OBSERVADAS = False
+# Controles antes de publicar. Las notas retenidas quedan en la carpeta "retenidas" y no salen en el
+# sitio; para publicarlas a mano, se mueven a la carpeta "notas".
+#
+# Datos sin respaldo: el verificador encontró una cifra, un nombre o una cita que no figura en las fuentes.
+RETENER_DATOS_SIN_RESPALDO = True
+# Frases copiadas: después de dos intentos de reescritura, todavía queda alguna frase muy parecida
+# a la de otro medio.
+RETENER_FRASES_COPIADAS = False
 
 TEMAS_A_EVITAR = [
     "suicidios",
