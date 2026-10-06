@@ -279,7 +279,7 @@ a.boton { display: inline-block; text-decoration: none; }
   .cabecera .identidad img { position: static; transform: none; margin: 0; }
 }
 .pie .identidad img { width: auto; height: 3rem; }
-.pie p { font-family: var(--lectura); font-size: 1rem; opacity: 0.85; max-width: 34ch; }
+.pie .contenedor p { font-family: var(--lectura); font-size: 1rem; opacity: 0.85; max-width: 34ch; }
 
 /* Crédito de la foto y aviso de elaboración automática */
 .nota-foto figcaption a { color: inherit; }
