@@ -1,0 +1,434 @@
+"""Redacción automática de La Birome.
+
+Lee titulares de varios medios, detecta los temas del momento, redacta notas propias citando
+las fuentes, las revisa, les busca una foto con licencia libre y las guarda en la carpeta "notas".
+Después, construir.py arma el sitio con lo que haya en esa carpeta.
+
+Uso:  python generar.py
+"""
+
+import datetime as dt
+import html
+import json
+import os
+import random
+import re
+import sys
+import time
+from pathlib import Path
+
+import feedparser
+import requests
+import trafilatura
+from openai import OpenAI
+
+import config
+
+AQUI = Path(__file__).parent
+CARPETA_NOTAS = AQUI / "notas"
+CARPETA_RETENIDAS = AQUI / "retenidas"
+ARCHIVO_VISTOS = AQUI / "vistos.json"
+ARGENTINA = dt.timezone(dt.timedelta(hours=-3))
+NAVEGADOR = {"User-Agent": "Mozilla/5.0 (lector de titulares de La Birome)"}
+IDENTIFICACION = {"User-Agent": f"LaBirome/1.0 ({config.URL_SITIO})"}
+
+
+# ---------- Configuración y cliente ----------
+
+def cargar_env():
+    """Lee el archivo .env (CLAVE=valor) cuando se ejecuta en una compu. En GitHub no hace falta."""
+    ruta = AQUI / ".env"
+    if not ruta.exists():
+        return
+    for linea in ruta.read_text(encoding="utf-8").splitlines():
+        linea = linea.strip()
+        if linea and not linea.startswith("#") and "=" in linea:
+            clave, valor = linea.split("=", 1)
+            if valor.strip():
+                os.environ.setdefault(clave.strip(), valor.strip().strip('"').strip("'"))
+
+
+def elegir_modelo(cliente):
+    forzado = os.environ.get("MODELO", "").strip()
+    if forzado:
+        return forzado
+    disponibles = {m.id for m in cliente.models.list()}
+    for nombre in config.MODELOS_PREFERIDOS:
+        if nombre in disponibles:
+            return nombre
+    sys.exit("No encontré ninguno de los modelos preferidos en la cuenta. Definí MODELO con el nombre de un modelo de chat.")
+
+
+def pedir_json(cliente, modelo, sistema, usuario):
+    """Llama al modelo pidiendo JSON. Reintenta una vez si la respuesta no se puede leer."""
+    for intento in (1, 2):
+        respuesta = cliente.chat.completions.create(
+            model=modelo,
+            response_format={"type": "json_object"},
+            messages=[
+                {"role": "system", "content": sistema},
+                {"role": "user", "content": usuario},
+            ],
+        )
+        try:
+            return json.loads(respuesta.choices[0].message.content)
+        except (json.JSONDecodeError, TypeError):
+            if intento == 2:
+                raise
+            time.sleep(2)
+
+
+# ---------- Paso 1: leer titulares ----------
+
+def limpiar(texto):
+    texto = re.sub(r"<[^>]+>", " ", texto or "")
+    return re.sub(r"\s+", " ", html.unescape(texto)).strip()
+
+
+def leer_fuentes():
+    limite = dt.datetime.now(dt.timezone.utc) - dt.timedelta(hours=config.VENTANA_HORAS)
+    titulares = []
+    for medio, url in config.FUENTES:
+        try:
+            crudo = requests.get(url, headers=NAVEGADOR, timeout=20)
+            crudo.raise_for_status()
+            feed = feedparser.parse(crudo.content)
+        except requests.RequestException as error:
+            print(f"  [sin respuesta] {medio}: {error.__class__.__name__}")
+            continue
+
+        cantidad = 0
+        for entrada in feed.entries:
+            momento = entrada.get("published_parsed") or entrada.get("updated_parsed")
+            if momento and dt.datetime(*momento[:6], tzinfo=dt.timezone.utc) < limite:
+                continue
+            titulo, enlace = limpiar(entrada.get("title")), entrada.get("link", "")
+            if not titulo or not enlace:
+                continue
+            titulares.append({
+                "medio": medio, "titulo": titulo, "link": enlace,
+                "resumen": limpiar(entrada.get("summary"))[:400],
+            })
+            cantidad += 1
+            if cantidad >= config.MAX_TITULARES_POR_MEDIO:
+                break
+        print(f"  {medio}: {cantidad} titulares")
+    return titulares
+
+
+# ---------- Paso 2: detectar los temas del momento ----------
+
+def titulos_recientes(horas=48):
+    """Títulos ya publicados, para no repetir temas entre una corrida y la siguiente."""
+    limite = dt.datetime.now(ARGENTINA) - dt.timedelta(hours=horas)
+    titulos = []
+    for carpeta in (CARPETA_NOTAS, CARPETA_RETENIDAS):
+        for ruta in carpeta.glob("*.json"):
+            try:
+                nota = json.loads(ruta.read_text(encoding="utf-8"))
+                if dt.datetime.fromisoformat(nota["fecha"]) >= limite:
+                    titulos.append(nota["titulo"])
+            except (ValueError, KeyError, json.JSONDecodeError):
+                continue
+    return titulos
+
+
+def agrupar_temas(cliente, modelo, titulares, ya_publicados):
+    lista = "\n".join(f"{i} | {t['medio']} | {t['titulo']}" for i, t in enumerate(titulares))
+    sistema = (
+        "Sos el jefe de redacción de un medio argentino de noticias generales. "
+        "Recibís titulares de varios medios, uno por línea, con el formato 'id | medio | titular'. "
+        "Agrupá los titulares que hablan del MISMO hecho puntual, no solo del mismo tema general. "
+        f"Descartá estos temas: {'; '.join(config.TEMAS_A_EVITAR)}. "
+        "Descartá también los hechos que el medio ya publicó (se listan al final), salvo que haya una novedad importante. "
+        f"Asigná a cada grupo una sección de esta lista: {', '.join(config.SECCIONES)}. "
+        "Puntuá la importancia para el público argentino del 1 al 10. "
+        'Respondé solo con JSON: {"temas": [{"tema": "frase corta", "ids": [números], '
+        '"seccion": "una de la lista", "importancia": número}]}. '
+        "Incluí únicamente grupos con titulares de al menos dos medios distintos."
+    )
+    usuario = lista + "\n\nYA PUBLICADO POR EL MEDIO:\n" + ("\n".join(f"- {t}" for t in ya_publicados) or "(nada)")
+    datos = pedir_json(cliente, modelo, sistema, usuario)
+
+    temas = []
+    for tema in datos.get("temas", []):
+        ids = [i for i in tema.get("ids", []) if isinstance(i, int) and 0 <= i < len(titulares)]
+        por_medio = {}
+        for i in ids:
+            por_medio.setdefault(titulares[i]["medio"], titulares[i])
+        if len(por_medio) < config.MIN_MEDIOS:
+            continue
+        importancia = tema.get("importancia", 0)
+        temas.append({
+            "tema": str(tema.get("tema", "")).strip(),
+            "seccion": tema.get("seccion") if tema.get("seccion") in config.SECCIONES else "Sociedad",
+            "importancia": importancia if isinstance(importancia, (int, float)) else 0,
+            "fuentes": list(por_medio.values())[: config.MAX_FUENTES_POR_NOTA],
+        })
+    temas.sort(key=lambda t: (t["importancia"], len(t["fuentes"])), reverse=True)
+    return temas[: config.N_NOTAS]
+
+
+# ---------- Paso 3: juntar el material ----------
+
+def bajar_texto(fuente):
+    """Texto principal del artículo. Si no se puede leer, usa el resumen del titular."""
+    texto = ""
+    try:
+        pagina = trafilatura.fetch_url(fuente["link"])
+        if pagina:
+            texto = trafilatura.extract(pagina, include_comments=False, include_tables=False) or ""
+    except Exception:  # la lectura de una página nunca debe frenar la corrida
+        texto = ""
+    return (texto.strip() or fuente["resumen"])[: config.MAX_CARACTERES_POR_FUENTE]
+
+
+def armar_material(fuentes):
+    return "\n\n".join(
+        f"[FUENTE {n}] {f['medio']} | {f['titulo']}\n{f['texto']}" for n, f in enumerate(fuentes, start=1)
+    )
+
+
+# ---------- Paso 4: redactar ----------
+
+REGLAS = """Sos redactor de un medio argentino de noticias generales. Escribís una nota PROPIA a partir del material de otras fuentes.
+
+Reglas que no se negocian:
+1. Usá únicamente hechos que estén en el material. No agregues datos, cifras, nombres ni contexto de tu memoria.
+2. Escribí con tus palabras. No copies frases del material. Las únicas citas textuales permitidas son declaraciones de personas, entre comillas y con atribución.
+3. Atribuí la información: "según informó [medio]", "de acuerdo con [organismo]". Si las fuentes se contradicen, decilo.
+4. En hechos policiales o judiciales, no nombres a personas que no estén condenadas: usá descripciones ("un hombre de 34 años"). Los funcionarios y figuras públicas en ejercicio de su rol sí se nombran.
+5. Nunca identifiques a menores de edad ni a víctimas de delitos sexuales.
+6. Si el material no alcanza para una nota sólida, devolvé "descartar": true y explicá el motivo.
+
+Para la foto de archivo, completá "imagen":
+- "entidad": el nombre, tal como figura en Wikipedia, de la figura pública, club, organismo, empresa o lugar que protagoniza la nota. Dejalo vacío si no hay uno claro o si el protagonista es una persona privada.
+- "generica": dos o tres palabras en inglés que describan una foto de banco neutra para el tema (por ejemplo "argentine pesos banknotes", "football stadium", "courtroom").
+
+Respondé solo con JSON:
+{"descartar": false, "motivo": "", "titulo": "", "bajada": "", "cuerpo": ["párrafo 1", "párrafo 2"], "seccion": "", "etiquetas": ["", ""], "imagen": {"entidad": "", "generica": ""}}
+"""
+
+
+def redactar(cliente, modelo, tema, guia):
+    sistema = REGLAS + f"\nSecciones posibles: {', '.join(config.SECCIONES)}.\n\nGuía de estilo del medio:\n{guia}"
+    usuario = f"Tema detectado: {tema['tema']}\n\nMaterial:\n\n{armar_material(tema['fuentes'])}"
+    return pedir_json(cliente, modelo, sistema, usuario)
+
+
+# ---------- Paso 5: revisar ----------
+
+def verificar(cliente, modelo, nota, tema):
+    sistema = (
+        "Sos verificador de datos. Recibís una nota y el material en que se basó. "
+        "Revisá cada cifra, fecha, nombre propio, cargo y cita textual de la nota y comprobá que esté respaldado por el material. "
+        "Marcá también si la nota nombra a una persona no condenada en un hecho policial o judicial, o identifica a un menor. "
+        'Respondé solo con JSON: {"observaciones": [{"dato": "lo que dice la nota", "problema": "por qué no está respaldado"}]}. '
+        "Si todo está respaldado, devolvé la lista vacía."
+    )
+    texto_nota = f"{nota['titulo']}\n{nota['bajada']}\n\n" + "\n\n".join(nota["cuerpo"])
+    datos = pedir_json(cliente, modelo, sistema, f"NOTA:\n{texto_nota}\n\nMATERIAL:\n\n{armar_material(tema['fuentes'])}")
+    return [o for o in datos.get("observaciones", []) if isinstance(o, dict) and o.get("dato")]
+
+
+def palabras(texto):
+    return re.findall(r"[a-záéíóúñü0-9]+", texto.lower())
+
+
+def copias_textuales(nota, tema, largo=12):
+    """Secuencias de 12 o más palabras seguidas que la nota comparte con alguna fuente."""
+    cuerpo = palabras(" ".join(nota["cuerpo"]))
+    hallazgos = []
+    for fuente in tema["fuentes"]:
+        origen = palabras(fuente["texto"])
+        gramas = {tuple(origen[i:i + largo]) for i in range(len(origen) - largo + 1)}
+        i = 0
+        while i <= len(cuerpo) - largo:
+            if tuple(cuerpo[i:i + largo]) in gramas:
+                hallazgos.append({"medio": fuente["medio"], "fragmento": " ".join(cuerpo[i:i + largo]) + "…"})
+                i += largo
+            else:
+                i += 1
+    return hallazgos[:5]
+
+
+# ---------- Paso 6: foto de archivo con licencia libre ----------
+
+LICENCIAS_LIBRES = re.compile(r"^(cc0|cc[ -]by([ -]sa)?\b|public domain|pd\b|dominio público)", re.I)
+
+
+def imagen_wikipedia(entidad):
+    """Foto principal del artículo de Wikipedia de la entidad, con sus datos de licencia en Wikimedia Commons."""
+    if not entidad:
+        return None
+    resp = requests.get("https://es.wikipedia.org/w/api.php", headers=IDENTIFICACION, timeout=20, params={
+        "action": "query", "format": "json", "generator": "search", "gsrsearch": entidad, "gsrlimit": 1,
+        "prop": "pageimages", "piprop": "name", "pilicense": "free",
+    }).json()
+    paginas = list(resp.get("query", {}).get("pages", {}).values())
+    if not paginas or not paginas[0].get("pageimage"):
+        return None
+
+    # El artículo encontrado tiene que corresponder a la entidad pedida.
+    pedido, hallado = set(palabras(entidad)), set(palabras(paginas[0].get("title", "")))
+    if not pedido or len(pedido & hallado) * 2 < len(pedido):
+        return None
+
+    archivo = "File:" + paginas[0]["pageimage"]
+    resp = requests.get("https://commons.wikimedia.org/w/api.php", headers=IDENTIFICACION, timeout=20, params={
+        "action": "query", "format": "json", "titles": archivo, "prop": "imageinfo",
+        "iiprop": "url|mime|size|extmetadata", "iiurlwidth": 1280,
+    }).json()
+    for pagina in resp.get("query", {}).get("pages", {}).values():
+        for info in pagina.get("imageinfo", []):
+            meta = info.get("extmetadata", {})
+            licencia = limpiar(meta.get("LicenseShortName", {}).get("value", ""))
+            if info.get("mime") != "image/jpeg" or info.get("width", 0) < 600 or not LICENCIAS_LIBRES.match(licencia):
+                return None
+            autor = limpiar(meta.get("Artist", {}).get("value", ""))[:80]
+            return {
+                "url": info.get("thumburl") or info["url"],
+                "credito": f"{autor} / Wikimedia Commons" if autor else "Wikimedia Commons",
+                "licencia": licencia,
+                "enlace": info.get("descriptionurl", ""),
+            }
+    return None
+
+
+def imagen_pexels(consulta):
+    """Foto de banco para notas sin protagonista. Requiere la clave gratuita PEXELS_API_KEY."""
+    clave = os.environ.get("PEXELS_API_KEY", "").strip()
+    if not clave or not consulta:
+        return None
+    resp = requests.get("https://api.pexels.com/v1/search", headers={"Authorization": clave}, timeout=20, params={
+        "query": consulta, "orientation": "landscape", "per_page": 5,
+    }).json()
+    fotos = [f for f in resp.get("photos", []) if f.get("src", {}).get("landscape")]
+    if not fotos:
+        return None
+    foto = random.choice(fotos)
+    return {
+        "url": foto["src"]["landscape"],
+        "credito": f"{foto.get('photographer', 'Pexels')} / Pexels",
+        "licencia": "",
+        "enlace": foto.get("url", ""),
+    }
+
+
+def buscar_imagen(pedido):
+    pedido = pedido if isinstance(pedido, dict) else {}
+    for buscador, consulta in ((imagen_wikipedia, pedido.get("entidad")), (imagen_pexels, pedido.get("generica"))):
+        try:
+            imagen = buscador(str(consulta or "").strip())
+            if imagen:
+                return imagen
+        except Exception as error:  # una foto que falla no debe impedir la nota
+            print(f"     foto: {buscador.__name__} falló ({str(error)[:80]})")
+    return None
+
+
+# ---------- Paso 7: guardar ----------
+
+def slugificar(texto):
+    texto = texto.lower().translate(str.maketrans("áéíóúñü", "aeiounu"))
+    return re.sub(r"[^a-z0-9]+", "-", texto).strip("-")[:80].strip("-")
+
+
+def guardar(nota, carpeta):
+    base = nota["slug"]
+    existentes = {r.stem.split("_", 1)[-1] for c in (CARPETA_NOTAS, CARPETA_RETENIDAS) for r in c.glob("*.json")}
+    numero = 2
+    while nota["slug"] in existentes:
+        nota["slug"] = f"{base}-{numero}"
+        numero += 1
+    ruta = carpeta / f"{nota['fecha'][:10]}_{nota['slug']}.json"
+    ruta.write_text(json.dumps(nota, ensure_ascii=False, indent=1), encoding="utf-8")
+    return ruta
+
+
+# ---------- Programa principal ----------
+
+def main():
+    cargar_env()
+    if not os.environ.get("OPENAI_API_KEY"):
+        sys.exit("Falta la clave OPENAI_API_KEY.")
+    for carpeta in (CARPETA_NOTAS, CARPETA_RETENIDAS):
+        carpeta.mkdir(exist_ok=True)
+
+    cliente = OpenAI()
+    modelo = elegir_modelo(cliente)
+    guia = (AQUI / "guia_estilo.md").read_text(encoding="utf-8")
+    historial = json.loads(ARCHIVO_VISTOS.read_text(encoding="utf-8")) if ARCHIVO_VISTOS.exists() else []
+    vistos = set(historial)
+    print(f"Modelo: {modelo}")
+    print(f"Fotos de banco (Pexels): {'activadas' if os.environ.get('PEXELS_API_KEY') else 'sin clave, solo Wikimedia'}")
+
+    print("\n1. Leyendo titulares...")
+    titulares = [t for t in leer_fuentes() if t["link"] not in vistos]
+    medios = {t["medio"] for t in titulares}
+    if len(medios) < config.MIN_MEDIOS:
+        print("No hay titulares nuevos de suficientes medios. No se generan notas en esta corrida.")
+        return
+
+    print(f"\n2. Detectando temas entre {len(titulares)} titulares de {len(medios)} medios...")
+    temas = agrupar_temas(cliente, modelo, titulares, titulos_recientes())
+    if not temas:
+        print("No hay temas nuevos cubiertos por al menos dos medios. No se generan notas en esta corrida.")
+        return
+
+    publicadas = retenidas = 0
+    for numero, tema in enumerate(temas, start=1):
+        print(f"\n3.{numero} {tema['tema']} ({', '.join(f['medio'] for f in tema['fuentes'])})")
+        for fuente in tema["fuentes"]:
+            fuente["texto"] = bajar_texto(fuente)
+
+        try:
+            borrador = redactar(cliente, modelo, tema, guia)
+        except Exception as error:  # un tema que falla no debe cortar los demás
+            print(f"     error al redactar: {str(error)[:120]}")
+            continue
+        for f in tema["fuentes"]:
+            if f["link"] not in vistos:
+                vistos.add(f["link"])
+                historial.append(f["link"])
+        if borrador.get("descartar") or not borrador.get("titulo") or not borrador.get("cuerpo"):
+            print(f"     descartada: {borrador.get('motivo') or 'material insuficiente'}")
+            continue
+
+        nota = {
+            "slug": slugificar(str(borrador["titulo"])),
+            "titulo": str(borrador["titulo"]).strip(),
+            "bajada": str(borrador.get("bajada", "")).strip(),
+            "cuerpo": [str(p).strip() for p in borrador["cuerpo"] if str(p).strip()],
+            "seccion": borrador.get("seccion") if borrador.get("seccion") in config.SECCIONES else tema["seccion"],
+            "etiquetas": [str(x).strip() for x in borrador.get("etiquetas", []) if str(x).strip()][:6],
+            "fecha": dt.datetime.now(ARGENTINA).isoformat(timespec="seconds"),
+            "importancia": tema["importancia"],
+            "fuentes": [{"medio": f["medio"], "titulo": f["titulo"], "link": f["link"]} for f in tema["fuentes"]],
+        }
+        if not nota["slug"]:
+            continue
+        try:
+            nota["observaciones"] = verificar(cliente, modelo, nota, tema)
+        except Exception as error:
+            nota["observaciones"] = [{"dato": "verificación", "problema": f"no se pudo verificar: {str(error)[:80]}"}]
+        nota["copias"] = copias_textuales(nota, tema)
+        nota["imagen"] = buscar_imagen(borrador.get("imagen"))
+
+        observada = bool(nota["observaciones"] or nota["copias"])
+        if observada and config.RETENER_OBSERVADAS:
+            guardar(nota, CARPETA_RETENIDAS)
+            retenidas += 1
+            print(f"     retenida: {nota['titulo']} [{len(nota['observaciones'])} datos, {len(nota['copias'])} copias]")
+        else:
+            guardar(nota, CARPETA_NOTAS)
+            publicadas += 1
+            print(f"     publicada: {nota['titulo']} [{'con foto' if nota['imagen'] else 'sin foto'}]")
+
+    # Se conservan los últimos 6000 artículos usados para que el archivo no crezca sin límite.
+    ARCHIVO_VISTOS.write_text(json.dumps(historial[-6000:], ensure_ascii=False, indent=0), encoding="utf-8")
+    print(f"\nListo: {publicadas} notas publicadas, {retenidas} retenidas.")
+
+
+if __name__ == "__main__":
+    main()
