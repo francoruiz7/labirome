@@ -37,7 +37,7 @@ button, input { font: inherit; }
 .servicios a:hover { opacity: 1; color: var(--celeste); }
 
 /* Cabecera negra con el logo centrado */
-.cabecera { background: var(--negro); color: var(--blanco); padding: 1.1rem 0 1.2rem; border-top: 1px solid rgba(255, 255, 255, 0.22); }
+.cabecera { background: var(--negro); color: var(--blanco); padding: 0.65rem 0 0.75rem; border-top: 1px solid rgba(255, 255, 255, 0.22); }
 .cabecera .contenedor { display: flex; align-items: center; justify-content: center; gap: 1rem; position: relative; }
 .identidad { display: flex; align-items: center; gap: clamp(0.75rem, 2vw, 1.25rem); text-decoration: none; }
 .identidad img { width: clamp(2.24rem, 5.2vw, 3.68rem); height: auto; flex: none; }
@@ -279,7 +279,7 @@ a.boton { display: inline-block; text-decoration: none; }
   .cabecera .identidad img { position: static; transform: none; margin: 0; }
 }
 .pie .identidad img { width: auto; height: 3rem; }
-.pie .contenedor p { font-family: var(--lectura); font-size: 1rem; opacity: 0.85; max-width: 34ch; }
+.pie .contenedor p { font-family: var(--lectura); font-size: 1rem; opacity: 0.85; max-width: 34ch; text-align: justify; hyphens: auto; }
 
 /* Crédito de la foto y aviso de elaboración automática */
 .nota-foto figcaption a { color: inherit; }
