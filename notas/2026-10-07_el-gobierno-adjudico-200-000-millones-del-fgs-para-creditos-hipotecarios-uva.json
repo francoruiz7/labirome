@@ -29,9 +29,10 @@
   }
  ],
  "imagen": {
-  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f8/ANSES_firm%C3%B3_un_convenio_de_cooperaci%C3%B3n_con_la_UBA..jpg/1280px-ANSES_firm%C3%B3_un_convenio_de_cooperaci%C3%B3n_con_la_UBA..jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-  "credito": "Administración Nacional de la Seguridad Social / Wikimedia Commons",
-  "licencia": "CC BY-SA 2.0",
-  "enlace": "https://commons.wikimedia.org/wiki/File:ANSES_firm%C3%B3_un_convenio_de_cooperaci%C3%B3n_con_la_UBA..jpg"
- }
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e9/Edificio_del_ANSES%2C_Tucum%C3%A1n_y_San_Mart%C3%ADn%2C_Buenos_Aires.jpg/1280px-Edificio_del_ANSES%2C_Tucum%C3%A1n_y_San_Mart%C3%ADn%2C_Buenos_Aires.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "credito": "Banfield / Wikimedia Commons",
+  "licencia": "CC BY-SA 2.5 ar",
+  "enlace": "https://commons.wikimedia.org/wiki/File:Edificio_del_ANSES,_Tucum%C3%A1n_y_San_Mart%C3%ADn,_Buenos_Aires.jpg"
+ },
+ "foto_revisada": true
 }

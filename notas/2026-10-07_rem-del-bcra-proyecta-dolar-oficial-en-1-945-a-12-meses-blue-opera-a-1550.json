@@ -26,9 +26,10 @@
   }
  ],
  "imagen": {
-  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/82/Buenos_Aires-2672f-Banco_de_la_Naci%C3%B3n_Argentina.jpg/1280px-Buenos_Aires-2672f-Banco_de_la_Naci%C3%B3n_Argentina.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-  "credito": "Barcex / Wikimedia Commons",
-  "licencia": "CC BY-SA 2.5",
-  "enlace": "https://commons.wikimedia.org/wiki/File:Buenos_Aires-2672f-Banco_de_la_Naci%C3%B3n_Argentina.jpg"
- }
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Banco_Central_de_la_Rep%C3%BAblica_Argentina_en_2016.jpg/1280px-Banco_Central_de_la_Rep%C3%BAblica_Argentina_en_2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "credito": "Casa Rosada / Wikimedia Commons",
+  "licencia": "CC BY 2.5 ar",
+  "enlace": "https://commons.wikimedia.org/wiki/File:Banco_Central_de_la_Rep%C3%BAblica_Argentina_en_2016.jpg"
+ },
+ "foto_revisada": true
 }
