@@ -87,14 +87,16 @@ def limpiar(texto):
 
 def leer_fuentes():
     limite = dt.datetime.now(dt.timezone.utc) - dt.timedelta(hours=config.VENTANA_HORAS)
-    titulares = []
-    for medio, url in config.FUENTES:
+    titulares, enlaces = [], set()
+    for medio, url, *resto in config.FUENTES:
+        pista = resto[0] if resto else ""
+        tope = config.MAX_TITULARES_POR_MEDIO if not pista else getattr(config, "MAX_TITULARES_POR_SECCION", 12)
         try:
             crudo = requests.get(url, headers=NAVEGADOR, timeout=20)
             crudo.raise_for_status()
             feed = feedparser.parse(crudo.content)
         except requests.RequestException as error:
-            print(f"  [sin respuesta] {medio}: {error.__class__.__name__}")
+            print(f"  [sin respuesta] {medio} {pista}: {error.__class__.__name__}")
             continue
 
         cantidad = 0
@@ -103,16 +105,17 @@ def leer_fuentes():
             if momento and dt.datetime(*momento[:6], tzinfo=dt.timezone.utc) < limite:
                 continue
             titulo, enlace = limpiar(entrada.get("title")), entrada.get("link", "")
-            if not titulo or not enlace:
+            if not titulo or not enlace or enlace in enlaces:
                 continue
+            enlaces.add(enlace)
             titulares.append({
-                "medio": medio, "titulo": titulo, "link": enlace,
+                "medio": medio, "titulo": titulo, "link": enlace, "pista": pista,
                 "resumen": limpiar(entrada.get("summary"))[:400],
             })
             cantidad += 1
-            if cantidad >= config.MAX_TITULARES_POR_MEDIO:
+            if cantidad >= tope:
                 break
-        print(f"  {medio}: {cantidad} titulares")
+        print(f"  {medio}{' (' + pista + ')' if pista else ''}: {cantidad} titulares")
     return titulares
 
 
@@ -134,10 +137,15 @@ def titulos_recientes(horas=48):
 
 
 def agrupar_temas(cliente, modelo, titulares, ya_publicados):
-    lista = "\n".join(f"{i} | {t['medio']} | {t['titulo']}" for i, t in enumerate(titulares))
+    lista = "\n".join(
+        f"{i} | {t['medio']} | {'[' + t['pista'] + '] ' if t.get('pista') else ''}{t['titulo']}" for i, t in enumerate(titulares)
+    )
     sistema = (
         "Sos el jefe de redacción de un medio argentino de noticias generales. "
         "Recibís titulares de varios medios, uno por línea, con el formato 'id | medio | titular'. "
+        "Algunos titulares traen entre corchetes la sección del medio de la que salieron: usala como pista. "
+        "El medio quiere cubrir TODAS sus secciones, no solo política y economía: buscá grupos también en deportes, "
+        "espectáculos, policiales, internacional y sociedad, y marcá como Bizarras las historias insólitas, curiosas o virales. "
         "Agrupá los titulares que hablan del MISMO hecho puntual, no solo del mismo tema general. "
         f"Descartá estos temas: {'; '.join(config.TEMAS_A_EVITAR)}. "
         "Descartá también los hechos que el medio ya publicó (se listan al final): otro ángulo, otra cifra u otra repercusión del mismo informe, anuncio, partido o fallo cuenta como ya publicado. Solo vale si ocurrió un hecho nuevo. "
@@ -166,7 +174,160 @@ def agrupar_temas(cliente, modelo, titulares, ya_publicados):
             "fuentes": list(por_medio.values())[: config.MAX_FUENTES_POR_NOTA],
         })
     temas.sort(key=lambda t: (t["importancia"], len(t["fuentes"])), reverse=True)
-    return temas[: config.N_NOTAS + getattr(config, "TEMAS_DE_RESERVA", 0)]
+    return temas
+
+
+def notas_por_seccion(horas=72):
+    """Cuántas notas publicó cada sección en los últimos días."""
+    limite = dt.datetime.now(ARGENTINA) - dt.timedelta(hours=horas)
+    cuenta = {s: 0 for s in config.SECCIONES}
+    for ruta in CARPETA_NOTAS.glob("*.json"):
+        try:
+            nota = json.loads(ruta.read_text(encoding="utf-8"))
+            if dt.datetime.fromisoformat(nota["fecha"]) >= limite and nota.get("seccion") in cuenta:
+                cuenta[nota["seccion"]] += 1
+        except (ValueError, KeyError, json.JSONDecodeError):
+            continue
+    return cuenta
+
+
+def repartir_por_seccion(temas, cuenta):
+    """Ordena los temas alternando secciones: primero las que menos publicaron en los últimos días.
+
+    Dentro de cada sección va primero el tema más importante. Así una corrida de cuatro notas
+    sale, en lo posible, con cuatro secciones distintas.
+    """
+    por_seccion = {}
+    for tema in temas:  # ya vienen ordenados por importancia
+        por_seccion.setdefault(tema["seccion"], []).append(tema)
+    orden = sorted(por_seccion, key=lambda s: (cuenta.get(s, 0), -por_seccion[s][0]["importancia"]))
+    repartidos = []
+    while any(por_seccion.values()):
+        for seccion in orden:
+            if por_seccion[seccion]:
+                repartidos.append(por_seccion[seccion].pop(0))
+    return repartidos
+
+
+# ---------- Efemérides: una nota cada tantos días, a partir de Wikipedia ----------
+
+MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre",
+         "octubre", "noviembre", "diciembre"]
+
+
+def toca(seccion, cada):
+    """True si la sección existe y lleva más de `cada` días sin una nota."""
+    if not cada or seccion not in config.SECCIONES:
+        return False
+    limite = dt.datetime.now(ARGENTINA) - dt.timedelta(days=cada)
+    for carpeta in (CARPETA_NOTAS, CARPETA_RETENIDAS):
+        for ruta in carpeta.glob("*.json"):
+            try:
+                nota = json.loads(ruta.read_text(encoding="utf-8"))
+                if nota.get("seccion") == seccion and dt.datetime.fromisoformat(nota["fecha"]) >= limite:
+                    return False
+            except (ValueError, KeyError, json.JSONDecodeError):
+                continue
+    return True
+
+
+def tema_efemeride():
+    """Arma un tema con un hecho ocurrido un día como hoy, tomado de Wikipedia."""
+    hoy = dt.datetime.now(ARGENTINA)
+    resp = requests.get(
+        f"https://es.wikipedia.org/api/rest_v1/feed/onthisday/events/{hoy.month:02d}/{hoy.day:02d}",
+        headers=IDENTIFICACION, timeout=20,
+    ).json()
+    candidatos = []
+    for hecho in resp.get("events", []):
+        paginas = [pg for pg in hecho.get("pages", []) if pg.get("extract") and pg.get("content_urls")]
+        if not hecho.get("text") or not isinstance(hecho.get("year"), int) or not paginas:
+            continue
+        hace = hoy.year - hecho["year"]
+        puntos = (3 if "argentin" in hecho["text"].lower() or "buenos aires" in hecho["text"].lower() else 0)
+        puntos += 2 if hace > 0 and hace % 25 == 0 else 1 if hace > 0 and hace % 10 == 0 else 0
+        puntos += min(len(paginas), 3) * 0.5
+        candidatos.append((puntos, random.random(), hecho, paginas))
+    if not candidatos:
+        return None
+    _, _, hecho, paginas = max(candidatos, key=lambda c: (c[0], c[1]))
+    fecha = f"{hoy.day} de {MESES[hoy.month - 1]} de {hecho['year']}"
+    fuentes = [{
+        "medio": "Wikipedia",
+        "titulo": pg.get("titles", {}).get("normalized") or pg.get("title", ""),
+        "link": pg["content_urls"]["desktop"]["page"],
+        "resumen": f"Un día como hoy, el {fecha}: {hecho['text']}\n\n{pg['extract']}",
+    } for pg in paginas[:3]]
+    return {
+        "tema": (f"EFEMÉRIDE. Un día como hoy, el {fecha}: {hecho['text']} "
+                 "Escribila como efeméride: abrí con la fecha y contá qué pasó y por qué se lo recuerda."),
+        "seccion": "Efemérides", "importancia": 5, "fuentes": fuentes, "seccion_fija": True,
+    }
+
+
+# ---------- Bizarras: una historia insólita cada tantos días, buscada en internet ----------
+
+def titulos_de(seccion, dias=120):
+    limite = dt.datetime.now(ARGENTINA) - dt.timedelta(days=dias)
+    titulos = []
+    for carpeta in (CARPETA_NOTAS, CARPETA_RETENIDAS):
+        for ruta in carpeta.glob("*.json"):
+            try:
+                nota = json.loads(ruta.read_text(encoding="utf-8"))
+                if nota.get("seccion") == seccion and dt.datetime.fromisoformat(nota["fecha"]) >= limite:
+                    titulos.append(nota["titulo"])
+            except (ValueError, KeyError, json.JSONDecodeError):
+                continue
+    return titulos
+
+
+def tema_bizarra(cliente, modelo):
+    """Le pide al modelo que busque en internet una historia insólita real y devuelve el tema con sus fuentes.
+
+    La historia puede ser de cualquier época. Solo sirve si al menos dos páginas se pueden leer:
+    la nota se escribe y se verifica contra ese texto, igual que las demás.
+    """
+    ya = titulos_de("Bizarras")
+    pedido = (
+        "Buscá en internet una historia REAL insólita, curiosa o absurda, de cualquier época y cualquier país, "
+        "que le resulte entretenida a un lector argentino: un récord raro, una ley extravagante, un error célebre, "
+        "un animal protagonista, una coincidencia increíble, un invento disparatado. Nada de muertes violentas, "
+        "delitos sexuales, menores, salud mental ni burlas a personas privadas. Tiene que estar documentada en "
+        "al menos dos páginas serias (medios, enciclopedias, museos, universidades), preferentemente en español.\n"
+        "No repitas estas, que ya se publicaron:\n" + ("\n".join(f"- {x}" for x in ya) or "(ninguna)") + "\n\n"
+        'Respondé SOLO con JSON: {"tema": "la historia en una frase", "fuentes": [{"titulo": "", "url": ""}]} '
+        "con dos a cuatro fuentes cuyas direcciones hayas abierto en la búsqueda."
+    )
+    respuesta = None
+    for herramienta in ("web_search", "web_search_preview"):
+        try:
+            respuesta = cliente.responses.create(model=modelo, tools=[{"type": herramienta}], input=pedido)
+            break
+        except Exception as error:
+            print(f"   bizarra: la búsqueda con {herramienta} falló ({str(error)[:80]})")
+    if respuesta is None:
+        return None
+    hallado = re.search(r"\{.*\}", respuesta.output_text or "", re.S)
+    datos = json.loads(hallado.group(0)) if hallado else {}
+
+    fuentes = []
+    for f in datos.get("fuentes", [])[:4]:
+        url = str(f.get("url", "")).split("?utm_")[0].strip()
+        if not url.startswith("http"):
+            continue
+        dominio = re.sub(r"^www\.", "", url.split("/")[2])
+        fuente = {"medio": dominio, "titulo": str(f.get("titulo") or dominio).strip(), "link": url, "resumen": ""}
+        fuente["texto"] = bajar_texto(fuente)
+        if len(fuente["texto"]) >= 600:  # solo fuentes que se pudieron leer de verdad
+            fuentes.append(fuente)
+    if not datos.get("tema") or len({f["medio"] for f in fuentes}) < 2:
+        print(f"   bizarra: se descartó por falta de fuentes legibles ({len(fuentes)})")
+        return None
+    return {
+        "tema": (f"HISTORIA INSÓLITA (atemporal, no es una noticia de hoy): {datos['tema']} "
+                 "Contala con gracia pero sin inventar nada, aclarando cuándo y dónde ocurrió."),
+        "seccion": "Bizarras", "importancia": 4, "fuentes": fuentes, "seccion_fija": True, "texto_listo": True,
+    }
 
 
 # ---------- Paso 3: juntar el material ----------
@@ -594,6 +755,26 @@ def main():
 
     print(f"\n2. Detectando temas entre {len(titulares)} titulares de {len(medios)} medios...")
     temas = agrupar_temas(cliente, modelo, titulares, titulos_recientes())
+    cuenta = notas_por_seccion()
+    print("   Notas de los últimos tres días: " + ", ".join(f"{s} {n}" for s, n in cuenta.items()))
+    print("   Temas detectados: " + (", ".join(f"{s} {sum(1 for x in temas if x['seccion'] == s)}"
+                                                for s in config.SECCIONES if any(x["seccion"] == s for x in temas)) or "ninguno"))
+    temas = repartir_por_seccion(temas, cuenta)
+    if toca("Bizarras", getattr(config, "BIZARRA_CADA_DIAS", 0)) and not any(x["seccion"] == "Bizarras" for x in temas):
+        try:
+            bizarra = tema_bizarra(cliente, modelo)
+            if bizarra:
+                temas.insert(0, bizarra)
+        except Exception as error:  # la bizarra nunca debe frenar la corrida
+            print(f"   bizarra: no se pudo armar ({str(error)[:80]})")
+    if toca("Efemérides", getattr(config, "EFEMERIDE_CADA_DIAS", 0)):
+        try:
+            efemeride = tema_efemeride()
+            if efemeride:
+                temas.insert(0, efemeride)
+        except Exception as error:  # la efeméride nunca debe frenar la corrida
+            print(f"   efeméride: no se pudo armar ({str(error)[:80]})")
+    temas = temas[: config.N_NOTAS + getattr(config, "TEMAS_DE_RESERVA", 0)]
     if not temas:
         print("No hay temas nuevos cubiertos por al menos dos medios. No se generan notas en esta corrida.")
         return
@@ -604,7 +785,8 @@ def main():
             break
         print(f"\n3.{numero} {tema['tema']} ({', '.join(f['medio'] for f in tema['fuentes'])})")
         for fuente in tema["fuentes"]:
-            fuente["texto"] = bajar_texto(fuente)
+            if not tema.get("texto_listo"):
+                fuente["texto"] = bajar_texto(fuente)
 
         try:
             borrador = redactar(cliente, modelo, tema, guia)
@@ -624,7 +806,8 @@ def main():
             "titulo": str(borrador["titulo"]).strip(),
             "bajada": str(borrador.get("bajada", "")).strip(),
             "cuerpo": [str(p).strip() for p in borrador["cuerpo"] if str(p).strip()],
-            "seccion": borrador.get("seccion") if borrador.get("seccion") in config.SECCIONES else tema["seccion"],
+            "seccion": (borrador.get("seccion") if borrador.get("seccion") in config.SECCIONES
+                        and not tema.get("seccion_fija") else tema["seccion"]),
             "etiquetas": [str(x).strip() for x in borrador.get("etiquetas", []) if str(x).strip()][:6],
             "fecha": dt.datetime.now(ARGENTINA).isoformat(timespec="seconds"),
             "importancia": tema["importancia"],

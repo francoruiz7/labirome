@@ -28,8 +28,17 @@ SECCIONES = [
 # ---------- La redacción automática ----------
 
 # Cuántas notas genera en cada corrida. La cantidad de corridas por día se define en
-# .github/workflows/publicar.yml. Con dos corridas diarias, esto da hasta cuatro notas por día.
-N_NOTAS = 2
+# .github/workflows/publicar.yml. Con tres corridas diarias, esto da hasta doce notas por día.
+# Las notas de cada corrida se reparten entre secciones, empezando por las que menos publicaron.
+N_NOTAS = 4
+
+# Cada cuántos días sale una efeméride ("un día como hoy"), armada a partir de Wikipedia. 0 la apaga.
+EFEMERIDE_CADA_DIAS = 7
+
+# Cada cuántos días sale una historia insólita atemporal, buscada en internet por el modelo y escrita
+# solo si al menos dos de las páginas halladas se pueden leer. Si ese día los medios ya traen una
+# noticia insólita, se usa esa. 0 la apaga.
+BIZARRA_CADA_DIAS = 3
 
 # Un tema solo se redacta si lo cubren al menos estos medios distintos.
 MIN_MEDIOS = 2
@@ -38,6 +47,7 @@ MAX_FUENTES_POR_NOTA = 4
 MAX_CARACTERES_POR_FUENTE = 3500
 VENTANA_HORAS = 12
 MAX_TITULARES_POR_MEDIO = 25
+MAX_TITULARES_POR_SECCION = 12
 
 # Controles antes de publicar. Las notas retenidas quedan en la carpeta "retenidas" y no salen en el
 # sitio; para publicarlas a mano, se mueven a la carpeta "notas".
@@ -50,7 +60,7 @@ RETENER_FRASES_COPIADAS = False
 
 # Temas de reserva: si una nota se descarta o queda retenida, la corrida sigue con el tema siguiente
 # hasta completar N_NOTAS. Este número es cuántos temas extra puede probar como máximo.
-TEMAS_DE_RESERVA = 3
+TEMAS_DE_RESERVA = 4
 
 # Si ninguna foto encontrada corresponde al titular: True usa una foto de archivo de la sección,
 # False publica la nota sin foto.
@@ -93,4 +103,32 @@ FUENTES = [
     ("Perfil", "https://www.perfil.com/feed"),
     ("El Cronista", "https://www.cronista.com/files/rss/news.xml"),
     ("TN", "https://tn.com.ar/arc/outboundfeeds/rss/?outputType=xml"),
+
+    # Feeds por sección, para que haya material fuera de política. El tercer dato es una pista para
+    # clasificar. Si alguno deja de responder, la corrida lo saltea y lo avisa en el registro.
+    ("Clarín", "https://www.clarin.com/rss/deportes/", "Deportes"),
+    ("Clarín", "https://www.clarin.com/rss/espectaculos/", "Espectáculos"),
+    ("Clarín", "https://www.clarin.com/rss/policiales/", "Policiales"),
+    ("Clarín", "https://www.clarin.com/rss/mundo/", "Internacional"),
+    ("Clarín", "https://www.clarin.com/rss/sociedad/", "Sociedad"),
+    ("La Nación", "https://www.lanacion.com.ar/arc/outboundfeeds/rss/category/deportes/?outputType=xml", "Deportes"),
+    ("La Nación", "https://www.lanacion.com.ar/arc/outboundfeeds/rss/category/espectaculos/?outputType=xml", "Espectáculos"),
+    ("La Nación", "https://www.lanacion.com.ar/arc/outboundfeeds/rss/category/seguridad/?outputType=xml", "Policiales"),
+    ("La Nación", "https://www.lanacion.com.ar/arc/outboundfeeds/rss/category/el-mundo/?outputType=xml", "Internacional"),
+    ("La Nación", "https://www.lanacion.com.ar/arc/outboundfeeds/rss/category/sociedad/?outputType=xml", "Sociedad"),
+    ("TN", "https://tn.com.ar/arc/outboundfeeds/rss/category/deportes/?outputType=xml", "Deportes"),
+    ("TN", "https://tn.com.ar/arc/outboundfeeds/rss/category/show/?outputType=xml", "Espectáculos"),
+    ("TN", "https://tn.com.ar/arc/outboundfeeds/rss/category/policiales/?outputType=xml", "Policiales"),
+    ("TN", "https://tn.com.ar/arc/outboundfeeds/rss/category/internacional/?outputType=xml", "Internacional"),
+    ("Infobae", "https://www.infobae.com/arc/outboundfeeds/rss/category/deportes/", "Deportes"),
+    ("Infobae", "https://www.infobae.com/arc/outboundfeeds/rss/category/teleshow/", "Espectáculos"),
+    ("Infobae", "https://www.infobae.com/arc/outboundfeeds/rss/category/sociedad/policiales/", "Policiales"),
+    ("Infobae", "https://www.infobae.com/arc/outboundfeeds/rss/category/america/", "Internacional"),
+    ("Perfil", "https://www.perfil.com/feed/deportes", "Deportes"),
+    ("Perfil", "https://www.perfil.com/feed/espectaculos", "Espectáculos"),
+    ("Perfil", "https://www.perfil.com/feed/policia", "Policiales"),
+    ("Perfil", "https://www.perfil.com/feed/internacional", "Internacional"),
+    ("Ámbito", "https://www.ambito.com/rss/pages/deportes.xml", "Deportes"),
+    ("Ámbito", "https://www.ambito.com/rss/pages/espectaculos.xml", "Espectáculos"),
+    ("Ámbito", "https://www.ambito.com/rss/pages/mundo.xml", "Internacional"),
 ]
