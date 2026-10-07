@@ -52,6 +52,14 @@ RETENER_FRASES_COPIADAS = False
 # hasta completar N_NOTAS. Este número es cuántos temas extra puede probar como máximo.
 TEMAS_DE_RESERVA = 3
 
+# Si ninguna foto encontrada corresponde al titular: True usa una foto de archivo de la sección,
+# False publica la nota sin foto.
+FOTO_DE_SECCION_SI_NO_HAY = True
+
+# Para cambiarle la foto a notas ya publicadas: poné acá un pedazo del nombre de su archivo en la carpeta
+# "notas" (por ejemplo "rem-el-mercado"). Se rehace una sola vez, en la corrida siguiente.
+REHACER_FOTOS = ["rem-el-mercado", "rem-del-bcra", "el-gobierno-adjudico"]
+
 # Foto de último recurso cuando no aparece ninguna para el tema: búsqueda en Wikimedia Commons por sección.
 FOTOS_POR_SECCION = {
     "Política": ["Casa Rosada", "Congreso de la Nación Argentina"],

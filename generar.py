@@ -140,7 +140,7 @@ def agrupar_temas(cliente, modelo, titulares, ya_publicados):
         "Recibís titulares de varios medios, uno por línea, con el formato 'id | medio | titular'. "
         "Agrupá los titulares que hablan del MISMO hecho puntual, no solo del mismo tema general. "
         f"Descartá estos temas: {'; '.join(config.TEMAS_A_EVITAR)}. "
-        "Descartá también los hechos que el medio ya publicó (se listan al final), salvo que haya una novedad importante. "
+        "Descartá también los hechos que el medio ya publicó (se listan al final): otro ángulo, otra cifra u otra repercusión del mismo informe, anuncio, partido o fallo cuenta como ya publicado. Solo vale si ocurrió un hecho nuevo. "
         f"Asigná a cada grupo una sección de esta lista: {', '.join(config.SECCIONES)}. "
         "Puntuá la importancia para el público argentino del 1 al 10. "
         'Respondé solo con JSON: {"temas": [{"tema": "frase corta", "ids": [números], '
@@ -201,12 +201,12 @@ Reglas que no se negocian:
 5. Nunca identifiques a menores de edad ni a víctimas de delitos sexuales.
 6. Si el material no alcanza para una nota sólida, devolvé "descartar": true y explicá el motivo.
 
-Para la foto de archivo, completá "imagen":
-- "entidad": el nombre, tal como figura en Wikipedia, de la figura pública, club, organismo, empresa o lugar que protagoniza la nota. Dejalo vacío si no hay uno claro o si el protagonista es una persona privada.
-- "generica": dos o tres palabras en inglés que describan una foto de banco neutra para el tema (por ejemplo "argentine pesos banknotes", "football stadium", "courtroom").
+Para la foto de archivo, completá "imagen" pensando en qué mostraría un editor de fotografía para ESTE titular:
+- "entidades": hasta tres nombres, tal como figuran en Wikipedia en español, de lo que protagoniza la nota, del más específico al más general: la persona pública, el organismo, la empresa, el club, el lugar o el objeto concreto (por ejemplo "Banco Central de la República Argentina", "Dólar estadounidense", "Crédito hipotecario"). No pongas personas privadas.
+- "busquedas": hasta tres búsquedas cortas para un archivo de fotos, que describan una imagen concreta del tema (por ejemplo "billetes de dólar", "pesos argentinos billetes", "edificio Banco Central Argentina", "llaves de una casa"). Evitá búsquedas vagas como "economía" o "política".
 
 Respondé solo con JSON:
-{"descartar": false, "motivo": "", "titulo": "", "bajada": "", "cuerpo": ["párrafo 1", "párrafo 2"], "seccion": "", "etiquetas": ["", ""], "imagen": {"entidad": "", "generica": ""}}
+{"descartar": false, "motivo": "", "titulo": "", "bajada": "", "cuerpo": ["párrafo 1", "párrafo 2"], "seccion": "", "etiquetas": ["", ""], "imagen": {"entidades": ["", ""], "busquedas": ["", ""]}}
 """
 
 
@@ -311,124 +311,152 @@ def reescribir(cliente, modelo, nota, copias):
 LICENCIAS_LIBRES = re.compile(r"^(cc0|cc[ -]by([ -]sa)?\b|public domain|pd\b|dominio público)", re.I)
 
 
-def imagen_wikipedia(entidad):
-    """Foto principal del artículo de Wikipedia de la entidad, con sus datos de licencia en Wikimedia Commons."""
-    if not entidad:
+def ficha_foto(info, origen):
+    """Convierte los datos de un archivo de Commons en una candidata, o None si no sirve."""
+    meta = info.get("extmetadata", {})
+    licencia = limpiar(meta.get("LicenseShortName", {}).get("value", ""))
+    ancho, alto = info.get("width", 0), info.get("height", 1) or 1
+    if info.get("mime") != "image/jpeg" or ancho < 800 or not LICENCIAS_LIBRES.match(licencia):
         return None
+    if not 1.1 <= ancho / alto <= 2.4:  # solo fotos apaisadas
+        return None
+    autor = limpiar(meta.get("Artist", {}).get("value", ""))[:80]
+    enlace = info.get("descriptionurl", "")
+    archivo = requests.utils.unquote(enlace.rsplit("File:", 1)[-1]).replace("_", " ")
+    return {
+        "url": info.get("thumburl") or info.get("url", ""),
+        "credito": f"{autor} / Wikimedia Commons" if autor else "Wikimedia Commons",
+        "licencia": licencia,
+        "enlace": enlace,
+        # Datos para elegir; no se guardan en la nota.
+        "_archivo": archivo[:120],
+        "_descripcion": limpiar(meta.get("ImageDescription", {}).get("value", ""))[:200],
+        "_origen": origen,
+    }
+
+
+def fotos_wikipedia(entidad):
+    """Foto principal del artículo de Wikipedia que corresponde a la entidad."""
     resp = requests.get("https://es.wikipedia.org/w/api.php", headers=IDENTIFICACION, timeout=20, params={
         "action": "query", "format": "json", "generator": "search", "gsrsearch": entidad, "gsrlimit": 3,
         "prop": "pageimages", "piprop": "name", "pilicense": "free",
     }).json()
-    paginas = sorted(resp.get("query", {}).get("pages", {}).values(), key=lambda p: p.get("index", 99))
     pedido = set(palabras(entidad))
-    for pagina in paginas:
-        # El artículo encontrado tiene que corresponder a la entidad pedida y tener foto libre.
+    fotos = []
+    for pagina in sorted(resp.get("query", {}).get("pages", {}).values(), key=lambda p: p.get("index", 99)):
         hallado = set(palabras(pagina.get("title", "")))
-        if pagina.get("pageimage") and pedido and len(pedido & hallado) * 2 >= len(pedido):
-            imagen = foto_de_commons("File:" + pagina["pageimage"])
-            if imagen:
-                return imagen
-    return None
+        if not pagina.get("pageimage") or not pedido or len(pedido & hallado) * 2 < len(pedido):
+            continue
+        datos = requests.get("https://commons.wikimedia.org/w/api.php", headers=IDENTIFICACION, timeout=20, params={
+            "action": "query", "format": "json", "titles": "File:" + pagina["pageimage"], "prop": "imageinfo",
+            "iiprop": "url|mime|size|extmetadata", "iiurlwidth": 1280,
+        }).json()
+        for hoja in datos.get("query", {}).get("pages", {}).values():
+            for info in hoja.get("imageinfo", []):
+                foto = ficha_foto(info, f"foto principal del artículo de Wikipedia «{pagina.get('title', '')}»")
+                if foto:
+                    fotos.append(foto)
+        if fotos:
+            break
+    return fotos
 
 
-def foto_de_commons(archivo):
+def fotos_commons(consulta, cuantas=4):
+    """Fotos de Wikimedia Commons para una búsqueda."""
     resp = requests.get("https://commons.wikimedia.org/w/api.php", headers=IDENTIFICACION, timeout=20, params={
-        "action": "query", "format": "json", "titles": archivo, "prop": "imageinfo",
-        "iiprop": "url|mime|size|extmetadata", "iiurlwidth": 1280,
-    }).json()
-    for pagina in resp.get("query", {}).get("pages", {}).values():
-        for info in pagina.get("imageinfo", []):
-            meta = info.get("extmetadata", {})
-            licencia = limpiar(meta.get("LicenseShortName", {}).get("value", ""))
-            if info.get("mime") != "image/jpeg" or info.get("width", 0) < 500 or not LICENCIAS_LIBRES.match(licencia):
-                return None
-            autor = limpiar(meta.get("Artist", {}).get("value", ""))[:80]
-            return {
-                "url": info.get("thumburl") or info["url"],
-                "credito": f"{autor} / Wikimedia Commons" if autor else "Wikimedia Commons",
-                "licencia": licencia,
-                "enlace": info.get("descriptionurl", ""),
-            }
-    return None
-
-
-def imagen_pexels(consulta):
-    """Foto de banco para notas sin protagonista. Requiere la clave gratuita PEXELS_API_KEY."""
-    clave = os.environ.get("PEXELS_API_KEY", "").strip()
-    if not clave or not consulta:
-        return None
-    resp = requests.get("https://api.pexels.com/v1/search", headers={"Authorization": clave}, timeout=20, params={
-        "query": consulta, "orientation": "landscape", "per_page": 5,
-    }).json()
-    fotos = [f for f in resp.get("photos", []) if f.get("src", {}).get("landscape")]
-    if not fotos:
-        return None
-    foto = random.choice(fotos)
-    return {
-        "url": foto["src"]["landscape"],
-        "credito": f"{foto.get('photographer', 'Pexels')} / Pexels",
-        "licencia": "",
-        "enlace": foto.get("url", ""),
-    }
-
-
-def imagen_commons(consulta):
-    """Foto de archivo buscada por tema en Wikimedia Commons. No necesita ninguna clave."""
-    if not consulta:
-        return None
-    resp = requests.get("https://commons.wikimedia.org/w/api.php", headers=IDENTIFICACION, timeout=20, params={
-        "action": "query", "format": "json", "generator": "search", "gsrnamespace": 6, "gsrlimit": 12,
+        "action": "query", "format": "json", "generator": "search", "gsrnamespace": 6, "gsrlimit": 15,
         "gsrsearch": f"{consulta} filetype:bitmap", "prop": "imageinfo",
         "iiprop": "url|mime|size|extmetadata", "iiurlwidth": 1280,
     }).json()
-    candidatas = []
+    fotos = []
     for pagina in sorted(resp.get("query", {}).get("pages", {}).values(), key=lambda p: p.get("index", 99)):
         for info in pagina.get("imageinfo", []):
-            ancho, alto = info.get("width", 0), info.get("height", 1) or 1
-            meta = info.get("extmetadata", {})
-            licencia = limpiar(meta.get("LicenseShortName", {}).get("value", ""))
-            # Solo fotos apaisadas, de buen tamaño y con licencia libre.
-            if info.get("mime") != "image/jpeg" or ancho < 800 or not 1.1 <= ancho / alto <= 2.4:
-                continue
-            if not LICENCIAS_LIBRES.match(licencia):
-                continue
-            autor = limpiar(meta.get("Artist", {}).get("value", ""))[:80]
-            candidatas.append({
-                "url": info.get("thumburl") or info["url"],
-                "credito": f"{autor} / Wikimedia Commons" if autor else "Wikimedia Commons",
-                "licencia": licencia,
-                "enlace": info.get("descriptionurl", ""),
-            })
-    return random.choice(candidatas[:5]) if candidatas else None
+            foto = ficha_foto(info, f"búsqueda «{consulta}»")
+            if foto:
+                fotos.append(foto)
+    return fotos[:cuantas]
 
 
-def buscar_imagen(pedido, seccion=""):
-    """Prueba de lo más específico a lo más general. La última opción es una foto de archivo de la sección."""
+def juntar_candidatas(consultas_wikipedia, consultas_commons):
+    candidatas, vistas = [], set()
+    for buscador, consultas in ((fotos_wikipedia, consultas_wikipedia), (fotos_commons, consultas_commons)):
+        for consulta in consultas:
+            try:
+                halladas = buscador(consulta)
+            except Exception as error:  # una búsqueda que falla no debe impedir la nota
+                print(f"     foto: {buscador.__name__} falló con '{consulta}' ({str(error)[:60]})")
+                continue
+            print(f"     foto: {buscador.__name__} '{consulta}': {len(halladas)} candidatas")
+            for foto in halladas:
+                if foto["enlace"] not in vistas:
+                    vistas.add(foto["enlace"])
+                    candidatas.append(foto)
+    return candidatas[:14]
+
+
+def elegir_foto(cliente, modelo, titulo, bajada, candidatas):
+    """El modelo actúa de editor de fotografía: elige la candidata que ilustra el titular, o ninguna."""
+    lista = "\n".join(
+        f"{i} | {c['_origen']} | archivo: {c['_archivo']} | descripción: {c['_descripcion'] or '(sin descripción)'}"
+        for i, c in enumerate(candidatas)
+    )
+    sistema = (
+        "Sos editor de fotografía de un medio argentino. Recibís el titular y la bajada de una nota y una lista "
+        "de fotos de archivo candidatas, descritas por su nombre de archivo y su descripción. "
+        "Elegí la que mejor ilustra ESE titular: tiene que mostrar a la persona, el organismo, el lugar o el objeto "
+        "del que habla la nota. Rechazá las fotos de otra persona u otro organismo (por ejemplo, el Banco Nación no "
+        "sirve para una nota sobre el Banco Central), las que muestran un hecho distinto, los mapas, gráficos, "
+        "documentos escaneados, logos y fotos históricas o en blanco y negro si la nota es actual. "
+        "Una foto temática correcta (billetes para una nota sobre el dólar) es mejor que un edificio que no se menciona. "
+        'Si ninguna sirve, respondé -1. Respondé solo con JSON: {"elegida": número, "motivo": "frase corta"}.'
+    )
+    datos = pedir_json(cliente, modelo, sistema, f"TITULAR: {titulo}\nBAJADA: {bajada}\n\nCANDIDATAS:\n{lista}")
+    elegida = datos.get("elegida", -1)
+    print(f"     foto: el editor eligió {elegida} ({str(datos.get('motivo', ''))[:100]})")
+    return candidatas[elegida] if isinstance(elegida, int) and 0 <= elegida < len(candidatas) else None
+
+
+def sin_internos(foto):
+    return {clave: valor for clave, valor in foto.items() if not clave.startswith("_")}
+
+
+def lista_de(valor):
+    valores = valor if isinstance(valor, list) else [valor]
+    return [str(v).strip() for v in valores if str(v or "").strip()][:3]
+
+
+def buscar_imagen(cliente, modelo, nota, pedido):
+    """Junta fotos candidatas para el tema y deja que el modelo elija la que corresponde al titular.
+
+    Si ninguna sirve, usa una foto de archivo de la sección (se puede apagar en config.py).
+    """
     pedido = pedido if isinstance(pedido, dict) else {}
-    entidad = str(pedido.get("entidad") or "").strip()
-    generica = str(pedido.get("generica") or "").strip()
-    corta = " ".join(generica.split()[:2])
-    buscadores = [
-        (imagen_wikipedia, entidad),
-        (imagen_commons, entidad),
-        (imagen_pexels, generica),
-        (imagen_commons, generica),
-        (imagen_commons, corta if corta != generica else ""),
-    ]
-    respaldo = list(getattr(config, "FOTOS_POR_SECCION", {}).get(seccion, []))
-    random.shuffle(respaldo)
-    buscadores += [(imagen_commons, consulta) for consulta in respaldo]
-    for buscador, consulta in buscadores:
-        if not consulta:
-            continue
+    entidades = lista_de(pedido.get("entidades") or pedido.get("entidad"))
+    busquedas = lista_de(pedido.get("busquedas") or pedido.get("generica"))
+    if not entidades and not busquedas:  # notas viejas sin pedido de foto: se busca por etiquetas
+        busquedas = lista_de(nota.get("etiquetas", []))
+    candidatas = juntar_candidatas(entidades, entidades + busquedas)
+    if candidatas:
         try:
-            imagen = buscador(consulta)
-            if imagen:
-                print(f"     foto: {buscador.__name__} con '{consulta}'")
-                return imagen
-            print(f"     foto: {buscador.__name__} sin resultado para '{consulta}'")
-        except Exception as error:  # una foto que falla no debe impedir la nota
-            print(f"     foto: {buscador.__name__} falló ({str(error)[:80]})")
+            foto = elegir_foto(cliente, modelo, nota["titulo"], nota.get("bajada", ""), candidatas)
+            if foto:
+                print(f"     foto: {foto['_archivo']}")
+                return sin_internos(foto)
+        except Exception as error:
+            print(f"     foto: no se pudo elegir ({str(error)[:80]})")
+
+    if not getattr(config, "FOTO_DE_SECCION_SI_NO_HAY", True):
+        return None
+    respaldo = list(getattr(config, "FOTOS_POR_SECCION", {}).get(nota.get("seccion", ""), []))
+    random.shuffle(respaldo)
+    for consulta in respaldo:
+        try:
+            halladas = fotos_commons(consulta)
+            if halladas:
+                print(f"     foto: de archivo de la sección ('{consulta}')")
+                return sin_internos(random.choice(halladas))
+        except Exception as error:
+            print(f"     foto: falló la de sección ({str(error)[:60]})")
     return None
 
 
@@ -460,22 +488,27 @@ def main():
     for carpeta in (CARPETA_NOTAS, CARPETA_RETENIDAS):
         carpeta.mkdir(exist_ok=True)
 
-    # Notas ya publicadas que quedaron sin foto: se les busca una de archivo de su sección.
-    for ruta in sorted(CARPETA_NOTAS.glob("*.json"))[-20:]:
-        vieja = json.loads(ruta.read_text(encoding="utf-8"))
-        if not vieja.get("imagen"):
-            print(f"Buscando foto para: {vieja.get('titulo')}")
-            vieja["imagen"] = buscar_imagen({}, vieja.get("seccion", ""))
-            if vieja["imagen"]:
-                ruta.write_text(json.dumps(vieja, ensure_ascii=False, indent=1), encoding="utf-8")
-
     cliente = OpenAI()
     modelo = elegir_modelo(cliente)
     guia = (AQUI / "guia_estilo.md").read_text(encoding="utf-8")
     historial = json.loads(ARCHIVO_VISTOS.read_text(encoding="utf-8")) if ARCHIVO_VISTOS.exists() else []
     vistos = set(historial)
     print(f"Modelo: {modelo}")
-    print(f"Fotos: Wikipedia y Wikimedia Commons{', más Pexels' if os.environ.get('PEXELS_API_KEY') else ''}")
+
+    # Notas ya publicadas que quedaron sin foto, o marcadas en config.py para cambiarles la foto.
+    rehacer = set(getattr(config, "REHACER_FOTOS", []))
+    for ruta in sorted(CARPETA_NOTAS.glob("*.json"))[-30:]:
+        vieja = json.loads(ruta.read_text(encoding="utf-8"))
+        marcada = any(clave in ruta.name for clave in rehacer) and not vieja.get("foto_revisada")
+        if vieja.get("imagen") and not marcada:
+            continue
+        print(f"Buscando foto para: {vieja.get('titulo')}")
+        nueva = buscar_imagen(cliente, modelo, vieja, {"busquedas": vieja.get("etiquetas", [])})
+        if nueva or marcada:
+            vieja["imagen"] = nueva or vieja.get("imagen")
+            vieja["foto_revisada"] = True  # para no rehacerla en cada corrida
+            ruta.write_text(json.dumps(vieja, ensure_ascii=False, indent=1), encoding="utf-8")
+    print("Fotos: Wikipedia y Wikimedia Commons, elegidas según el titular")
 
     print("\n1. Leyendo titulares...")
     titulares = [t for t in leer_fuentes() if t["link"] not in vistos]
@@ -546,7 +579,7 @@ def main():
                 break
             nota["copias"] = copias_textuales(nota, tema)
             print(f"     reescritura: quedan {len(nota['copias'])} frases copiadas")
-        nota["imagen"] = buscar_imagen(borrador.get("imagen"), nota["seccion"])
+        nota["imagen"] = buscar_imagen(cliente, modelo, nota, borrador.get("imagen"))
 
         # Cada control se puede activar o apagar por separado en config.py.
         retener = bool(
