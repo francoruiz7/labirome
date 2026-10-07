@@ -35,5 +35,10 @@
    "link": "https://www.cronista.com/economia-politica/rem-cual-sera-la-inflacion-y-a-cuanto-cotizara-el-dolar-a-fin-de-ano-segun-mas-de-44-gurues-de-la-city/"
   }
  ],
- "imagen": null
+ "imagen": {
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ec/Casa_Rosada%2C_Buenos_Aires%2C_Argentina.jpg/1280px-Casa_Rosada%2C_Buenos_Aires%2C_Argentina.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "credito": "Diego Delso / Wikimedia Commons",
+  "licencia": "CC BY-SA 3.0",
+  "enlace": "https://commons.wikimedia.org/wiki/File:Casa_Rosada,_Buenos_Aires,_Argentina.jpg"
+ }
 }
