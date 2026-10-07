@@ -166,7 +166,7 @@ def agrupar_temas(cliente, modelo, titulares, ya_publicados):
             "fuentes": list(por_medio.values())[: config.MAX_FUENTES_POR_NOTA],
         })
     temas.sort(key=lambda t: (t["importancia"], len(t["fuentes"])), reverse=True)
-    return temas[: config.N_NOTAS]
+    return temas[: config.N_NOTAS + getattr(config, "TEMAS_DE_RESERVA", 0)]
 
 
 # ---------- Paso 3: juntar el material ----------
@@ -221,14 +221,46 @@ def redactar(cliente, modelo, tema, guia):
 def verificar(cliente, modelo, nota, tema):
     sistema = (
         "Sos verificador de datos. Recibís una nota y el material en que se basó. "
-        "Revisá cada cifra, fecha, nombre propio, cargo y cita textual de la nota y comprobá que esté respaldado por el material. "
-        "Marcá también si la nota nombra a una persona no condenada en un hecho policial o judicial, o identifica a un menor. "
-        'Respondé solo con JSON: {"observaciones": [{"dato": "lo que dice la nota", "problema": "por qué no está respaldado"}]}. '
+        "Revisá cada cifra, fecha, nombre propio, cargo y cita textual de la nota y comprobá que figure en el material. "
+        "Un dato está respaldado si aparece en AL MENOS UNA de las fuentes, aunque la nota lo atribuya a otra o a varias. "
+        "Clasificá cada problema con una gravedad:\n"
+        "- 'grave': el dato no aparece en ninguna fuente o la contradice (cifra, fecha, nombre, cargo o cita inventados o cambiados); "
+        "la nota da el nombre y apellido de una persona privada no condenada en un hecho policial o judicial; "
+        "o da el nombre de un menor de edad o datos que permitan ubicarlo.\n"
+        "- 'menor': atribución imprecisa entre medios, redondeos, matices de redacción, detalles de estilo.\n"
+        "No es un problema mencionar a menores sin nombrarlos (por ejemplo 'sus hijos', 'un nene de 8 años'), "
+        "ni nombrar a funcionarios y figuras públicas. "
+        'Respondé solo con JSON: {"observaciones": [{"dato": "lo que dice la nota", "problema": "por qué", "gravedad": "grave o menor"}]}. '
         "Si todo está respaldado, devolvé la lista vacía."
     )
     texto_nota = f"{nota['titulo']}\n{nota['bajada']}\n\n" + "\n\n".join(nota["cuerpo"])
     datos = pedir_json(cliente, modelo, sistema, f"NOTA:\n{texto_nota}\n\nMATERIAL:\n\n{armar_material(tema['fuentes'])}")
     return [o for o in datos.get("observaciones", []) if isinstance(o, dict) and o.get("dato")]
+
+
+def graves(observaciones):
+    return [o for o in observaciones if str(o.get("gravedad", "grave")).strip().lower() != "menor"]
+
+
+def corregir(cliente, modelo, nota, observaciones, tema):
+    """Devuelve la nota sin los datos que el verificador no encontró en las fuentes."""
+    sistema = (
+        "Sos editor de un medio argentino. Recibís una nota, el material en que se basó y una lista de datos "
+        "que no están respaldados por ese material. Corregí cada uno: si el material trae el dato correcto, usalo; "
+        "si no, sacá el dato y acomodá la oración. No agregues información que no esté en el material y dejá "
+        "el resto de la nota como está. "
+        'Respondé solo con JSON: {"titulo": "", "bajada": "", "cuerpo": ["párrafo 1", "párrafo 2"]}.'
+    )
+    usuario = ("DATOS A CORREGIR:\n" + "\n".join(f"- {o.get('dato')}: {o.get('problema', '')}" for o in observaciones)
+               + f"\n\nNOTA:\nTítulo: {nota['titulo']}\nBajada: {nota['bajada']}\n\n" + "\n\n".join(nota["cuerpo"])
+               + "\n\nMATERIAL:\n\n" + armar_material(tema["fuentes"]))
+    datos = pedir_json(cliente, modelo, sistema, usuario)
+    cuerpo = [str(p).strip() for p in datos.get("cuerpo", []) if str(p).strip()]
+    if cuerpo:
+        nota["cuerpo"] = cuerpo
+        nota["titulo"] = str(datos.get("titulo") or nota["titulo"]).strip()
+        nota["bajada"] = str(datos.get("bajada") or nota["bajada"]).strip()
+    return nota
 
 
 def palabras(texto):
@@ -284,19 +316,22 @@ def imagen_wikipedia(entidad):
     if not entidad:
         return None
     resp = requests.get("https://es.wikipedia.org/w/api.php", headers=IDENTIFICACION, timeout=20, params={
-        "action": "query", "format": "json", "generator": "search", "gsrsearch": entidad, "gsrlimit": 1,
+        "action": "query", "format": "json", "generator": "search", "gsrsearch": entidad, "gsrlimit": 3,
         "prop": "pageimages", "piprop": "name", "pilicense": "free",
     }).json()
-    paginas = list(resp.get("query", {}).get("pages", {}).values())
-    if not paginas or not paginas[0].get("pageimage"):
-        return None
+    paginas = sorted(resp.get("query", {}).get("pages", {}).values(), key=lambda p: p.get("index", 99))
+    pedido = set(palabras(entidad))
+    for pagina in paginas:
+        # El artículo encontrado tiene que corresponder a la entidad pedida y tener foto libre.
+        hallado = set(palabras(pagina.get("title", "")))
+        if pagina.get("pageimage") and pedido and len(pedido & hallado) * 2 >= len(pedido):
+            imagen = foto_de_commons("File:" + pagina["pageimage"])
+            if imagen:
+                return imagen
+    return None
 
-    # El artículo encontrado tiene que corresponder a la entidad pedida.
-    pedido, hallado = set(palabras(entidad)), set(palabras(paginas[0].get("title", "")))
-    if not pedido or len(pedido & hallado) * 2 < len(pedido):
-        return None
 
-    archivo = "File:" + paginas[0]["pageimage"]
+def foto_de_commons(archivo):
     resp = requests.get("https://commons.wikimedia.org/w/api.php", headers=IDENTIFICACION, timeout=20, params={
         "action": "query", "format": "json", "titles": archivo, "prop": "imageinfo",
         "iiprop": "url|mime|size|extmetadata", "iiurlwidth": 1280,
@@ -305,7 +340,7 @@ def imagen_wikipedia(entidad):
         for info in pagina.get("imageinfo", []):
             meta = info.get("extmetadata", {})
             licencia = limpiar(meta.get("LicenseShortName", {}).get("value", ""))
-            if info.get("mime") != "image/jpeg" or info.get("width", 0) < 600 or not LICENCIAS_LIBRES.match(licencia):
+            if info.get("mime") != "image/jpeg" or info.get("width", 0) < 500 or not LICENCIAS_LIBRES.match(licencia):
                 return None
             autor = limpiar(meta.get("Artist", {}).get("value", ""))[:80]
             return {
@@ -353,7 +388,7 @@ def imagen_commons(consulta):
             meta = info.get("extmetadata", {})
             licencia = limpiar(meta.get("LicenseShortName", {}).get("value", ""))
             # Solo fotos apaisadas, de buen tamaño y con licencia libre.
-            if info.get("mime") != "image/jpeg" or ancho < 1000 or not 1.2 <= ancho / alto <= 2.2:
+            if info.get("mime") != "image/jpeg" or ancho < 800 or not 1.1 <= ancho / alto <= 2.4:
                 continue
             if not LICENCIAS_LIBRES.match(licencia):
                 continue
@@ -367,18 +402,31 @@ def imagen_commons(consulta):
     return random.choice(candidatas[:5]) if candidatas else None
 
 
-def buscar_imagen(pedido):
+def buscar_imagen(pedido, seccion=""):
+    """Prueba de lo más específico a lo más general. La última opción es una foto de archivo de la sección."""
     pedido = pedido if isinstance(pedido, dict) else {}
-    buscadores = (
-        (imagen_wikipedia, pedido.get("entidad")),
-        (imagen_pexels, pedido.get("generica")),
-        (imagen_commons, pedido.get("generica")),
-    )
+    entidad = str(pedido.get("entidad") or "").strip()
+    generica = str(pedido.get("generica") or "").strip()
+    corta = " ".join(generica.split()[:2])
+    buscadores = [
+        (imagen_wikipedia, entidad),
+        (imagen_commons, entidad),
+        (imagen_pexels, generica),
+        (imagen_commons, generica),
+        (imagen_commons, corta if corta != generica else ""),
+    ]
+    respaldo = list(getattr(config, "FOTOS_POR_SECCION", {}).get(seccion, []))
+    random.shuffle(respaldo)
+    buscadores += [(imagen_commons, consulta) for consulta in respaldo]
     for buscador, consulta in buscadores:
+        if not consulta:
+            continue
         try:
-            imagen = buscador(str(consulta or "").strip())
+            imagen = buscador(consulta)
             if imagen:
+                print(f"     foto: {buscador.__name__} con '{consulta}'")
                 return imagen
+            print(f"     foto: {buscador.__name__} sin resultado para '{consulta}'")
         except Exception as error:  # una foto que falla no debe impedir la nota
             print(f"     foto: {buscador.__name__} falló ({str(error)[:80]})")
     return None
@@ -412,6 +460,15 @@ def main():
     for carpeta in (CARPETA_NOTAS, CARPETA_RETENIDAS):
         carpeta.mkdir(exist_ok=True)
 
+    # Notas ya publicadas que quedaron sin foto: se les busca una de archivo de su sección.
+    for ruta in sorted(CARPETA_NOTAS.glob("*.json"))[-20:]:
+        vieja = json.loads(ruta.read_text(encoding="utf-8"))
+        if not vieja.get("imagen"):
+            print(f"Buscando foto para: {vieja.get('titulo')}")
+            vieja["imagen"] = buscar_imagen({}, vieja.get("seccion", ""))
+            if vieja["imagen"]:
+                ruta.write_text(json.dumps(vieja, ensure_ascii=False, indent=1), encoding="utf-8")
+
     cliente = OpenAI()
     modelo = elegir_modelo(cliente)
     guia = (AQUI / "guia_estilo.md").read_text(encoding="utf-8")
@@ -435,6 +492,8 @@ def main():
 
     publicadas = retenidas = 0
     for numero, tema in enumerate(temas, start=1):
+        if publicadas >= config.N_NOTAS:  # los temas que sobran eran de reserva
+            break
         print(f"\n3.{numero} {tema['tema']} ({', '.join(f['medio'] for f in tema['fuentes'])})")
         for fuente in tema["fuentes"]:
             fuente["texto"] = bajar_texto(fuente)
@@ -469,6 +528,13 @@ def main():
             nota["observaciones"] = verificar(cliente, modelo, nota, tema)
         except Exception as error:
             nota["observaciones"] = [{"dato": "verificación", "problema": f"no se pudo verificar: {str(error)[:80]}"}]
+        if graves(nota["observaciones"]):  # un intento de corregir y volver a verificar
+            try:
+                nota = corregir(cliente, modelo, nota, graves(nota["observaciones"]), tema)
+                nota["observaciones"] = verificar(cliente, modelo, nota, tema)
+                print(f"     corrección: quedan {len(graves(nota['observaciones']))} datos sin respaldo")
+            except Exception as error:
+                print(f"     no se pudo corregir: {str(error)[:80]}")
         nota["copias"] = copias_textuales(nota, tema)
         for _ in range(2):  # hasta dos intentos de reescritura
             if not nota["copias"]:
@@ -480,17 +546,19 @@ def main():
                 break
             nota["copias"] = copias_textuales(nota, tema)
             print(f"     reescritura: quedan {len(nota['copias'])} frases copiadas")
-        nota["imagen"] = buscar_imagen(borrador.get("imagen"))
+        nota["imagen"] = buscar_imagen(borrador.get("imagen"), nota["seccion"])
 
         # Cada control se puede activar o apagar por separado en config.py.
         retener = bool(
-            (nota["observaciones"] and config.RETENER_DATOS_SIN_RESPALDO)
+            (graves(nota["observaciones"]) and config.RETENER_DATOS_SIN_RESPALDO)
             or (nota["copias"] and config.RETENER_FRASES_COPIADAS)
         )
         if retener:
             guardar(nota, CARPETA_RETENIDAS)
             retenidas += 1
-            print(f"     retenida: {nota['titulo']} [{len(nota['observaciones'])} datos, {len(nota['copias'])} copias]")
+            print(f"     retenida: {nota['titulo']} [{len(graves(nota['observaciones']))} datos, {len(nota['copias'])} copias]")
+            for o in graves(nota["observaciones"]):
+                print(f"       dato sin respaldo: {o.get('dato')} ({o.get('problema', '')})")
         else:
             # El detalle de la revisión se informa acá, en el registro de la corrida, y no se guarda
             # en el archivo de la nota publicada.

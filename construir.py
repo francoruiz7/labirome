@@ -26,7 +26,7 @@ MESES = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio",
 SERVICIOS = [
     ("Clima", "https://weather.com/es-AR/tiempo/hoy/l/ARBA0009:1:AR"),
     ("Dólar", "https://dolarhoy.com/"),
-    ("Subte", "https://www.enelsubte.com/estado/"),
+    ("Subte", "https://emova.com.ar/index.php/horarios-del-servicio/"),
     ("Cripto", "https://coinmarketcap.com/es/"),
     ("Boletín Oficial", "https://www.boletinoficial.gob.ar/"),
     ("Cómo llegar", "https://moovitapp.com/"),

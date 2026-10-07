@@ -47,6 +47,22 @@ RETENER_DATOS_SIN_RESPALDO = True
 # a la de otro medio.
 RETENER_FRASES_COPIADAS = False
 
+# Temas de reserva: si una nota se descarta o queda retenida, la corrida sigue con el tema siguiente
+# hasta completar N_NOTAS. Este número es cuántos temas extra puede probar como máximo.
+TEMAS_DE_RESERVA = 3
+
+# Foto de último recurso cuando no aparece ninguna para el tema: búsqueda en Wikimedia Commons por sección.
+FOTOS_POR_SECCION = {
+    "Política": ["Casa Rosada", "Congreso de la Nación Argentina"],
+    "Sociedad": ["Buenos Aires skyline", "Avenida 9 de Julio"],
+    "Policiales": ["Policía Federal Argentina", "Palacio de Justicia Buenos Aires"],
+    "Deportes": ["football stadium Argentina", "Estadio Monumental"],
+    "Internacional": ["United Nations headquarters", "world flags"],
+    "Espectáculos": ["Teatro Colón", "theatre stage lights"],
+    "Efemérides": ["Cabildo de Buenos Aires", "Obelisco de Buenos Aires"],
+    "Bizarras": ["Obelisco de Buenos Aires", "Buenos Aires skyline"],
+}
+
 TEMAS_A_EVITAR = [
     "suicidios",
     "abuso sexual de menores",
