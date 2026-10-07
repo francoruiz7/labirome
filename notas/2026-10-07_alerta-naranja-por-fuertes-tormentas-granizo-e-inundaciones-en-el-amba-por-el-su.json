@@ -1,0 +1,48 @@
+{
+ "slug": "alerta-naranja-por-fuertes-tormentas-granizo-e-inundaciones-en-el-amba-por-el-su",
+ "titulo": "Alerta naranja por fuertes tormentas, granizo e inundaciones en el AMBA por el “Súper Niño”",
+ "bajada": "El Servicio Meteorológico mantiene la alerta para el Área Metropolitana; se reportaron anegamientos en varias localidades, un camión quedó varado en El Palomar y los organismos recomiendan prepararse ante el avance del fenómeno.",
+ "cuerpo": [
+  "El Servicio Meteorológico Nacional (SMN) mantiene este miércoles una alerta naranja por tormentas fuertes que afecta al Área Metropolitana de Buenos Aires (AMBA) y la franja costera bonaerense, con riesgo de lluvias intensas en cortos períodos, granizo, actividad eléctrica frecuente y ráfagas, según informó TN y confirmó el propio SMN.",
+  "Las tormentas tendrían su mayor intensidad durante la tarde, cuando la probabilidad de precipitaciones llegó al 100% en sectores de la ciudad, y el periódo de inestabilidad podría extenderse hasta el fin de semana, advirtió el meteorólogo Fernando Confessore, según TN.",
+  "Las mediciones de precipitación difieren entre fuentes: el Observatorio Central Buenos Aires reportó entre las 13 y las 15 alrededor de 18,6 milímetros, según Clarín, mientras que TN consignó un acumulado de 19,5 mm entre las 11 y las 16. Ambas cuentas dan cuenta de episodios de anegamiento en calles y plazas del AMBA.",
+  "En cuanto a incidentes locales, Clarín informó que un camión quedó atascado en un paso bajo nivel en El Palomar, a metros del Colegio Militar; el conductor debió salir del vehículo cuando el agua superó el nivel de los asientos e inundó el habitáculo. TN registró además una conductora cuyo auto se incendió tras quedar detenido en una calle anegada en Caseros y reportó inundaciones en localidades como Caseros, Ramos Mejía, Haedo, Ciudadela, San Justo, El Palomar, Pablo Podestá, Morón y el centro de Merlo.",
+  "Ante el escenario, la Agencia Federal de Emergencias y el Ministerio de Seguridad implementaron medidas de coordinación: el ministerio señaló que “El Niño ya está activo” y la agencia puso en marcha el Plan de Coordinación Federal ENOS, según informó Clarín. La Nación señaló además protocolos prácticos emitidos por el Ejecutivo y la Agencia Federal de Emergencias: limpiar desagües y canaletas, revisar techos, retirar objetos sueltos, consultar pronóstico local, anotar números de Defensa Civil, Bomberos y Policía, no circular por calles anegadas y cortar el suministro eléctrico si el agua ingresa a la vivienda.",
+  "A la escala internacional, Infobae recogió el llamado de científicos de la Universidad de Bristol publicado en The Lancet para aprovechar el margen de anticipación: Ruby Lieber advirtió que “Hay una necesidad urgente y sin precedentes de comprender, medir e identificar mejor los distintos peligros para cada país y cada lugar”, y Dann Mitchell afirmó que “No podemos permitirnos ignorar este riesgo emergente, que puede tener consecuencias devastadoras, pero anticipables, para comunidades de todo el mundo”. La Nación completa el contexto al señalar que el llamado “Súper Niño” se instaló en agosto y podría mantenerse hasta febrero de 2027, con su pico de intensidad previsto para diciembre."
+ ],
+ "seccion": "Sociedad",
+ "etiquetas": [
+  "Súper Niño 2026",
+  "Tormentas"
+ ],
+ "fecha": "2026-10-07T18:24:51-03:00",
+ "importancia": 8,
+ "fuentes": [
+  {
+   "medio": "Clarín",
+   "titulo": "Súper Niño 2026 en Argentina, EN VIVO: alerta naranja por fuertes tormentas y granizo en Buenos Aires",
+   "link": "https://www.clarin.com/sociedad/super-nino-2026-argentina-vivo-llegara-pico-maximo-provincias-esperan-fuertes-lluvias_0_2BUsnyrFCW.html"
+  },
+  {
+   "medio": "La Nación",
+   "titulo": "Súper Niño 2026: qué se sabe del fenómeno que cambiará por completo el clima en la Argentina y llegará a su pico máximo",
+   "link": "https://www.lanacion.com.ar/sociedad/super-nino-2026-que-se-sabe-del-fenomeno-que-cambiara-por-completo-el-clima-en-la-argentina-y-nid05102026/"
+  },
+  {
+   "medio": "Infobae",
+   "titulo": "Súper El Niño: las 5 medidas urgentes que proponen científicos climáticos para preparar al mundo",
+   "link": "https://www.infobae.com/america/medio-ambiente/2026/10/07/super-el-nino-las-5-medidas-urgentes-que-proponen-cientificos-climaticos-para-preparar-al-mundo/"
+  },
+  {
+   "medio": "TN",
+   "titulo": "Rige la alerta naranja por fuertes tormentas en el AMBA: hay varias zonas inundadas",
+   "link": "https://tn.com.ar/sociedad/2026/10/07/llueve-en-el-amba-y-hay-alerta-naranja-por-tormentas-el-minuto-a-minuto-del-temporal/"
+  }
+ ],
+ "imagen": {
+  "url": "https://images.unsplash.com/photo-1761252987176-c450c43f5cbb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDk1MTk0fDB8MXxzZWFyY2h8MXx8Zmxvb2RlZCUyMHN0cmVldCUyMGNhcnxlbnwxfDB8fHwxNzkxNDA4MzMyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+  "credito": "Aldward Castillo / Unsplash",
+  "licencia": "",
+  "enlace": "https://unsplash.com/photos/cars-driving-through-a-flooded-street-during-a-storm-Tf7ysdubEHE"
+ }
+}
