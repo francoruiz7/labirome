@@ -204,9 +204,10 @@ Reglas que no se negocian:
 Para la foto de archivo, completá "imagen" pensando en qué mostraría un editor de fotografía para ESTE titular:
 - "entidades": hasta tres nombres, tal como figuran en Wikipedia en español, de lo que protagoniza la nota, del más específico al más general: la persona pública, el organismo, la empresa, el club, el lugar o el objeto concreto (por ejemplo "Banco Central de la República Argentina", "Dólar estadounidense", "Crédito hipotecario"). No pongas personas privadas.
 - "busquedas": hasta tres búsquedas cortas para un archivo de fotos, que describan una imagen concreta del tema (por ejemplo "billetes de dólar", "pesos argentinos billetes", "edificio Banco Central Argentina", "llaves de una casa"). Evitá búsquedas vagas como "economía" o "política".
+- "stock": hasta tres búsquedas EN INGLÉS para un banco de fotos, de dos a cuatro palabras, que describan una escena u objeto que ilustre el tema sin mostrar edificios públicos (por ejemplo "storm clouds city", "dollar bills closeup", "house keys mortgage", "football stadium crowd", "supermarket shelves prices").
 
 Respondé solo con JSON:
-{"descartar": false, "motivo": "", "titulo": "", "bajada": "", "cuerpo": ["párrafo 1", "párrafo 2"], "seccion": "", "etiquetas": ["", ""], "imagen": {"entidades": ["", ""], "busquedas": ["", ""]}}
+{"descartar": false, "motivo": "", "titulo": "", "bajada": "", "cuerpo": ["párrafo 1", "párrafo 2"], "seccion": "", "etiquetas": ["", ""], "imagen": {"entidades": ["", ""], "busquedas": ["", ""], "stock": ["", ""]}}
 """
 
 
@@ -377,9 +378,64 @@ def fotos_commons(consulta, cuantas=4):
     return fotos[:cuantas]
 
 
-def juntar_candidatas(consultas_wikipedia, consultas_commons):
+def fotos_pexels(consulta, cuantas=4):
+    """Fotos de banco de Pexels (licencia libre). Usa la clave gratuita PEXELS_API_KEY si está cargada."""
+    clave = os.environ.get("PEXELS_API_KEY", "").strip()
+    if not clave:
+        return []
+    resp = requests.get("https://api.pexels.com/v1/search", headers={"Authorization": clave}, timeout=20, params={
+        "query": consulta, "orientation": "landscape", "per_page": cuantas,
+    }).json()
+    return [{
+        "url": f["src"]["landscape"],
+        "credito": f"{f.get('photographer') or 'Pexels'} / Pexels",
+        "licencia": "",
+        "enlace": f.get("url", ""),
+        "_archivo": (f.get("alt") or consulta)[:120],
+        "_descripcion": (f.get("alt") or "")[:200],
+        "_origen": f"banco de fotos, búsqueda «{consulta}»",
+    } for f in resp.get("photos", []) if f.get("src", {}).get("landscape")]
+
+
+def fotos_unsplash(consulta, cuantas=4):
+    """Fotos de banco de Unsplash (licencia libre). Usa la clave gratuita UNSPLASH_ACCESS_KEY si está cargada."""
+    clave = os.environ.get("UNSPLASH_ACCESS_KEY", "").strip()
+    if not clave:
+        return []
+    resp = requests.get("https://api.unsplash.com/search/photos", timeout=20,
+                        headers={"Authorization": f"Client-ID {clave}", "Accept-Version": "v1"}, params={
+        "query": consulta, "orientation": "landscape", "per_page": cuantas, "content_filter": "high",
+    }).json()
+    fotos = []
+    for f in resp.get("results", []):
+        if not f.get("urls", {}).get("regular"):
+            continue
+        texto = f.get("alt_description") or f.get("description") or ""
+        fotos.append({
+            "url": f["urls"]["regular"],
+            "credito": f"{(f.get('user') or {}).get('name') or 'Unsplash'} / Unsplash",
+            "licencia": "",
+            "enlace": (f.get("links") or {}).get("html", ""),
+            "_archivo": (texto or consulta)[:120],
+            "_descripcion": texto[:200],
+            "_origen": f"banco de fotos, búsqueda «{consulta}»",
+        })
+    return fotos
+
+
+def hay_banco_de_fotos():
+    return bool(os.environ.get("PEXELS_API_KEY", "").strip() or os.environ.get("UNSPLASH_ACCESS_KEY", "").strip())
+
+
+def juntar_candidatas(consultas_wikipedia, consultas_commons, consultas_stock=()):
     candidatas, vistas = [], set()
-    for buscador, consultas in ((fotos_wikipedia, consultas_wikipedia), (fotos_commons, consultas_commons)):
+    tandas = (
+        (fotos_wikipedia, consultas_wikipedia),
+        (fotos_pexels, consultas_stock),
+        (fotos_unsplash, consultas_stock),
+        (fotos_commons, consultas_commons),
+    )
+    for buscador, consultas in tandas:
         for consulta in consultas:
             try:
                 halladas = buscador(consulta)
@@ -391,7 +447,7 @@ def juntar_candidatas(consultas_wikipedia, consultas_commons):
                 if foto["enlace"] not in vistas:
                     vistas.add(foto["enlace"])
                     candidatas.append(foto)
-    return candidatas[:14]
+    return candidatas[:24]
 
 
 def elegir_foto(cliente, modelo, titulo, bajada, candidatas):
@@ -407,13 +463,24 @@ def elegir_foto(cliente, modelo, titulo, bajada, candidatas):
         "del que habla la nota. Rechazá las fotos de otra persona u otro organismo (por ejemplo, el Banco Nación no "
         "sirve para una nota sobre el Banco Central), las que muestran un hecho distinto, los mapas, gráficos, "
         "documentos escaneados, logos y fotos históricas o en blanco y negro si la nota es actual. "
-        "Una foto temática correcta (billetes para una nota sobre el dólar) es mejor que un edificio que no se menciona. "
+        "Preferí siempre una foto que muestre el tema (una escena, un objeto, personas, el clima, billetes para una nota "
+        "sobre el dólar) antes que la fachada de un edificio. Las fachadas de organismos son el último recurso: elegilas "
+        "solo si no hay ninguna foto temática correcta. Si la nota trata sobre una persona pública, preferí su retrato. "
         'Si ninguna sirve, respondé -1. Respondé solo con JSON: {"elegida": número, "motivo": "frase corta"}.'
     )
     datos = pedir_json(cliente, modelo, sistema, f"TITULAR: {titulo}\nBAJADA: {bajada}\n\nCANDIDATAS:\n{lista}")
     elegida = datos.get("elegida", -1)
     print(f"     foto: el editor eligió {elegida} ({str(datos.get('motivo', ''))[:100]})")
     return candidatas[elegida] if isinstance(elegida, int) and 0 <= elegida < len(candidatas) else None
+
+
+PEDIDO_FOTO = (
+    "Sos editor de fotografía de un medio argentino. Para el titular que recibís, proponé qué buscar. "
+    'Respondé solo con JSON: {"entidades": [hasta tres nombres de artículos de Wikipedia en español: persona pública, '
+    'organismo, lugar u objeto protagonista], "busquedas": [hasta tres búsquedas cortas en español de una imagen concreta], '
+    '"stock": [hasta tres búsquedas en inglés, de dos a cuatro palabras, para un banco de fotos: escenas u objetos que '
+    "ilustren el tema, sin edificios públicos]}."
+)
 
 
 def sin_internos(foto):
@@ -435,7 +502,8 @@ def buscar_imagen(cliente, modelo, nota, pedido):
     busquedas = lista_de(pedido.get("busquedas") or pedido.get("generica"))
     if not entidades and not busquedas:  # notas viejas sin pedido de foto: se busca por etiquetas
         busquedas = lista_de(nota.get("etiquetas", []))
-    candidatas = juntar_candidatas(entidades, entidades + busquedas)
+    stock = lista_de(pedido.get("stock")) or lista_de(pedido.get("generica"))
+    candidatas = juntar_candidatas(entidades, entidades + busquedas, stock)
     if candidatas:
         try:
             foto = elegir_foto(cliente, modelo, nota["titulo"], nota.get("bajada", ""), candidatas)
@@ -499,16 +567,23 @@ def main():
     rehacer = set(getattr(config, "REHACER_FOTOS", []))
     for ruta in sorted(CARPETA_NOTAS.glob("*.json"))[-30:]:
         vieja = json.loads(ruta.read_text(encoding="utf-8"))
-        marcada = any(clave in ruta.name for clave in rehacer) and not vieja.get("foto_revisada")
+        tanda = getattr(config, "TANDA_FOTOS", 1)
+        marcada = (any(clave in ruta.name for clave in rehacer) and vieja.get("foto_revisada") != tanda
+                   and hay_banco_de_fotos())
         if vieja.get("imagen") and not marcada:
             continue
         print(f"Buscando foto para: {vieja.get('titulo')}")
-        nueva = buscar_imagen(cliente, modelo, vieja, {"busquedas": vieja.get("etiquetas", [])})
+        try:
+            pedido = pedir_json(cliente, modelo, PEDIDO_FOTO, f"TITULAR: {vieja.get('titulo')}\nBAJADA: {vieja.get('bajada', '')}")
+        except Exception:
+            pedido = {"busquedas": vieja.get("etiquetas", [])}
+        nueva = buscar_imagen(cliente, modelo, vieja, pedido)
         if nueva or marcada:
             vieja["imagen"] = nueva or vieja.get("imagen")
-            vieja["foto_revisada"] = True  # para no rehacerla en cada corrida
+            vieja["foto_revisada"] = tanda  # para no rehacerla en cada corrida
             ruta.write_text(json.dumps(vieja, ensure_ascii=False, indent=1), encoding="utf-8")
-    print("Fotos: Wikipedia y Wikimedia Commons, elegidas según el titular")
+    bancos = [n for n, v in (("Pexels", "PEXELS_API_KEY"), ("Unsplash", "UNSPLASH_ACCESS_KEY")) if os.environ.get(v, "").strip()]
+    print(f"Fotos: Wikimedia{''.join(', ' + b for b in bancos)}{'' if bancos else ' (sin banco de fotos: falta la clave)'}")
 
     print("\n1. Leyendo titulares...")
     titulares = [t for t in leer_fuentes() if t["link"] not in vistos]

@@ -58,7 +58,9 @@ FOTO_DE_SECCION_SI_NO_HAY = True
 
 # Para cambiarle la foto a notas ya publicadas: poné acá un pedazo del nombre de su archivo en la carpeta
 # "notas" (por ejemplo "rem-el-mercado"). Se rehace una sola vez, en la corrida siguiente.
-REHACER_FOTOS = ["rem-el-mercado", "rem-del-bcra", "el-gobierno-adjudico"]
+REHACER_FOTOS = ["rem-el-mercado", "rem-del-bcra", "el-gobierno-adjudico", "el-smn-declaro"]
+# Subí este número cada vez que cambies la lista de arriba, para que se vuelvan a rehacer.
+TANDA_FOTOS = 2
 
 # Foto de último recurso cuando no aparece ninguna para el tema: búsqueda en Wikimedia Commons por sección.
 FOTOS_POR_SECCION = {
