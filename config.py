@@ -15,6 +15,7 @@ RUTA_BASE = ""
 INDEXABLE = False
 
 # Leyenda al pie de cada nota y texto del pie de página.
+MAIL_PRENSA = "prensa@labirome.com"
 AVISO_IA = "Nota elaborada con inteligencia artificial a partir de las fuentes citadas."
 SOBRE = "Un medio digital que tiene como premisa la objetividad y el respaldo de cada dato. Las notas se elaboran con inteligencia artificial, contrastan al menos dos fuentes periodísticas y las citan al pie."
 

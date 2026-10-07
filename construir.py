@@ -203,6 +203,7 @@ def pagina(titulo, cuerpo, ruta, ultimas, descripcion=None, imagen=None, seccion
     <div>
       <h2>Sobre {e(config.NOMBRE)}</h2>
       <p>{e(config.SOBRE)}</p>
+      <a class="contacto" href="mailto:{e(config.MAIL_PRENSA)}"><svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="M3.5 6.5 12 13l8.5-6.5"/></svg>{e(config.MAIL_PRENSA)}</a>
     </div>
   </div>
   <p class="legal">© {dt.date.today().year} {e(config.NOMBRE)}</p>
