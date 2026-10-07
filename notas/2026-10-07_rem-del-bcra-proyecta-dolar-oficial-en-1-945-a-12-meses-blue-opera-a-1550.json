@@ -26,10 +26,10 @@
   }
  ],
  "imagen": {
-  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/30/Banco_Central_de_la_Rep%C3%BAblica_Argentina_en_2016.jpg/1280px-Banco_Central_de_la_Rep%C3%BAblica_Argentina_en_2016.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
-  "credito": "Casa Rosada / Wikimedia Commons",
-  "licencia": "CC BY 2.5 ar",
-  "enlace": "https://commons.wikimedia.org/wiki/File:Banco_Central_de_la_Rep%C3%BAblica_Argentina_en_2016.jpg"
+  "url": "https://images.unsplash.com/photo-1518458028785-8fbcd101ebb9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDk1MTk0fDB8MXxzZWFyY2h8MXx8aGFuZHMlMjBleGNoYW5naW5nJTIwY2FzaHxlbnwxfDB8fHwxNzkxMzQ2NDUzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+  "credito": "Alexander Grey / Unsplash",
+  "licencia": "",
+  "enlace": "https://unsplash.com/photos/focus-photography-of-person-counting-dollar-banknotes--8a5eJ1-mmQ"
  },
- "foto_revisada": true
+ "foto_revisada": 2
 }
