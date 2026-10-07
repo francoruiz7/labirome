@@ -289,3 +289,7 @@ a.boton { display: inline-block; text-decoration: none; }
 .fuentes a { text-decoration: underline; text-decoration-color: var(--celeste); text-decoration-thickness: 2px; text-underline-offset: 3px; }
 .aviso-ia { font-family: var(--lectura); font-style: italic; font-size: 0.98rem; color: var(--gris); margin-top: 1.25rem; }
 .newsletter .aviso { margin-top: 0.2rem; }
+
+/* Mail de contacto en el pie */
+.pie .contacto { display: inline-flex; align-items: center; gap: 0.5rem; margin-top: 0.9rem; font-size: 0.95rem; }
+.pie .contacto svg { color: var(--celeste); flex: none; }
