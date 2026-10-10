@@ -1,0 +1,40 @@
+{
+ "slug": "la-guerra-del-cerdo-1859-un-cerdo-muerto-y-una-crisis-sin-disparos-en-las-islas",
+ "titulo": "La «Guerra del Cerdo» (1859): un cerdo muerto y una crisis sin disparos en las islas San Juan",
+ "bajada": "La muerte de un cerdo en junio de 1859 entre colonos estadounidenses y la Compañía de la Bahía de Hudson casi desata un enfrentamiento entre Estados Unidos y Gran Bretaña que se resolvió por arbitraje.",
+ "cuerpo": [
+  "En la primavera y el verano de 1859, en la isla San Juan —entre la isla de Vancouver y el territorio de Washington— se acumuló tensión por la ambigua delimitación fronteriza entre Estados Unidos y el Reino Unido. Según informó el Servicio de Parques Nacionales (NPS), la región había sido reclamada por ambos países desde el Tratado de Oregón de 1846, y la Compañía de la Bahía de Hudson (HBC) mantenía una granja ovina en la isla desde alrededor de 1853. El 15 de junio de 1859, el granjero estadounidense Lyman Cutlar disparó y mató a un cerdo que era de propiedad británica, un hecho que, de acuerdo con la página del NPS y la recopilación en Wikipedia, encendió la crisis conocida como la «Guerra del Cerdo». Las fuentes difieren en el recuento de colonos asentados: el NPS señaló que al menos 18 estadounidenses habían tomado puestos en la isla en la primavera de 1859, mientras que Wikipedia registra entre 25 y 29 colonos a mediados de ese año.",
+  "El incidente llevó a un enfrentamiento diplomático y a una movilización militar limitada: de acuerdo con HistoryLink, aquel verano de 1859 comenzó un estancamiento que llegó a durar trece años entre el Ejército estadounidense y la Marina Real británica. HistoryLink menciona el desembarco de una compañía de infantería estadounidense al mando del capitán George Pickett y la decisión del capitán de la Royal Navy Geoffrey Phipps Hornby de no enfrentarse a las fuerzas estadounidenses. Las crónicas coinciden en que no hubo víctimas humanas —solo el cerdo— y que la controversia se resolvió por arbitraje pacífico, con la posterior adjudicación de las islas a los Estados Unidos y la definición final de la frontera en la región, según relata HistoryLink y subraya el NPS.",
+  "seccion"
+ ],
+ "seccion": "Bizarras",
+ "etiquetas": [
+  "Historia",
+  "Estados Unidos"
+ ],
+ "fecha": "2026-10-10T13:16:17-03:00",
+ "importancia": 4,
+ "fuentes": [
+  {
+   "medio": "nps.gov",
+   "titulo": "San Juan Island National Historical Park (NPS) — página en español",
+   "link": "https://www.nps.gov/sajh/espanol/index.htm"
+  },
+  {
+   "medio": "es.wikipedia.org",
+   "titulo": "Guerra del Cerdo - Wikipedia, la enciclopedia libre",
+   "link": "https://es.wikipedia.org/wiki/Guerra_del_Cerdo"
+  },
+  {
+   "medio": "historylink.org",
+   "titulo": "San Juan Island Pig War — Part 1 - HistoryLink.org",
+   "link": "https://www.historylink.org/File/5724"
+  }
+ ],
+ "imagen": {
+  "url": "https://images.unsplash.com/photo-1670974545850-7619a012dea5?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDk1MTk0fDB8MXxzZWFyY2h8MXx8aGlzdG9yaWNhbCUyMHBpZyUyMG9uJTIwZmFybXxlbnwxfDB8fHwxNzkxNjQ4OTkzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+  "credito": "Mathias Grischott / Unsplash",
+  "licencia": "",
+  "enlace": "https://unsplash.com/photos/a-small-pig-standing-on-top-of-a-lush-green-field-nG_Y_TG3O-w"
+ }
+}

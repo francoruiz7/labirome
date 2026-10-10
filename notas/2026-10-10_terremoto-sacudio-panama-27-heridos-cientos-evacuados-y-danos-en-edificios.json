@@ -1,0 +1,43 @@
+{
+ "slug": "terremoto-sacudio-panama-27-heridos-cientos-evacuados-y-danos-en-edificios",
+ "titulo": "Terremoto sacudió Panamá: 27 heridos, cientos evacuados y daños en edificios",
+ "bajada": "El sismo afectó viviendas, escuelas y hospitales; las cifras de magnitud y réplicas varían según las fuentes, y Estados Unidos envió apoyo aéreo coordinado con las autoridades panameñas.",
+ "cuerpo": [
+  "Un fuerte terremoto que se registró el viernes por la tarde en la región central de Panamá dejó decenas de heridos, cientos de evacuados y daños en numerosas construcciones, según los reportes oficiales y medios locales. El movimiento ocurrió el 9 de octubre alrededor de las 12:56 p.m. hora local, con epicentro en la zona de Azuero o cerca de Pitaloza Arriba, según distintos informes, y provocó una ola de réplicas durante las horas siguientes (datos de Clarín, Infobae y Ámbito).",
+  "De acuerdo con el Sistema Nacional de Protección Civil (Sinaproc), citado por Ámbito y Clarín, al menos 27 personas resultaron con heridas leves y cerca de 300 personas fueron evacuadas. El primer balance oficial consignado por Ámbito indicó que más de 400 edificaciones sufrieron daños, entre ellas 142 viviendas y 188 centros escolares, además de hospitales, iglesias y edificios públicos. En todos los informes se señala que, hasta los últimos balances, no se registraban víctimas fatales ni personas desaparecidas (Sinaproc, según Ámbito).",
+  "Las consecuencias se concentraron en varias provincias del centro y sur del país: Clarín menciona especialmente Los Santos, Herrera, Veraguas y Coclé, y describe localidades como Tonosí entre las más afectadas. El aeropuerto de Tocumen cerró temporalmente y algunos vuelos fueron desviados, según Clarín. Testimonios publicados por ese medio relatan escenas de pánico en Ciudad de Panamá y daños materiales en edificios y viviendas; una testigo dijo: \"Fue horrible, algo que no habíamos vivido\".",
+  "Hubo diferencias en las mediciones y en el conteo de réplicas según las fuentes: el Servicio Geológico de Estados Unidos (USGS) revisó la magnitud a 7,7 (según Clarín), mientras que el Instituto de Geociencias de la Universidad de Panamá consignó 7,5 (según Infobae). El Instituto de Geociencias (IGC) reportó aproximadamente 107 réplicas en las horas posteriores (Ámbito), y Infobae consignó más de 150 réplicas, algunas por encima de magnitud 6.",
+  "También se reportaron daños en infraestructura vinculada al Canal de Panamá: la Autoridad del Canal (ACP) informó, según Ámbito, afectaciones menores en cuatro edificios de oficinas del sector Pacífico y en la planta potabilizadora de Monte Esperanza, pero precisó que el tránsito de buques no se vio afectado tras las primeras inspecciones. Por su parte, Infobae informó que un helicóptero militar Chinook de Estados Unidos inició misiones para trasladar ayuda humanitaria en coordinación con el Servicio Nacional Aeronaval (Senan) y Sinaproc, y que estaba previsto el envío de especialistas en búsqueda, rescate y evaluación estructural.",
+  "Las tareas de asistencia, evaluación y búsqueda continuaban en las zonas afectadas mientras las autoridades locales y equipos internacionales coordinaban el auxilio y las inspecciones técnicas para determinar la magnitud definitiva de los daños (Ámbito, Clarín, Infobae)."
+ ],
+ "seccion": "Internacional",
+ "etiquetas": [
+  "Terremoto",
+  "Panamá"
+ ],
+ "fecha": "2026-10-10T13:18:23-03:00",
+ "importancia": 7,
+ "fuentes": [
+  {
+   "medio": "Ámbito",
+   "titulo": "Terremoto en Panamá: al menos 27 heridos, cientos de evacuados y graves daños en edificios",
+   "link": "https://www.ambito.com/mundo/terremoto-panama-al-menos-27-heridos-cientos-evacuados-y-graves-danos-edificios-n6332329"
+  },
+  {
+   "medio": "Clarín",
+   "titulo": "Los dramáticos testimonios de los afectados por el terremoto en Panamá: \"Fue horrible, algo nunca visto\"",
+   "link": "https://www.clarin.com/mundo/dramaticos-testimonios-afectados-terremoto-panama-horrible-visto_0_vH4rvO0dM4.html"
+  },
+  {
+   "medio": "Infobae",
+   "titulo": "Helicóptero Chinook de Estados Unidos transporta ayuda humanitaria a las zonas afectadas por el sismo en Panamá",
+   "link": "https://www.infobae.com/panama/2026/10/10/helicoptero-chinook-de-estados-unidos-transporta-ayuda-humanitaria-a-las-zonas-afectadas-por-el-sismo-en-panama/"
+  }
+ ],
+ "imagen": {
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/Veh%C3%ADculo_del_Benem%C3%A9rito_Cuerpo_de_Bomberos_de_la_Rep%C3%BAblica_de_Panam%C3%A1.jpg/1280px-Veh%C3%ADculo_del_Benem%C3%A9rito_Cuerpo_de_Bomberos_de_la_Rep%C3%BAblica_de_Panam%C3%A1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "credito": "Virpana / Wikimedia Commons",
+  "licencia": "CC BY 4.0",
+  "enlace": "https://commons.wikimedia.org/wiki/File:Veh%C3%ADculo_del_Benem%C3%A9rito_Cuerpo_de_Bomberos_de_la_Rep%C3%BAblica_de_Panam%C3%A1.jpg"
+ }
+}
