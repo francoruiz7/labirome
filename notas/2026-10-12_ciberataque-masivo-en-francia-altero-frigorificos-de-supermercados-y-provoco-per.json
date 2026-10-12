@@ -1,0 +1,41 @@
+{
+ "slug": "ciberataque-masivo-en-francia-altero-frigorificos-de-supermercados-y-provoco-per",
+ "titulo": "Ciberataque masivo en Francia alteró frigoríficos de supermercados y provocó pérdidas",
+ "bajada": "Cadenas como Intermarché, Coopérative U y E.Leclerc denunciaron aumentos de temperatura en sus heladeras; hubo fuegos y toneladas de alimentos desechados, según los medios.",
+ "cuerpo": [
+  "Un ciberataque dirigido a los sistemas de refrigeración afectó la noche del domingo a supermercados en toda Francia, según informaron medios franceses y cadenas del sector. Intermarché, Coopérative U y E.Leclerc confirmaron haberse visto afectados, y otros grupos como Carrefour y Monoprix podrían también estar implicados, según reportes de Perfil, Clarín y La Nación.",
+  "Las cifras varían según las fuentes: de acuerdo con Perfil, al menos 300 tiendas de Intermarché o de su marca Netto y más de 100 establecimientos de Cooperative U sufrieron el incidente; en cambio Clarín y La Nación citan entre 150 y 200 locales de Intermarché y menos de un centenar de Coopérative U. También difieren las temperaturas reportadas: Clarín informó que las vitrinas alcanzaron 36 °C, mientras que La Nación y otros reportes indicaron picos de hasta 50 °C. Varias cadenas dijeron que tuvieron que desechar productos frescos y congelados; el Groupement Mousquetaires calculó pérdidas en “varios millones de euros”, según Clarín.",
+  "La fiscalía de París abrió una investigación y, según La Nación y Clarín, se reportaron conatos de incendio en algunas tiendas. La pesquisa fue encomendada a la Oficina Anticibercriminalidad, y La Nación consignó que el primer ministro solicitó que la Agencia Nacional de Seguridad de los Sistemas de Información (ANSSI) se haga cargo de la investigación y coordine con sus homólogos europeos.",
+  "Sobre el vector del ataque, fuentes citadas por Perfil y La Nación señalaron que hackers habrían explotado vulnerabilidades en sistemas de control fabricados por la empresa danesa Danfoss. Danfoss declaró a la AFP que muchos de los equipos afectados eran «productos antiguos que ya no reciben actualizaciones de software ni de seguridad», según informó Perfil. En las redes, el director general de Coopérative U, Dominique Schelcher, dijo que era un hecho “sin precedentes”; el comisario europeo de Alimentación y Agricultura, Christophe Hansen, advirtió en X que “la seguridad alimentaria requiere mayor atención a todos los niveles”, según Perfil."
+ ],
+ "seccion": "Internacional",
+ "etiquetas": [
+  "ciberataque",
+  "Francia"
+ ],
+ "fecha": "2026-10-12T17:19:35-03:00",
+ "importancia": 5,
+ "fuentes": [
+  {
+   "medio": "Perfil",
+   "titulo": "Hackearon heladeras y freezers de supermercados franceses, subiéndoles la temperatura: pérdidas millonarias",
+   "link": "https://www.perfil.com/noticias/internacional/hackers-suben-temperaturas-de-heladeras-de-supermercados-franceses-dejando-perdidas-millonarias.phtml"
+  },
+  {
+   "medio": "Clarín",
+   "titulo": "Guerra híbrida en Europa: hackearon las heladeras de cientos de supermercados en Francia y provocaron pérdidas millonarias",
+   "link": "https://www.clarin.com/mundo/guerra-hibrida-europa-hackearon-heladeras-cientos-supermercados-francia-provocaron-perdidas-millonarias_0_6rvwj2G8Ep.html"
+  },
+  {
+   "medio": "La Nación",
+   "titulo": "Alerta en Francia por un ciberataque masivo contra supermercados: heladeras a 50°, incendios y pérdida de comida",
+   "link": "https://www.lanacion.com.ar/el-mundo/alerta-en-francia-por-un-ciberataque-masivo-contra-supermercados-heladeras-a-50-incendios-y-perdida-nid12102026/"
+  }
+ ],
+ "imagen": {
+  "url": "https://images.unsplash.com/photo-1604719312566-8912e9227c6a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDk1MTk0fDB8MXxzZWFyY2h8MXx8c3VwZXJtYXJrZXQlMjByZWZyaWdlcmF0b3JzfGVufDF8MHx8fDE3OTE4MzY0MDV8MA&ixlib=rb-4.1.0&q=80&w=1080",
+  "credito": "Franki Chamaki / Unsplash",
+  "licencia": "",
+  "enlace": "https://unsplash.com/photos/grocery-store-aisle-with-stocked-shelves-ivfp_yxZuYQ"
+ }
+}

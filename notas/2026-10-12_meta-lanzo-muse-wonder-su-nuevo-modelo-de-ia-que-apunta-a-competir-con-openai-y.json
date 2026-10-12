@@ -1,0 +1,36 @@
+{
+ "slug": "meta-lanzo-muse-wonder-su-nuevo-modelo-de-ia-que-apunta-a-competir-con-openai-y",
+ "titulo": "Meta lanzó Muse Wonder, su nuevo modelo de IA que apunta a competir con OpenAI y Anthropic",
+ "bajada": "La empresa presentó este lunes dos versiones del modelo —Wonder y Wonder Full— y aseguró que en pruebas supera a alternativas de OpenAI y Anthropic; estará disponible primero para desarrolladores y pronto se integrará a su asistente Muse.",
+ "cuerpo": [
+  "Meta presentó el lunes dos nuevos modelos de inteligencia artificial llamados Wonder y Wonder Full, y los describió como una evolución de su familia de modelos Muse, según informó Clarín. El anuncio llega tras la reestructuración y la inversión de “miles de millones” que la compañía impulsó el último año para ponerse a la par de los laboratorios que lideran la carrera en Estados Unidos, añadió Clarín.",
+  "De acuerdo con Infobae, la empresa sostiene que Muse Wonder supera en ciertos benchmarks a modelos comparables de Anthropic y OpenAI, y citó evaluaciones concretas donde lo ubican por delante de Claude Opus 5.5 y Fable 5.1 (Anthropic) y de GPT‑6 Astra (OpenAI). Clarín también mencionó que la firma Artificial Analysis sitúa al nuevo modelo entre los más eficientes del mercado. Meta indicó que Muse Wonder podrá emplearse en tareas complejas, desde interpretar contratos hasta procesar datos financieros o de salud, según Infobae.",
+  "Sobre disponibilidad y uso comercial, Clarín detalló que el modelo quedó disponible para desarrolladores desde el lunes y que “pronto” empezará a impulsar al asistente Muse para sus suscriptores de pago. Infobae agregó que las versiones más avanzadas funcionarán como un modelo cerrado y se venderán directamente a empresas, en competencia con Anthropic y OpenAI por contratos corporativos.",
+  "El director ejecutivo Mark Zuckerberg celebró el avance: “Muse Spark fue nuestra primera familia de modelos, y ahora Muse Wonder es una clase de modelos mucho más grande y avanzada que nos sitúa en la vanguardia”, reprodujo Clarín. En declaraciones al Financial Times citadas por Infobae, Zuckerberg sostuvo que el nuevo sistema “permitirá comportamientos mucho más sofisticados que están en la frontera de lo que se está haciendo en el campo de la IA”. Clarín también recordó que la apuesta por IA financia este año inversiones por hasta 145.000 millones de dólares y que el lanzamiento ocurre en un momento de debate en Silicon Valley sobre el ritmo de desarrollo de estas tecnologías."
+ ],
+ "seccion": "Internacional",
+ "etiquetas": [
+  "Meta",
+  "Inteligencia artificial"
+ ],
+ "fecha": "2026-10-12T17:21:11-03:00",
+ "importancia": 6,
+ "fuentes": [
+  {
+   "medio": "Clarín",
+   "titulo": "Meta presenta nuevo modelo de IA y afirma que está al nivel de OpenAI y Anthropic",
+   "link": "https://www.clarin.com/estados-unidos/meta-presenta-nuevo-modelo-de-ia-y-afirma-que-esta-al-nivel-de-openai-y-anthropic_0_kvnmyfmi9Q.html"
+  },
+  {
+   "medio": "Infobae",
+   "titulo": "Meta desafía a Anthropic y OpenAI con Muse Wonder: “Permitirá comportamientos mucho más sofisticados”",
+   "link": "https://www.infobae.com/tecno/2026/10/12/meta-desafia-a-anthropic-y-openai-con-muse-wonder-permitira-comportamientos-mucho-mas-sofisticados/"
+  }
+ ],
+ "imagen": {
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7c/Meta_Platforms_Headquarters_Menlo_Park_California.jpg/1280px-Meta_Platforms_Headquarters_Menlo_Park_California.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "credito": "LPS.1 / Wikimedia Commons",
+  "licencia": "CC0",
+  "enlace": "https://commons.wikimedia.org/wiki/File:Meta_Platforms_Headquarters_Menlo_Park_California.jpg"
+ }
+}
