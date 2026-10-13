@@ -1,0 +1,39 @@
+{
+ "slug": "el-nino-obliga-a-abrir-compuertas-y-genera-alarma-por-crecidas-en-el-litoral",
+ "titulo": "El Niño obliga a abrir compuertas y genera alarma por crecidas en el Litoral",
+ "bajada": "Itaipú y Yacyretá abrieron compuertas ante el aumento de caudales; en el Litoral ríos Uruguay y Paraná muestran niveles altos y productores trasladan hacienda por inundaciones parciales.",
+ "cuerpo": [
+  "Las represas binacionales Itaipú y Yacyretá abrieron compuertas ante el incremento de los aportes por el fenómeno de El Niño, y las autoridades ya advierten sobre posibles escenarios de aguas altas entre octubre y diciembre, según informó La Nación. En el caso de Yacyretá, la Entidad Binacional suspendió las visitas turísticas y técnicas hasta al menos el 17 de octubre por razones de seguridad. La crecida del Paraná ya obligó a evacuar familias en la región de la Triple Frontera; en Ciudad del Este, Paraguay, se llevaron a cabo operativos en barrios bajos expuestos al avance del agua. \"Realmente sabíamos que el fenómeno El Niño iba a presentarse de esta forma: lluvias intensas, de corta duración y sorpresivas. Estamos preparados para asistir a las familias; ya venimos trabajando en conjunto con la Secretaría de Emergencia Nacional... Continuamos con la evacuación de la gente y estamos previendo todo lo necesario para este operativo\", dijo Justo Zacarías Irún, director general paraguayo de Itaipú, según La Nación. La central binacional indicó además que los caudales afluentes excedieron los registros históricos; en septiembre la diferencia fue del 37% y en lo que va de octubre alcanzó el 40%, conforme al mismo medio.",
+  "En la Argentina, el fenómeno también impacta en el Litoral: Clarín reportó que el Instituto Nacional del Agua (INA) registra alturas del río Uruguay que en varios puntos son preocupantes. En Paso de los Libres la altura se ubicó en 9,26 metros (el punto de evacuación es 8,5 metros), mientras que en Santo Tomé y en Concordia las marcas fueron de 10,52 y 11,5 metros, respectivamente (el nivel de evacuación en esos tramos se menciona en 12,5 metros). Sobre el Paraná, Clarín consignó que en Iguazú las aguas están muy elevadas (24,3 metros) y que río abajo se observan niveles \"medio altos\" que podrían aumentar en las próximas semanas. Productores a la vera de los cauces ya trasladan hacienda hacia terrenos más altos y alertan por campos anegados y accesos complicados; en diálogo con Clarín, el presidente de la Sociedad Rural de Santo Tomé sostuvo: \"Si bien todos los afluentes en el nacimiento del Uruguay están estabilizados, por las lluvias de estos dos días va a haber una crecida mayor... para mañana se estarán evacuando algunos sectores bajos\". A su vez, la Organización Meteorológica Mundial y organismos internacionales alertaron que El Niño podría intensificarse y afectar la seguridad alimentaria, según informó Ámbito."
+ ],
+ "seccion": "Sociedad",
+ "etiquetas": [
+  "El Niño",
+  "crecidas"
+ ],
+ "fecha": "2026-10-13T15:21:29-03:00",
+ "importancia": 9,
+ "fuentes": [
+  {
+   "medio": "Clarín",
+   "titulo": "El Niño comienza a golpear en el Litoral: alarma entre los productores por la crecida de los ríos Uruguay y Paraná",
+   "link": "https://www.clarin.com/rural/nino-comienza-golpear-litoral-alarma-productores-crecida-rios-uruguay-parana_0_e1FASn3CPT.html"
+  },
+  {
+   "medio": "La Nación",
+   "titulo": "Abrieron las compuertas de la represa de Itaipú y Yacyretá y aumenta la preocupación por el río Paraná",
+   "link": "https://www.lanacion.com.ar/sociedad/abrieron-las-compuertas-de-la-represa-de-itaipu-y-yacyreta-y-aumenta-la-preocupacion-por-el-rio-nid13102026/"
+  },
+  {
+   "medio": "Ámbito",
+   "titulo": "El Niño golpea al mundo con incendios, sequías e inundaciones: advierten que podría intensificarse",
+   "link": "https://www.ambito.com/mundo/el-nino-golpea-al-incendios-sequias-e-inundaciones-advierten-que-podria-intensificarse-n6333103"
+  }
+ ],
+ "imagen": {
+  "url": "https://upload.wikimedia.org/wikipedia/commons/4/40/2006.11.19_32_Desborde_Yacyret%C3%A1_Corrientes_Argentina.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "credito": "Hermann Luyken / Wikimedia Commons",
+  "licencia": "CC BY-SA 3.0",
+  "enlace": "https://commons.wikimedia.org/wiki/File:2006.11.19_32_Desborde_Yacyret%C3%A1_Corrientes_Argentina.jpg"
+ }
+}
