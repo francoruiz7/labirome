@@ -1,0 +1,34 @@
+{
+ "slug": "pfizer-anuncio-que-el-suministro-de-lebocar-se-normalizara-entre-noviembre-y-dic",
+ "titulo": "Pfizer anunció que el suministro de Lebocar se normalizará entre noviembre y diciembre",
+ "bajada": "La farmacéutica adelantó plazos respecto del primer pronóstico; Laboratorios Bagó aumentará producción y organizaciones advierten riesgos por la interrupción.",
+ "cuerpo": [
+  "Qué pasó, quién, cuándo y dónde: según informó Clarín, Pfizer comunicó que el abastecimiento de Lebocar (levodopa/carbidopa) se normalizará “a principios de noviembre de 2026” en la presentación de 250 mg y “hacia fines del mes de diciembre de este año” en la de 100 mg. La noticia llega tras semanas de faltantes en farmacias de la ciudad de Buenos Aires y el conurbano, un problema que el Gobierno intentó tratar con reuniones con los laboratorios, de acuerdo con los informes periodísticos.",
+  "Contexto y consecuencias: Clarín consignó que Pfizer abastece cerca del 70% del mercado local y que Laboratorios Bagó, que cubría alrededor del 20%, está incrementando su producción para intentar compensar la discontinuidad; el propio Bagó dijo que trabaja con la autoridad sanitaria (ANMAT) para acompañar la mayor demanda. La Nación había señalado que el laboratorio había estimado inicialmente una normalización recién para marzo de 2027, y que ANMAT confirmó el 17/9 la discontinuidad de LEBOCAR hasta marzo de 2027; en ese punto las fuentes difieren respecto del plazo. Clarín también reportó que Pfizer no detalló la causa concreta de la interrupción, aunque se mencionó la posibilidad de demoras en la cadena de producción; en paralelo, se informó que Bagó no tuvo problemas para importar el principio activo. Organizaciones de pacientes advirtieron sobre el impacto: según Clarín, la Red Argentina de Parkinson dijo que “el Parkinson no puede esperar. La interrupción de levodopa / carbidopa puede provocar un serio deterioro de la movilidad y, en determinadas circunstancias, complicaciones más duras”. En el material consultado se consignó además que en la Argentina se estima que hay más de 90.000 pacientes con Parkinson y que la levodopa es el tratamiento más eficaz para los síntomas motores."
+ ],
+ "seccion": "Sociedad",
+ "etiquetas": [
+  "Parkinson",
+  "medicamentos"
+ ],
+ "fecha": "2026-10-14T21:00:08-03:00",
+ "importancia": 7,
+ "fuentes": [
+  {
+   "medio": "Clarín",
+   "titulo": "Buena noticia para los pacientes con Parkinson: un remedio clave volverá a estar disponible en noviembre",
+   "link": "https://www.clarin.com/sociedad/buena-noticia-pacientes-parkinson-remedio-clave-volvera-disponible-noviembre_0_bEEdeWccTB.html"
+  },
+  {
+   "medio": "La Nación",
+   "titulo": "Anuncian la normalización del suministro de un medicamento para el Parkinson: cuál es la fecha prevista",
+   "link": "https://www.lanacion.com.ar/sociedad/anuncian-la-normalizacion-del-suministro-de-un-medicamento-para-el-parkinson-cual-es-la-fecha-nid14102026/"
+  }
+ ],
+ "imagen": {
+  "url": "https://images.unsplash.com/photo-1762328494465-274a63177884?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDk1MTk0fDB8MXxzZWFyY2h8M3x8cGlsbCUyMGJsaXN0ZXIlMjBwYWNrfGVufDF8MHx8fDE3OTIwMjI0MjB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+  "credito": "Zulfugar Karimov / Unsplash",
+  "licencia": "",
+  "enlace": "https://unsplash.com/photos/hand-holding-blister-packs-of-white-pills-dWUCuIEKjeg"
+ }
+}
