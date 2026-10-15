@@ -1,0 +1,39 @@
+{
+ "slug": "encuestas-previas-al-balotaje-en-brasil-muestran-a-bolsonaro-apenas-arriba-de-lu",
+ "titulo": "Encuestas previas al balotaje en Brasil muestran a Bolsonaro apenas arriba de Lula",
+ "bajada": "Dos sondeos recientes dan una ventaja estrecha al candidato liberal frente al actual presidente; la campaña de Lula denuncia además sesgos en plataformas de Meta.",
+ "cuerpo": [
+  "A menos de dos semanas del balotaje del 25 de octubre, distintas encuestas muestran una diferencia muy estrecha entre Flávio Bolsonaro y Luiz Inácio Lula da Silva. Según informó La Nación, un relevamiento de la encuestadora Quaest encargado por O Globo ubicó a Bolsonaro con 44% frente al 42% de Lula en intención de voto total, con 2.154 entrevistas realizadas entre el 10 y el 13 de octubre y un margen de error de dos puntos. Ese mismo sondeo, citado por La Nación, indica que el voto femenino acompaña mayormente al actual mandatario y el voto masculino al referente liberal; que ambos empatan 44% entre quienes tienen entre 16 y 34 años; y que Lula lidera en el Nordeste mientras Bolsonaro obtiene más adhesiones en Norte, Sur, Sudeste y Centro-Oeste. La desagregación por educación y religión también aparece en ese informe: Lula concentra más apoyo en el sector de escolaridad básica y entre católicos (49% vs. 43%), y Bolsonaro suma mayor respaldo entre quienes tienen estudios medios y superiores y entre evangélicos (60% vs. 28%), datos que La Nación aclara llevan márgenes de error mayores, entre cuatro y cinco puntos.",
+  "No obstante, de acuerdo con Ámbito, otro sondeo que toma el mismo periodo y el mismo margen de error da cifras algo distintas: presenta a Bolsonaro con 46% y a Lula con 44% de intención de voto, y añade que un 9% de electores votaría en blanco o nulo y un 1% permanece indeciso. Ámbito también reportó niveles de aprobación y rechazo alto para ambos: 48% desaprueba la gestión de Lula frente a 45% que la aprueba, y Bolsonaro acumula 54% de rechazo por 53% de Lula, según ese sondeo. En paralelo a la disputa por los votos, la campaña de Lula denunció ante el tribunal electoral que Meta y sus plataformas favorecen a Bolsonaro, una acusación que Perfil replicó citando a The New York Times; la empresa negó un sesgo, atribuyó problemas a errores técnicos y apuntó que no trabaja \"para favorecer o perjudicar candidaturas\". Perfil consignó además reportes de la organización CTRL+Z sobre 1.088 casos de supuesta censura o restricciones en plataformas de Meta y un cruce informado por Folha de São Paulo sobre inconsistencias en Meta AI al generar imágenes de los candidatos."
+ ],
+ "seccion": "Internacional",
+ "etiquetas": [
+  "Brasil",
+  "Elecciones"
+ ],
+ "fecha": "2026-10-15T12:39:31-03:00",
+ "importancia": 7,
+ "fuentes": [
+  {
+   "medio": "La Nación",
+   "titulo": "Elecciones en Brasil con una mala noticia para Lula: las encuestas dan como ganador a Bolsonaro por 44% a 42%",
+   "link": "https://www.lanacion.com.ar/el-mundo/elecciones-en-brasil-con-una-mala-noticia-para-lula-las-encuestas-dan-como-ganador-a-bolsonaro-por-nid15102026/"
+  },
+  {
+   "medio": "Ámbito",
+   "titulo": "Balotaje en Brasil: una nueva encuesta asegura que Flávio Bolsonaro supera a Lula da Silva por un estrecho margen",
+   "link": "https://www.ambito.com/mundo/balotaje-brasil-una-nueva-encuesta-asegura-que-flavio-bolsonaro-supera-lula-da-silva-un-estrecho-margen-n6333999"
+  },
+  {
+   "medio": "Perfil",
+   "titulo": "Elecciones en Brasil: denuncian que Meta censura a los partidarios de Lula y favorece a los de Bolsonaro",
+   "link": "https://www.perfil.com/noticias/internacional/brasil-denuncian-que-meta-censura-a-los-partidarios-de-lula-y-favorece-a-los-de-bolsonaro.phtml"
+  }
+ ],
+ "imagen": {
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e5/Pedro_Guimar%C3%A3es%2C_Jair_Bolsonaro_e_Fl%C3%A1vio_Bolsonaro.jpg/1280px-Pedro_Guimar%C3%A3es%2C_Jair_Bolsonaro_e_Fl%C3%A1vio_Bolsonaro.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "credito": "Isac Nóbrega/PR / Wikimedia Commons",
+  "licencia": "CC BY 2.0",
+  "enlace": "https://commons.wikimedia.org/wiki/File:Pedro_Guimar%C3%A3es,_Jair_Bolsonaro_e_Fl%C3%A1vio_Bolsonaro.jpg"
+ }
+}
