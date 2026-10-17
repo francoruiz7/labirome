@@ -1,0 +1,34 @@
+{
+ "slug": "alerta-amarilla-por-tormentas-y-fuerte-descenso-de-temperatura-el-17-de-octubre",
+ "titulo": "Alerta amarilla por tormentas y fuerte descenso de temperatura el 17 de octubre",
+ "bajada": "El Servicio Meteorológico emitió avisos por tormentas para la cordillera y la provincia de Córdoba; en la Ciudad entra aire frío y las máximas serán bajas, según los informes.",
+ "cuerpo": [
+  "Según los comunicados del Servicio Meteorológico Nacional (SMN) y reportado por La Nación, para este sábado 17 de octubre el organismo dictó alertas de nivel amarillo por tormentas y lluvias en diversas regiones del país. Las zonas cordilleranas de Neuquén, Río Negro, Chubut y la provincia de Santa Cruz podrían registrar precipitaciones de variada intensidad, algunas localmente fuertes, con ráfagas intensas, actividad eléctrica frecuente y ocasional caída de granizo. Además, el SMN advirtió vientos del oeste entre 50 y 70 km/h, con ráfagas que puntualmente podrían superar los 90 km/h. La provincia de Córdoba figura como una de las más afectadas: el organismo prevé lluvias persistentes, acumulación en cortos periodos, posible granizo y riesgo de interrupciones momentáneas en actividades cotidianas. Ante estas condiciones, el SMN recomendó salir solo si es necesario, permanecer en construcciones cerradas, evitar puertas y ventanas, no ingresar en calles anegadas y desconectar electrodomésticos o cortar el suministro eléctrico si el agua ingresa a los locales.",
+  "En la Ciudad de Buenos Aires y el AMBA, el escenario será de marcado descenso térmico por la entrada de una masa de aire frío desde el sur, según Perfil. Para la Capital se estiman mínimas en torno a 8°C durante la mañana y máximas que, según las fuentes, oscilarán entre 14°C (Perfil) y 15°C (La Nación). Perfil añade que la probabilidad de precipitaciones en CABA será baja (por debajo del 10%) y que los vientos del sector sur rondarán los 21 km/h, aportando sensación de fresco. La Nación, por su parte, indicó 0% de probabilidad de lluvia para la jornada porteña. Para el domingo, ambos medios pronostican condiciones frescas y cielo mayormente nublado, aunque difieren en detalles de temperatura; Perfil prevé una mínima cercana a 9°C y una máxima alrededor de 16°C. Todas las precisiones sobre alertas y recomendaciones provienen de los reportes del SMN citados por los medios."
+ ],
+ "seccion": "Sociedad",
+ "etiquetas": [
+  "Clima",
+  "Tormentas"
+ ],
+ "fecha": "2026-10-17T11:17:20-03:00",
+ "importancia": 4,
+ "fuentes": [
+  {
+   "medio": "La Nación",
+   "titulo": "Hay alerta amarilla por tormentas y lluvias para este sábado 17 de octubre: las provincias afectadas",
+   "link": "https://www.lanacion.com.ar/sociedad/hay-alerta-amarilla-por-tormentas-y-lluvias-para-este-sabado-17-de-octubre-las-provincias-afectadas-nid17102026/"
+  },
+  {
+   "medio": "Perfil",
+   "titulo": "Clima en Ciudad de Buenos Aires este 17 de octubre: baja la temperatura y entra aire frío el sábado",
+   "link": "https://www.perfil.com/noticias/clima/clima-en-ciudad-de-a50-jsm-buenos-aires-este-17-de-octubre-baja-la-temperatura-y-entra-aire-frio-el-sabado.phtml"
+  }
+ ],
+ "imagen": {
+  "url": "https://images.unsplash.com/photo-1529482625147-9e202bdf2f9c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDk1MTk0fDB8MXxzZWFyY2h8MXx8c3Rvcm0lMjBjbG91ZHMlMjBtb3VudGFpbnN8ZW58MXwwfHx8MTc5MjI0NjY4N3ww&ixlib=rb-4.1.0&q=80&w=1080",
+  "credito": "Alexandra Mirgheș / Unsplash",
+  "licencia": "",
+  "enlace": "https://unsplash.com/photos/mountain-covered-with-cloudy-at-daytime-CO-rNFAVsRU"
+ }
+}
