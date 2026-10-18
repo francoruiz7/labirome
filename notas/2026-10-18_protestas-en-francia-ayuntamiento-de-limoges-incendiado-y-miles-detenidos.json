@@ -1,0 +1,44 @@
+{
+ "slug": "protestas-en-francia-ayuntamiento-de-limoges-incendiado-y-miles-detenidos",
+ "titulo": "Protestas en Francia: ayuntamiento de Limoges incendiado y miles detenidos",
+ "bajada": "Manifestaciones contra el costo de vida derivaron en incendios, comercios saqueados y enfrentamientos; las fuentes difieren sobre la cifra de detenidos.",
+ "cuerpo": [
+  "Una jornada masiva de protestas contra el encarecimiento de la vida y el aumento del precio del combustible derivó en disturbios en distintas ciudades de Francia, con daños materiales, saqueos y choques con la policía. Según La Nación, el ayuntamiento de Limoges, un edificio municipal de 143 años, quedó “prácticamente destruido” tras un incendio que provocó el derrumbe de su cúpula y daños extensos; testigos describieron a manifestantes enmascarados que prendieron fuego al lugar y saquearon locales cercanos. Infobae consignó que las protestas dejaron comercios destrozados y calles arrasadas, con la Federación de Comercio y Distribución reportando daños en 1.500 locales y pérdidas millonarias. Ese medio añadió que más de 500 policías resultaron heridos en los enfrentamientos.",
+  "Las cifras de detenciones varían según la fuente: Clarín y Infobae informaron 1.800 personas detenidas, mientras que La Nación consignó 850 detenciones en relación con los disturbios, por lo que las fuentes se contradicen sobre ese dato. El presidente Emmanuel Macron escribió en X que “Ningún lugar para la violencia en nuestra República” y prometió perseguir a quienes atacaron instituciones, según publicó La Nación. Las reacciones internacionales incluyeron declaraciones del expresidente estadounidense Donald Trump, quien en su plataforma Truth Social dijo: \"¡Francia está en llamas! La inmigración... ha destrozado ese país\", y críticas similares del vicepresidente estadounidense JD Vance, citadas por Clarín y Ámbito. Los incidentes ocurren a seis meses de las elecciones presidenciales en Francia, un contexto que citaron Clarín y La Nación para subrayar la tensión política que atraviesa el país."
+ ],
+ "seccion": "Internacional",
+ "etiquetas": [
+  "Francia",
+  "Protestas"
+ ],
+ "fecha": "2026-10-18T11:36:25-03:00",
+ "importancia": 8,
+ "fuentes": [
+  {
+   "medio": "Clarín",
+   "titulo": "Trump dice que Francia \"está en llamas\" y \"destrozado\" por la inmigración",
+   "link": "https://www.clarin.com/estados-unidos/trump-dice-que-francia-esta-en-llamas-y-destrozado-por-la-inmigracion_0_pkzDjcQIUF.html"
+  },
+  {
+   "medio": "Ámbito",
+   "titulo": "\"Francia se está quemando\": Donald Trump apuntó contra los inmigrantes por los disturbios y pidió cerrar las fronteras",
+   "link": "https://www.ambito.com/mundo/francia-se-esta-quemando-donald-trump-apunto-contra-los-inmigrantes-los-disturbios-y-pidio-cerrar-las-fronteras-n6335022"
+  },
+  {
+   "medio": "La Nación",
+   "titulo": "El impactante incendio de un edificio municipal de 143 años en las protestas en Francia",
+   "link": "https://www.lanacion.com.ar/el-mundo/el-impactante-incendio-de-una-alcaidia-en-las-protestas-en-francia-nid17102026/"
+  },
+  {
+   "medio": "Infobae",
+   "titulo": "Francia amaneció con comercios destrozados y calles arrasadas: 35 fotos de los daños causados durante las protestas",
+   "link": "https://www.infobae.com/fotos/2026/10/18/francia-amanecio-con-comercios-destrozados-y-calles-arrasadas-35-fotos-de-los-danos-causados-durante-las-protestas/"
+  }
+ ],
+ "imagen": {
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f2/Centre-ville_et_champ_de_Juillet.JPG/1280px-Centre-ville_et_champ_de_Juillet.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "credito": "Babsy / Wikimedia Commons",
+  "licencia": "CC BY-SA 3.0",
+  "enlace": "https://commons.wikimedia.org/wiki/File:Centre-ville_et_champ_de_Juillet.JPG"
+ }
+}
