@@ -1,0 +1,42 @@
+{
+ "slug": "los-servicios-frenan-la-baja-de-la-inflacion-pese-a-la-economia-debil-y-el-dolar",
+ "titulo": "Los servicios frenan la baja de la inflación pese a la economía débil y el dólar estable",
+ "bajada": "Entre enero y septiembre los servicios subieron 30,2% y las tarifas aumentaron fuertemente desde la llegada del gobierno, según informes citados por La Nación y consultoras.",
+ "cuerpo": [
+  "En Argentina, el retraso y la recomposición de precios en los servicios se volvieron un obstáculo para una baja rápida de la inflación, según informó La Nación a partir de datos oficiales y análisis de consultoras. Los datos de septiembre del Indec muestran que el IPC mensual fue 1,9% mientras que los servicios aumentaron 2,4%.",
+  "Las diferencias son notables en lo acumulado del año: entre enero y septiembre los servicios registraron un alza del 30,2%, casi diez puntos porcentuales por encima de los bienes, que acumularon 20,4% en el mismo período, según destacó Invecq sobre datos del Indec y según informó La Nación. Además, Econviews indicó que entre noviembre de 2023 y septiembre de 2026 las tarifas de energía subieron 126,2% y el transporte público 104,1% en términos nominales respecto del IPC.",
+  "Las consultoras consultadas atribuyen la resistencia a dos vasos comunicantes: por un lado, la corrección de tarifas para reducir subsidios o cubrir costos; por otro, la inercia contractual de servicios que se actualizan por contratos, salarios o inflación pasada. Invecq, citado por La Nación, detalló que la cobertura promedio de costos de servicios residenciales del AMBA está en 54% según el IIEP, y en transporte en 35%. El contexto internacional también presionó: Economía y Energía señaló un aumento del 29,8% interanual en el costo de generación eléctrica en el último invierno, informó La Nación.",
+  "En el frente financiero, Ámbito señaló que el riesgo país escaló hasta 648 puntos básicos la última semana, mientras que el dólar minorista cerró en $1.535 en el Banco Nación, con una variación de 3,7% en 2026. Ese contraste refleja, según Ámbito, que el mercado duda sobre la financiación y las reservas futuras aun con estabilidad cambiaria en el corto plazo.",
+  "Un centro internacional también proyecta una desaceleración más lenta. El Cronista informó que Oxford Economics prevé un promedio mensual de inflación del 2,1% para los próximos seis meses (frente al 1,7% del consenso), y espera 31% para 2026 y 24% para 2027. Oxford atribuye parte del riesgo a la reanudación de recortes de subsidios energéticos hacia 2027 y a la demora en que las bajas internacionales del petróleo se trasladen a precios locales, además de la incertidumbre por El Niño."
+ ],
+ "seccion": "Política",
+ "etiquetas": [
+  "Inflación",
+  "Servicios"
+ ],
+ "fecha": "2026-10-18T20:14:52-03:00",
+ "importancia": 8,
+ "fuentes": [
+  {
+   "medio": "La Nación",
+   "titulo": "Advierten que los servicios impiden que baje la inflación, aun con una economía debilitada y el dólar planchado",
+   "link": "https://www.lanacion.com.ar/economia/advierten-que-los-servicios-impiden-que-baje-la-inflacion-aun-con-una-economia-debilitada-y-el-dolar-nid18102026/"
+  },
+  {
+   "medio": "Ámbito",
+   "titulo": "Riesgo país arriba de los 600 puntos: qué puede pasar con los bonos y el dólar esta semana",
+   "link": "https://www.ambito.com/finanzas/riesgo-pais-arriba-los-600-puntos-que-puede-pasar-los-bonos-y-el-dolar-esta-semana-n6335015"
+  },
+  {
+   "medio": "El Cronista",
+   "titulo": "Inflación: un influyente centro internacional prevé una baja más lenta que el consenso y señala dos factores clave",
+   "link": "https://www.cronista.com/economia-politica/inflacion-un-influyente-centro-internacional-preve-una-baja-mas-lenta-que-el-consenso-y-senala-dos-factores-clave/"
+  }
+ ],
+ "imagen": {
+  "url": "https://images.unsplash.com/photo-1625980344922-a4df108b2bd0?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDk1MTk0fDB8MXxzZWFyY2h8MXx8dXRpbGl0eSUyMGJpbGxzJTIwY2xvc2V1cHxlbnwxfDB8fHwxNzkyMzY1MzEzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+  "credito": "Chanhee Lee / Unsplash",
+  "licencia": "",
+  "enlace": "https://unsplash.com/photos/person-holding-white-printer-paper-vkvHBK8n_gs"
+ }
+}
