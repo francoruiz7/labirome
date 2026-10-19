@@ -1,0 +1,40 @@
+{
+ "slug": "alerta-por-crecidas-abrieron-compuertas-de-itaipu-y-el-super-nino-eleva-riesgos",
+ "titulo": "Alerta por crecidas: abrieron compuertas de Itaipú y el 'Súper Niño' eleva riesgos",
+ "bajada": "La represa de Itaipú comenzó a liberar agua el 13 de septiembre y podría mantener las descargas hasta febrero; el fenómeno denominado 'Súper Niño' aumentará lluvias y tormentas, por lo que hay protocolos y recomendaciones vigentes, según TN y La Nación.",
+ "cuerpo": [
+  "La binacional Itaipú abrió sus compuertas el 13 de septiembre ante un aumento del caudal afluente y proyecta mantener el vertedero en funcionamiento, de forma continua o intermitente, al menos hasta febrero, según informó TN. Desde la central explicaron que la apertura de las canaletas se hace de manera progresiva: la izquierda permite descargar hasta 10.600 metros cúbicos por segundo y, si el caudal sigue subiendo, se habilita la canaleta central para llegar, en conjunto, a alrededor de 30.000 metros cúbicos por segundo. Rodrigo García, gerente de Operaciones de Itaipú del lado paraguayo, señaló que el volumen actual no se veía desde 2015-2016 y que el agua liberada tarda aproximadamente 24 horas en llegar a la represa de Yacyretá, por lo que las descargas se monitorean en función de la evolución hidrológica.",
+  "El aumento del caudal se vincula con el fenómeno climático denominado 'Súper Niño', cuyo avance se detectó a comienzos de agosto y, según informó La Nación, continuará al menos hasta marzo de 2027, manteniendo la amenaza de lluvias abundantes, olas de calor y tormentas severas. Ese mismo medio describió medidas preventivas del Parque Nacional Iguazú: la Garganta del Diablo fue cerrada preventivamente desde el 3 de agosto y sus pasarelas y barandas fueron retiradas y puestas a resguardo. La Agencia Federal de Emergencias difundió protocolos básicos como limpiar desagües, revisar techos y canaletas, no circular por calles anegadas y cortar el suministro eléctrico si el agua ingresa a las viviendas, según La Nación. Además, la Secretaría de Agricultura recomendó a los productores anticiparse y planificar el manejo del forraje y del rodeo: “Anticiparse, prever y planificar puede ser la mejor estrategia para enfrentar la emerge”, citó La Nación. Por su parte, Clarín consignó que distintas agencias internacionales discrepan sobre si el episodio es récord, aunque coincidieron en que se trata de un El Niño muy intenso, y reportó además impactos ya registrados en la región, como los datos oficiales de Ecuador sobre fallecidos y afectados por las lluvias."
+ ],
+ "seccion": "Sociedad",
+ "etiquetas": [
+  "El Niño",
+  "Itaipú",
+  "inundaciones"
+ ],
+ "fecha": "2026-10-19T14:34:02-03:00",
+ "importancia": 8,
+ "fuentes": [
+  {
+   "medio": "La Nación",
+   "titulo": "Súper Niño: qué se sabe sobre los efectos que tendrá el fenómeno en la Argentina y cuándo impactará con más fuerza",
+   "link": "https://www.lanacion.com.ar/sociedad/super-nino-que-se-sabe-sobre-los-efectos-que-tendra-el-fenomeno-en-la-argentina-y-cuando-impactara-nid19102026/"
+  },
+  {
+   "medio": "Clarín",
+   "titulo": "Súper Niño 2026 en Argentina, EN VIVO: qué ciudades están en riesgo de inundación y cuándo llega el pico de la crecida",
+   "link": "https://www.clarin.com/sociedad/super-nino-2026-argentina-vivo-llegara-pico-fuertes-lluvias-cambiara-clima-pais_0_YXf54Qp9KX.html"
+  },
+  {
+   "medio": "TN",
+   "titulo": "Alerta por la crecida de los ríos: el Niño incrementó el caudal esperado para octubre y abrieron las compuertas de Itaipú",
+   "link": "https://tn.com.ar/sociedad/2026/10/19/alerta-por-la-crecida-de-los-rios-el-nino-incremento-el-caudal-esperado-para-octubre-y-abrieron-las-compuertas-de-itaipu/"
+  }
+ ],
+ "imagen": {
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/Itaipu_Binacional_%2849006543267%29.jpg/1280px-Itaipu_Binacional_%2849006543267%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "credito": "Tedd Santana from Vitória, Brasil / Wikimedia Commons",
+  "licencia": "CC BY-SA 2.0",
+  "enlace": "https://commons.wikimedia.org/wiki/File:Itaipu_Binacional_(49006543267).jpg"
+ }
+}
