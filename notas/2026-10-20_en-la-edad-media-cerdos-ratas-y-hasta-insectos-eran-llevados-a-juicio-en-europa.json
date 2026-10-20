@@ -1,0 +1,39 @@
+{
+ "slug": "en-la-edad-media-cerdos-ratas-y-hasta-insectos-eran-llevados-a-juicio-en-europa",
+ "titulo": "En la Edad Media, cerdos, ratas y hasta insectos eran llevados a juicio en Europa",
+ "bajada": "Entre los siglos XIII y XVIII hubo procesos formales contra animales —principalmente cerdos— que incluyeron procuradores, testigos y sentencias que iban desde la excomunión hasta la ejecución, según fuentes históricas.",
+ "cuerpo": [
+  "En Europa, desde el siglo XIII hasta el XVIII se documentaron juicios penales en los que los acusados eran animales, con procedimientos semejantes a los aplicados a personas. Según informó Wikipedia, los casos más numerosos están registrados en Francia, aunque también hubo procesos en Italia, Portugal, España, Inglaterra, el Sacro Imperio Romano Germánico, los Países Bajos y Suiza. Los animales implicados abarcaron desde grandes cuadrúpedos —cerdos, vacas, toros— hasta roedores e insectos asociados a plagas.",
+  "Las causas apuntadas por las fuentes muestran por qué los cerdos fueron los protagonistas en la mayoría de los procesos: Wikipedia señala que eran el ganado más abundante y solían deambular por pueblos y aldeas, lo que los convertía en los animales «más aptos para cometer delitos» como hurtos, homicidios o daños a menores. De acuerdo con El Espectador, los grandes animales solían ser juzgados por homicidio y, a menudo, ejecutados; en cambio, las plagas —ratas y algunos insectos— eran castigadas incluso con la excomunión. Los procedimientos replicaban formalidades humanas: un procurador presentaba la acusación, se tomaban testimonios y el juez dictaba sentencia, según explicó el medio. El tema fue registrado desde principios del siglo XX por el académico Edward Evans, que reunió casos en su libro de 1906, y recibió críticas contemporáneas: el jurista Philippe de Rémi escribió que, al no poseer los animales facultad de discernimiento, estos procesos eran una “justicia perdida”, según El Espectador. Wikipedia agrega que el fenómeno se intensificó en paralelo a otras persecuciones de la época —como las contra herejes y supuestas brujas— y que las estimaciones del número total de animales juzgados varían entre unas centenas y varios miles. Como concluye la misma fuente, en la modernidad la mayoría de los sistemas judiciales dejaron de considerar a los animales responsables moralmente de actos penales."
+ ],
+ "seccion": "Bizarras",
+ "etiquetas": [
+  "Edad Media",
+  "Historia"
+ ],
+ "fecha": "2026-10-20T17:03:11-03:00",
+ "importancia": 4,
+ "fuentes": [
+  {
+   "medio": "es.wikipedia.org",
+   "titulo": "Juicios a animales - Wikipedia, la enciclopedia libre",
+   "link": "https://es.wikipedia.org/wiki/Juicios_a_animales"
+  },
+  {
+   "medio": "revistas.usal.es",
+   "titulo": "Animales y hombres: un estudio a través de las Partidas (s. XIII) - Studia Historica, Universidad de Sevilla",
+   "link": "https://revistas.usal.es/uno/index.php/Studia_H_Historia_Medieval/article/view/31731"
+  },
+  {
+   "medio": "elespectador.com",
+   "titulo": "Así eran los juicios contra los animales en la Edad Media - El Espectador",
+   "link": "https://www.elespectador.com/la-red-zoocial/asi-eran-los-juicios-contra-los-animales-en-la-edad-media-noticias-hoy/"
+  }
+ ],
+ "imagen": {
+  "url": "https://images.unsplash.com/photo-1602853736377-8e8744036346?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDk1MTk0fDB8MXxzZWFyY2h8NHx8bWVkaWV2YWwlMjBwaWclMjB0cmlhbHxlbnwxfDB8fHwxNzkyNTI2NjIyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+  "credito": "Bob van Aubel / Unsplash",
+  "licencia": "",
+  "enlace": "https://unsplash.com/photos/pink-pig-on-green-grass-field-during-daytime-KbgJbt2kIbk"
+ }
+}
