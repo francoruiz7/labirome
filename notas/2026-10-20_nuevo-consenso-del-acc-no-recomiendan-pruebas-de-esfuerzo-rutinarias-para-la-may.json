@@ -1,0 +1,34 @@
+{
+ "slug": "nuevo-consenso-del-acc-no-recomiendan-pruebas-de-esfuerzo-rutinarias-para-la-may",
+ "titulo": "Nuevo consenso del ACC: no recomiendan pruebas de esfuerzo rutinarias para la mayoría",
+ "bajada": "La declaración del Colegio Americano de Cardiología, publicada en JACC, sostiene que las ergometrías de rutina no son necesarias en personas asintomáticas; en la Ciudad de Buenos Aires todavía rige la exigencia de un certificado con ECG anual, según informó Clarín.",
+ "cuerpo": [
+  "El Colegio Americano de Cardiología (ACC) publicó una declaración científica que plantea que la gran mayoría de las personas asintomáticas o clínicamente estables no necesita una prueba de esfuerzo rutinaria antes de iniciar actividad física de intensidad suave o moderada, según informó Infobae. El artículo, difundido en Journal of the American College of Cardiology (JACC) y replicado por Clarín, sostiene que en la población general la probabilidad real de sufrir un evento cardíaco grave mientras se ejercita es muy baja, que las pruebas de esfuerzo producen numerosos falsos positivos y que su valor predictivo para infarto o muerte súbita en personas asintomáticas es limitado. Al mismo tiempo, el texto señala que estas pruebas pueden desalentar el inicio de la actividad física. La guía admite, sin embargo, que la ergometría puede ser útil cuando existe una pregunta clínica concreta: valorar la capacidad funcional, identificar arritmias provocadas por el esfuerzo, monitorizar la respuesta de la presión arterial o establecer la intensidad inicial del entrenamiento; y recomienda considerarla en personas con enfermedad coronaria crónica o insuficiencia cardíaca si hay síntomas, deterioro clínico reciente o planes de actividad intensa, según informó Infobae.",
+  "El cambio propuesto por el ACC contrapone prácticas vigentes en Argentina. Clarín recordó que en la Ciudad de Buenos Aires una modificación de la ley 139 exige que quienes asisten a gimnasios presenten un certificado de aptitud física con resultados electrocardiográficos anuales. Sergio Baratta, presidente de la Sociedad Argentina de Cardiología, dijo a Clarín que el tema debe analizarse y destacó la ausencia de una rectoría estatal que defina pautas para cada grupo poblacional; sostuvo además que exigir estudios a todo el mundo no es costo efectivo y señaló la discusión sobre quién debe financiar esos estudios. Infobae consultó a cardiólogos locales: Juan Pablo Costabel planteó que los estudios deben usarse selectivamente y que no hay que demorar actividades suaves como caminatas, mientras que Gabriel Lapman calificó la postura del ACC como un cambio de paradigma y diferenció los controles preventivos de la exigencia de ergometrías periódicas para ir al gimnasio. En ambos casos, las fuentes coinciden en que la evaluación previa puede comenzar por una buena consulta clínica y no siempre por estudios complejos."
+ ],
+ "seccion": "Sociedad",
+ "etiquetas": [
+  "salud",
+  "ejercicio"
+ ],
+ "fecha": "2026-10-20T12:43:11-03:00",
+ "importancia": 5,
+ "fuentes": [
+  {
+   "medio": "Clarín",
+   "titulo": "Un nuevo consenso médico indica un cambio en el apto físico para la mayoría de la gente que hace ejercicio",
+   "link": "https://www.clarin.com/sociedad/nuevo-consenso-medico-indica-cambio-apto-fisico-mayoria-gente-hace-ejercicio_0_MHIBIyOa3j.html"
+  },
+  {
+   "medio": "Infobae",
+   "titulo": "Pruebas de esfuerzo antes de empezar a entrenar: qué dice la nueva declaración del Colegio Americano de Cardiología",
+   "link": "https://www.infobae.com/salud/2026/10/20/pruebas-de-esfuerzo-antes-de-empezar-a-entrenar-que-dice-la-nueva-declaracion-del-colegio-americano-de-cardiologia/"
+  }
+ ],
+ "imagen": {
+  "url": "https://images.unsplash.com/photo-1638183395699-2c0db5b6afbb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDk1MTk0fDB8MXxzZWFyY2h8MXx8dHJlYWRtaWxsJTIwc3RyZXNzJTIwdGVzdHxlbnwxfDB8fHwxNzkyNTExMDMyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+  "credito": "Intenza Fitness / Unsplash",
+  "licencia": "",
+  "enlace": "https://unsplash.com/photos/a-woman-is-running-on-a-treadmill-X3huptykYH0"
+ }
+}

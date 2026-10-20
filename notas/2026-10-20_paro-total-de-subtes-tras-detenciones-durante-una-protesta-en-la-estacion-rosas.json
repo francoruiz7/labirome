@@ -1,0 +1,45 @@
+{
+ "slug": "paro-total-de-subtes-tras-detenciones-durante-una-protesta-en-la-estacion-rosas",
+ "titulo": "Paro total de subtes tras detenciones durante una protesta en la estación Rosas",
+ "bajada": "La medida, que dejó sin servicio a las seis líneas y al Premetro, fue lanzada por metrodelegados tras la intervención policial y la orden fiscal de detención; el Gobierno porteño exigió servicios mínimos.",
+ "cuerpo": [
+  "Esta mañana se interrumpió el servicio en todas las líneas de subte (A, B, C, D, E, H) y en el Premetro tras una medida de fuerza de la Asociación Gremial de Trabajadores del Subte y Premetro (AGTSyP), según informó La Nación, Infobae y Ámbito. El paro comenzó cerca de las 10 y, según el gremio, se extenderá hasta que se liberen a los delegados detenidos durante un operativo en la estación Juan Manuel de Rosas, en Villa Urquiza.",
+  "El conflicto se desencadenó cuando un trabajador abrió molinetes como forma de protesta por una sanción laboral y por la denuncia de la presencia de empresas tercerizadas realizando tareas que, según el sindicato, corresponden al personal de mantenimiento, según informó La Nación y Clarín. En la intervención policial la Unidad Fiscal Norte, a cargo de la fiscal Natalia Pla, ordenó la detención de gremialistas por afectar el servicio declarado de importancia trascendental, según La Nación e Infobae. Fuentes policiales consultadas por Infobae detallaron que la Policía de la Ciudad actuó en la estación y que hubo forcejeos durante los arrestos.",
+  "Desde el Gobierno porteño hubo reclamos a los organizadores de la protesta y el jefe de Gobierno, Jorge Macri, dijo desde Madrid: \"El que bloquea un servicio esencial va preso\", según publicó Clarín e Infobae. Además, la Secretaría de Trabajo y Empleo de la Ciudad dictó la Resolución 1201/SECTE/26 para intimar a garantizar servicios mínimos y dispuso la obligación de cubrir al menos el 50% del servicio en cada línea y en el Premetro, según informó Infobae. El gremio, por su parte, responsabilizó a la empresa concesionaria y afirmó que la paralización responde a la detención de delegados y a la falta de diálogo, según La Nación y Ámbito."
+ ],
+ "seccion": "Policiales",
+ "etiquetas": [
+  "Subte",
+  "Metrodelegados"
+ ],
+ "fecha": "2026-10-20T12:44:22-03:00",
+ "importancia": 9,
+ "fuentes": [
+  {
+   "medio": "Clarín",
+   "titulo": "\"El que bloquea un servicio esencial va preso\": la advertencia de Jorge Macri tras las detenciones de metrodelegados por el paro de subtes",
+   "link": "https://www.clarin.com/ciudades/bloquea-servicio-esencial-va-preso-advertencia-jorge-macri-detenciones-metrodelegados-paro-subtes_0_FSJLI5NNDQ.html"
+  },
+  {
+   "medio": "La Nación",
+   "titulo": "Paro de subtes en las seis líneas: qué se sabe de la medida de fuerza y hasta cuándo dura",
+   "link": "https://www.lanacion.com.ar/sociedad/paro-de-subtes-en-las-seis-lineas-que-se-sabe-de-la-medida-de-fuerza-y-hasta-cuando-dura-nid20102026/"
+  },
+  {
+   "medio": "Infobae",
+   "titulo": "Sorpresivo paro total en el subte: detuvieron a los delegados Segovia y Dellecarbonara y escala el conflicto",
+   "link": "https://www.infobae.com/sociedad/2026/10/20/sorpresivo-paro-total-en-las-seis-lineas-del-subte-y-en-el-premetro/"
+  },
+  {
+   "medio": "Ámbito",
+   "titulo": "Paro total de subtes: Metrodelegados llevan adelante una sorpresiva medida de fuerza en todas las líneas",
+   "link": "https://www.ambito.com/sorpresivo-paro-total-subtes-metrodelegados-llevan-adelante-una-medida-fuerzas-todas-las-lineas-n6335705"
+  }
+ ],
+ "imagen": {
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3d/Juan_Manuel_de_Rosas%2C_Est._de_Subte.JPG/1280px-Juan_Manuel_de_Rosas%2C_Est._de_Subte.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "credito": "Geogast / Wikimedia Commons",
+  "licencia": "CC BY 3.0",
+  "enlace": "https://commons.wikimedia.org/wiki/File:Juan_Manuel_de_Rosas,_Est._de_Subte.JPG"
+ }
+}
