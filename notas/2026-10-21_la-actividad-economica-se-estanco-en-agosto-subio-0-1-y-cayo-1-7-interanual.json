@@ -1,0 +1,44 @@
+{
+ "slug": "la-actividad-economica-se-estanco-en-agosto-subio-0-1-y-cayo-1-7-interanual",
+ "titulo": "La actividad económica se estancó en agosto: subió 0,1% y cayó 1,7% interanual",
+ "bajada": "El EMAE del INDEC mostró una mejora mensual marginal tras la fuerte baja de julio; consultoras advierten que el tercer trimestre podría cerrar en rojo.",
+ "cuerpo": [
+  "El Instituto Nacional de Estadística y Censos (INDEC) publicó este miércoles el Estimador Mensual de Actividad Económica (EMAE) de agosto, que registró una suba desestacionalizada de 0,1% respecto de julio y una caída interanual de 1,7%, según informó el organismo y lo consignaron medios como TN, El Cronista y Perfil. El dato mensual apenas compensó la fuerte baja de julio (2,9% según Ámbito; TN consignó una corrección a 2,8%), por lo que diversas consultoras y analistas anticipan que el tercer trimestre cerrará con saldo negativo y que la economía podría entrar en recesión técnica. En ese sentido, el economista Gonzalo Carrera, de la consultora Equilibra, advirtió que “para evitar la recesión la economía debe crecer más de 8,5% mensual en septiembre”, y consideró improbable una recuperación de esa magnitud, según publicó Ámbito. Por su parte, el ministro de Economía, Luis Caputo, destacó en su cuenta de X que “el indicador tendencia-ciclo se ubicó 6,6% por encima del nivel de diciembre de 2023”, según consignó El Cronista y reprodujeron otros medios.",
+  "En el desagregado por sectores, sólo cinco de los 15 rubros del EMAE mostraron mejoras interanuales en agosto. Según TN y Perfil, Explotación de minas y canteras creció 11,1% (El Cronista consignó 11,5%), mientras que Electricidad, gas y agua aumentó 4,3% y Hoteles y restaurantes 3,1%, aportando en conjunto 0,6 puntos porcentuales al índice, informó el INDEC y lo replicaron los medios. En cambio diez actividades retrocedieron: Pesca cayó 15,7%, Industria manufacturera 3,2% e Comercio mayorista, minorista y reparaciones 3,5%, los dos últimos con la mayor incidencia negativa, según El Cronista y TN. Analistas privados esperaban un rebote mayor —entre 1% y 1,5% mensual, según referencias recogidas por TN y El Cronista—, pero la recuperación fue menor a lo esperado. Desde el CEPEC señalaron que “la actividad económica cayó 1,7% interanual en agosto, un resultado mucho peor de lo esperado” y advirtieron que la falta de dinamismo complica las estimaciones de crecimiento para 2026, según publicó Perfil."
+ ],
+ "seccion": "Política",
+ "etiquetas": [
+  "EMAE",
+  "actividad económica"
+ ],
+ "fecha": "2026-10-21T17:13:04-03:00",
+ "importancia": 8,
+ "fuentes": [
+  {
+   "medio": "Ámbito",
+   "titulo": "Camino a la recesión: la economía se mantuvo estancada en agosto y no logró recuperar casi nada del derrumbe de julio",
+   "link": "https://www.ambito.com/economia/camino-la-recesion-la-se-mantuvo-estancada-agosto-y-no-logro-recuperar-casi-nada-del-derrumbe-julio-n6336445"
+  },
+  {
+   "medio": "El Cronista",
+   "titulo": "La economía cayó 1,7% interanual en agosto y subió apenas 0,1% frente al mes previo",
+   "link": "https://www.cronista.com/economia-politica/actividad-economica-el-indec-publica-el-dato-clave-de-agosto-que-anticipan-las-consultoras/"
+  },
+  {
+   "medio": "TN",
+   "titulo": "La actividad económica se estancó en agosto y cayó 1,7% en la comparación con el año pasado",
+   "link": "https://tn.com.ar/economia/2026/10/21/la-actividad-economica-se-estanco-en-agosto-y-cayo-17-en-la-comparacion-con-el-ano-pasado/"
+  },
+  {
+   "medio": "Perfil",
+   "titulo": "Tras la fuerte caída de julio, la actividad económica tuvo una pequeña suba del 0,1% en agosto, según el INDEC",
+   "link": "https://www.perfil.com/noticias/economia/tras-la-fuerte-caida-en-julio-la-actividad-economica-tuvo-un-leve-rebote-del-01-en-agosto-segun-el-indec-a40.phtml"
+  }
+ ],
+ "imagen": {
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6f/INDEC_edificio_1.jpg/1280px-INDEC_edificio_1.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "credito": "Roberto Fiadone / Wikimedia Commons",
+  "licencia": "CC BY-SA 3.0",
+  "enlace": "https://commons.wikimedia.org/wiki/File:INDEC_edificio_1.jpg"
+ }
+}
