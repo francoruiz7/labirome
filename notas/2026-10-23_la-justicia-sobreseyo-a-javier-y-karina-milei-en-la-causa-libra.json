@@ -1,0 +1,44 @@
+{
+ "slug": "la-justicia-sobreseyo-a-javier-y-karina-milei-en-la-causa-libra",
+ "titulo": "La Justicia sobreseyó a Javier y Karina Milei en la causa $LIBRA",
+ "bajada": "El juez Marcelo Martínez de Giorgi aceptó el pedido del fiscal Eduardo Taiano y consideró que no se acreditó una estafa ni otros delitos penales en el lanzamiento del token, según consta en la resolución.",
+ "cuerpo": [
+  "El Juzgado Criminal y Correccional Federal N.º 8, a cargo del juez Marcelo Martínez de Giorgi, resolvió el sobreseimiento de Javier Milei, presidente, y de Karina Milei, secretaria general de la Presidencia, junto a otros imputados en la investigación por el lanzamiento y posterior desplome de la criptomoneda $LIBRA, según informó La Nación y confirmaron Ámbito y Perfil. La decisión fue tomada tras aceptar el pedido de sobreseimiento formulado por el fiscal Eduardo Taiano y se basó en lo dispuesto por el artículo 336, inciso 3º, del Código Procesal Penal de la Nación, que permite archivar cuando el hecho investigado no encuadra en una figura penal. Fuentes judiciales citadas por los medios señalaron que la resolución ocupa 60 páginas y que muchos de los acusados no habían sido citados a indagatoria.",
+  "En los fundamentos, consignados por los distintos medios, el juez concluyó que no se probó un engaño penalmente relevante ni se acreditó la maniobra defraudatoria que planteaban las denuncias: la promoción pública del token, la subida de su cotización y la posterior caída no bastaron para configurar una estafa. La resolución, según La Nación y El Cronista, admite que unas pocas billeteras retiraron alrededor de US$100 millones y que más de 40.000 compradores sufrieron pérdidas tras un tuit presidencial del 14 de febrero de 2025, pero entiende que esa disparidad económica no prueba por sí sola un ardid defraudatorio. El fallo incorporó los informes remitidos por la Secretaría Legal y Técnica, la Secretaría General de la Presidencia y la Oficina Anticorrupción, que evaluaron el posteo como un acto individual o privado sin uso de recursos públicos, según consignaron los medios. Las fuentes remarcan que la resolución puede ser recurrida y que su alcance se limita a las actuaciones examinadas por ese juzgado."
+ ],
+ "seccion": "Política",
+ "etiquetas": [
+  "Milei",
+  "$LIBRA"
+ ],
+ "fecha": "2026-10-23T17:00:19-03:00",
+ "importancia": 8,
+ "fuentes": [
+  {
+   "medio": "La Nación",
+   "titulo": "La Justicia sobreseyó al Presidente y a Karina Milei en el caso $LIBRA",
+   "link": "https://www.lanacion.com.ar/politica/el-gobierno-le-contesto-al-fiscal-del-caso-libra-que-no-tenia-registro-del-presunto-acuerdo-nid20032026/"
+  },
+  {
+   "medio": "Ámbito",
+   "titulo": "Caso $LIBRA: sobreseyeron a Javier y Karina Milei y la justicia sostuvo que no se probó una estafa",
+   "link": "https://www.ambito.com/politica/caso-libra-la-justicia-sobreseyo-javier-milei-mauricio-novelli-y-todos-los-imputados-n6337343"
+  },
+  {
+   "medio": "Perfil",
+   "titulo": "Causa $LIBRA: sobreseyeron a Javier y Karina Milei",
+   "link": "https://www.perfil.com/noticias/politica/causa-libra-sobreseyeron-javier-karina-milei.phtml"
+  },
+  {
+   "medio": "El Cronista",
+   "titulo": "Causa Libra: la Justicia sobreseyó a Javier Milei y a su hermana Karina",
+   "link": "https://www.cronista.com/economia-politica/causa-libra-la-justicia-sobreseyo-a-javier-milei-y-a-su-hermana-karina/"
+  }
+ ],
+ "imagen": {
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/80/Javier_Milei_VIVA_24_%285%29.jpg/1280px-Javier_Milei_VIVA_24_%285%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "credito": "Vox España / Wikimedia Commons",
+  "licencia": "CC0",
+  "enlace": "https://commons.wikimedia.org/wiki/File:Javier_Milei_VIVA_24_(5).jpg"
+ }
+}
