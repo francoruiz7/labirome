@@ -1,0 +1,38 @@
+{
+ "slug": "amba-semana-con-nubes-ascenso-termico-y-baja-probabilidad-de-lluvias",
+ "titulo": "AMBA: semana con nubes, ascenso térmico y baja probabilidad de lluvias",
+ "bajada": "El Servicio Meteorológico Nacional y pronósticos privados anticipan jornadas mayormente nubladas, temperaturas en alza y sólo chances reducidas de precipitaciones, aunque hay discrepancias entre informes sobre las marcas exactas.",
+ "cuerpo": [
+  "El Área Metropolitana de Buenos Aires (AMBA) tendrá una semana con cielo mayormente nublado y temperaturas que en general tenderán a subir, según difundió el Servicio Meteorológico Nacional (SMN) y fue replicado por medios locales.",
+  "El SMN pronosticó jornadas con poca probabilidad de lluvia —hasta un 10% en las tardes y noches— y vientos dominantes del sector sur y sudeste en los primeros días, con rachas moderadas. De acuerdo con la cobertura de Ámbito, la semana registrará máximas que podrían llegar hasta 23 °C en el pico del periodo.",
+  "El detalle día a día varía entre fuentes. Ámbito consignó para el lunes temperaturas que irían de 9 °C de mínima a 18 °C de máxima, con vientos del este; el martes previó un rango de 12 °C a 21 °C y el miércoles elevó la máxima a 23 °C. El jueves y el viernes, anticipó marcas templadas, entre 15 °C y 22 °C, con escasa probabilidad de lluvias.",
+  "Por su parte, Perfil destacó que el inicio de la semana llega con una masa de aire frío que mantiene temperaturas por debajo de lo esperado para la época. Ese informe, que toma proyecciones del portal Meteored y del modelo ECMWF, indicó valores algo más bajos para el comienzo: un lunes con mínima de 8 °C y máxima de 16 °C, y una recuperación paulatina hacia el martes (mín. 11 °C, máx. 18 °C).",
+  "Además, Perfil advirtió sobre la posible llegada de un nuevo frente frío para el jueves, que podría aumentar la inestabilidad y traer lluvias débiles o intermitentes en la Ciudad y el conurbano, aunque las proyecciones no anticipan acumulados significativos si el sistema no se profundiza.",
+  "En resumen, coinciden en un predominio de nubosidad y en un ascenso térmico hacia la mitad de la semana, con baja probabilidad de precipitaciones en la mayor parte del periodo; las discrepancias entre boletines aparecen en las marcas puntuales de temperatura y en la potencial intensidad del frente del jueves."
+ ],
+ "seccion": "Sociedad",
+ "etiquetas": [
+  "clima",
+  "AMBA"
+ ],
+ "fecha": "2026-10-25T20:19:37-03:00",
+ "importancia": 3,
+ "fuentes": [
+  {
+   "medio": "Ámbito",
+   "titulo": "Semana de nubes y temperaturas en alza en Buenos Aires: qué dice el pronóstico para el AMBA",
+   "link": "https://www.ambito.com/informacion-general/semana-nubes-y-temperaturas-alza-buenos-aires-que-dice-el-pronostico-el-amba-n6337695"
+  },
+  {
+   "medio": "Perfil",
+   "titulo": "El AMBA arranca la semana con frío invernal y un nuevo frente inestable amenaza a Buenos Aires",
+   "link": "https://www.perfil.com/noticias/clima/el-amba-arranca-la-semana-con-frio-de-julio-y-un-nuevo-frente-inestable-amenaza-a-buenos-aires.phtml"
+  }
+ ],
+ "imagen": {
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/Buenos_Aires%2C_Argentina%2C_the_South_American_nation%27s_largest_city_%28iss073e0176306%29.jpg/1280px-Buenos_Aires%2C_Argentina%2C_the_South_American_nation%27s_largest_city_%28iss073e0176306%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "credito": "NASA Johnson Space Center / Wikimedia Commons",
+  "licencia": "Public domain",
+  "enlace": "https://commons.wikimedia.org/wiki/File:Buenos_Aires,_Argentina,_the_South_American_nation%27s_largest_city_(iss073e0176306).jpg"
+ }
+}
