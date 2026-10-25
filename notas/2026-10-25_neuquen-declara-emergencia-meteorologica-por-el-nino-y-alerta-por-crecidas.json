@@ -1,0 +1,42 @@
+{
+ "slug": "neuquen-declara-emergencia-meteorologica-por-el-nino-y-alerta-por-crecidas",
+ "titulo": "Neuquén declara emergencia meteorológica por El Niño y alerta por crecidas",
+ "bajada": "El gobernador Rolando Figueroa anunció una medida por seis meses ante lluvias extraordinarias; la Organización Meteorológica Mundial prevé un episodio fuerte que tendrá su pico hacia fin de año, según los informes.",
+ "cuerpo": [
+  "Neuquén anunció la declaración de emergencia meteorológica por seis meses debido a las precipitaciones extraordinarias vinculadas al fenómeno de El Niño, informó el gobierno provincial y replicaron los medios locales. El anuncio lo hizo el gobernador Rolando Figueroa ante el avance de tormentas y crecidas que pusieron bajo presión la infraestructura regional.",
+  "Figueroa alertó sobre la magnitud de las lluvias y describió los efectos en el territorio: “se están llenando cañadones que hace 70 años no recibían semejante cantidad de agua”, y advirtió que la infraestructura disponible quedó colapsada, según publicó Ámbito y Clarín. La provincia conformó un comité para coordinar la asistencia a los damnificados y continúa con inversiones en obras pluvioaluvionales para mitigar el impacto.",
+  "En paralelo al diagnóstico local, la Organización Meteorológica Mundial indicó que, tras un aumento sostenido de la temperatura superficial del Pacífico ecuatorial desde mediados de agosto de 2026, el episodio de El Niño se ha consolidado y se encuentra en proceso de intensificarse, según Clarín. Los pronósticos estacionales indican una probabilidad cercana al 100% de que el fenómeno se mantenga entre septiembre de 2026 y febrero de 2027, y que se fortalezca hasta alcanzar una intensidad muy fuerte con un pico a fines de año.",
+  "El avance del fenómeno ya se refleja en otras regiones. La Nación, citando al sitio Meteored, advirtió que El Niño mantiene activas las tormentas en el Litoral y alimenta las crecidas del río Paraná. Para el Área Metropolitana de Buenos Aires (AMBA) se espera un fin de semana fresco con viento sur y lloviznas intermitentes; el lunes 26 será la jornada más fría del periodo con mínimas cercanas a 7–8 °C, y luego las temperaturas subirían gradualmente hasta valores cercanos a 25 °C hacia el jueves 29, según el pronóstico publicado.",
+  "Ante la creciente amenaza hídrica, Figueroa planteó la necesidad de soluciones de largo plazo y volvió a mencionar la conveniencia de construir una gran represa sobre el río Neuquén, aunque reconoció que “es una obra que no es para nada económica y que lleva tiempo”, según Ámbito. La extensión efectiva de la emergencia y los alcances de las medidas dependerán del decreto formal que publique la Provincia."
+ ],
+ "seccion": "Sociedad",
+ "etiquetas": [
+  "El Niño",
+  "Neuquén"
+ ],
+ "fecha": "2026-10-25T12:02:36-03:00",
+ "importancia": 7,
+ "fuentes": [
+  {
+   "medio": "Clarín",
+   "titulo": "Súper Niño 2026 en Argentina, EN VIVO: cuándo será el pico de las lluvias y las provincias más afectadas",
+   "link": "https://www.clarin.com/sociedad/super-nino-2026-argentina-vivo-pico-lluvias-provincias-afectadas_0_8GOBXGG3kB.html"
+  },
+  {
+   "medio": "La Nación",
+   "titulo": "Se aproxima un nuevo frente que provocará altibajos en la temperatura, nubosidad variable y lloviznas en medio del avance del Súper Niño: las zonas afectadas",
+   "link": "https://www.lanacion.com.ar/sociedad/se-aproxima-un-nuevo-frente-que-provocara-altibajos-en-la-temperatura-nubosidad-variable-y-lloviznas-nid25102026/"
+  },
+  {
+   "medio": "Ámbito",
+   "titulo": "Efecto El Niño en la Argentina: Neuquén declarará la emergencia meteorológica por seis meses ante las lluvias extremas",
+   "link": "https://www.ambito.com/ambito-nacional/efecto-el-nino-la-argentina-neuquen-declarara-la-emergencia-meteorologica-seis-meses-las-lluvias-extremas-n6337642"
+  }
+ ],
+ "imagen": {
+  "url": "https://images.unsplash.com/photo-1647288255258-3c4e56fd8b13?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDk1MTk0fDB8MXxzZWFyY2h8Mnx8Zmxvb2RlZCUyMHJpdmVyJTIwYXJnZW50aW5hfGVufDF8MHx8fDE3OTI5NDA1Nzl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+  "credito": "Jeffrey Eisen / Unsplash",
+  "licencia": "",
+  "enlace": "https://unsplash.com/photos/a-boat-traveling-down-a-river-next-to-a-bridge-yYSwenZjcvs"
+ }
+}
