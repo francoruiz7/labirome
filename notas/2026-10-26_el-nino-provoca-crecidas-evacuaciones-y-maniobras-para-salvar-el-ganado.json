@@ -1,0 +1,41 @@
+{
+ "slug": "el-nino-provoca-crecidas-evacuaciones-y-maniobras-para-salvar-el-ganado",
+ "titulo": "El Niño provoca crecidas, evacuaciones y maniobras para salvar el ganado",
+ "bajada": "El fenómeno elevó el caudal del Iguazú a 17.700 m³/s, dejó 2.026 personas fuera de sus casas en Chaco y obligó a productores en las islas del Paraná a usar “siñuelos” para conducir la hacienda, según Clarín, Perfil y La Nación.",
+ "cuerpo": [
+  "El fenómeno de El Niño aceleró las crecientes en varias cuencas. Según informó Clarín, el río Iguazú alcanzó un caudal récord para 2026 de 17.700 metros cúbicos por segundo en la zona de las Cataratas, casi doce veces el promedio, y por ese motivo se cerró el Circuito Superior del Parque Nacional. Clarín consignó además que Copel reportó una subida de la altura del río de 3,51 metros a 5,45 metros en menos de 48 horas y detalló la evolución del caudal en las últimas jornadas.",
+  "En las islas del Paraná, la subida del agua obligó a trasladar la hacienda y puso en relieve una práctica tradicional: el uso de los “siñuelos”. Según informó La Nación, se trata en general de novillos castrados que conocen los caminos y que encabezan los movimientos del rodeo para que el resto del ganado los siga. La evacuación exige experiencia y maniobras precisas, en especial cuando deben cruzar ríos y bañados en época de parición. Víctor Masat, productor y veterinario de Las Garzas, dijo: \"Todos los isleros tradicionales tienen sus siñuelos. Si no es imposible trabajar en la isla\".",
+  "En el Chaco las inundaciones ya desplazaron a 2.026 personas, según el informe oficial citado por Perfil, que precisó que la cifra incluye evacuados y autoevacuados y que corresponde a 543 hogares. Perfil detalló que Puerto Vilelas concentró 639 evacuados y 507 autoevacuados (1.146 en total), que Antequeras reportó 408 evacuados y 35 autoevacuados, y que Barranqueras e Isla del Cerrito sumaron 253 y 142 evacuados respectivamente. Los centros de alojamiento provinciales alojaban a 156 personas de 49 familias, con Kagiva (Puerto Vilelas) como el de mayor ocupación, según Perfil.",
+  "El parte de Perfil incorporó además mediciones de la Administración Provincial del Agua: el río Paraná marcó 7,21 metros en Barranqueras y el río Paraguay 7,97 metros en Isla del Cerrito. Ese informe ubicó diversas localidades en alerta roja, naranja y amarilla según su situación. Por otra parte, Clarín explicó que Parques Nacionales y la empresa Iguazú Argentina desmontaron parte de la pasarela hacia la Garganta del Diablo para prevenir daños estructurales, y recordó que las crecientes actuales todavía no alcanzaron los 24.000 m³/s registrados en la primavera de 2023."
+ ],
+ "seccion": "Sociedad",
+ "etiquetas": [
+  "El Niño",
+  "Inundaciones"
+ ],
+ "fecha": "2026-10-26T21:27:59-03:00",
+ "importancia": 7,
+ "fuentes": [
+  {
+   "medio": "La Nación",
+   "titulo": "Aliados indispensables: los animales que conocen el camino y guían a miles de vacas para escapar de la inundación",
+   "link": "https://www.lanacion.com.ar/economia/campo/todos-tienen-sus-sinuelos-los-animales-que-conocen-el-camino-y-guian-a-miles-de-vacas-para-escapar-nid26102026/"
+  },
+  {
+   "medio": "Clarín",
+   "titulo": "Efecto de El Niño en las cataratas: caudal récord en 2026 y una de las pasarelas permanece cerrada",
+   "link": "https://www.clarin.com/sociedad/efecto-nino-cataratas-caudal-record-2026-pasarelas-permanece-cerrada_0_JKeVmF63lL.html"
+  },
+  {
+   "medio": "Perfil",
+   "titulo": "La crecida en Chaco mantiene a más de 2.000 personas fuera de sus viviendas",
+   "link": "https://www.perfil.com/noticias/nea/la-crecida-en-chaco-mantiene-a-mas-de-2000-personas-fuera-de-sus-viviendas.phtml"
+  }
+ ],
+ "imagen": {
+  "url": "https://images.unsplash.com/photo-1759254805309-c1bb93f0d4af?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDk1MTk0fDB8MXxzZWFyY2h8Mnx8Y2F0dGxlJTIwY3Jvc3NpbmclMjB3YXRlcnxlbnwxfDB8fHwxNzkzMDYwOTAzfDA&ixlib=rb-4.1.0&q=80&w=1080",
+  "credito": "Ed Wingate / Unsplash",
+  "licencia": "",
+  "enlace": "https://unsplash.com/photos/cows-wading-through-a-shallow-body-of-water-W8VOce7hNt4"
+ }
+}
