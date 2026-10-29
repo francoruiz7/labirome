@@ -1,0 +1,44 @@
+{
+ "slug": "choque-de-trenes-en-toledo-deja-decenas-de-muertos-y-miles-de-heridos-en-la-line",
+ "titulo": "Choque de trenes en Toledo deja decenas de muertos y más de un centenar de heridos en la línea Madrid-Sevilla",
+ "bajada": "El accidente entre un AVE de Renfe y un tren de Iryo ocurrió cerca de Urda; las cifras de víctimas varían según fuentes y continúan las tareas de búsqueda e identificación.",
+ "cuerpo": [
+  "Un choque entre dos trenes de alta velocidad ocurrido el miércoles por la mañana entre las localidades toledanas de Los Yébenes y Urda dejó decenas de muertos y más de un centenar de heridos, según el recuento de diferentes medios y organismos. El siniestro se produjo alrededor de las 08:54 en la línea AV Madrid-Sevilla, cuando un AVE de Renfe impactó por detrás a una formación de Iryo que estaba detenida en las vías, según informó Clarín y pudo constatar La Nación con datos de ADIF. Las cifras oficiales aún difieren: La Nación y fuentes como Reuters citaron inicialmente 68 y luego 69 muertos; Infobae consignó un balance de 69 según la Junta de Castilla-La Mancha y 74 según la Comisión de Investigación de Accidentes Ferroviarios (CIAF), mientras que Clarín y TN informaron que la cifra llegó a 74. Además, los medios consignan más de un centenar de heridos y reportes sobre personas desaparecidas y denuncias de familiares que buscan a allegados tras el choque.",
+  "Las tareas de rescate y rastreo continuaban con perros especializados y drones térmicos para buscar restos entre los vagones volcados, informaron Clarín y La Nación; la identificación de víctimas exige cotejos forenses y toma de muestras de ADN, detalló Clarín. Renfe anunció la suspensión total del servicio de alta velocidad y prevé un plan alternativo entre Madrid y Andalucía, según La Nación. Entre las víctimas confirmadas aparecen, por distintas fuentes, la atleta española Julieta Gallego y la exministra Fátima Báñez, según TN y Reuters citados por los medios; además, La Nación informó sobre una ciudadana argentina, Ana Martina Conte Grand, que falleció y viajaba con su hermano, quien sobrevivió. El ministro de Transportes, Óscar Puente, pidió esclarecer las causas y fue citado a dar explicaciones en el Congreso, informó Infobae; por su parte sindicatos y representantes del sector reclamaron prudencia en las conclusiones y pidieron investigaciones sobre posibles responsabilidades, según TN e Infobae."
+ ],
+ "seccion": "Policiales",
+ "etiquetas": [
+  "Toledo",
+  "tren"
+ ],
+ "fecha": "2026-10-29T14:28:19-03:00",
+ "importancia": 10,
+ "fuentes": [
+  {
+   "medio": "La Nación",
+   "titulo": "Choque de trenes en España, EN VIVO: qué pasó en Toledo y las últimas noticias del accidente mientras sigue la búsqueda de víctimas",
+   "link": "https://www.lanacion.com.ar/el-mundo/choque-de-trenes-en-espana-en-vivo-que-paso-en-toledo-y-las-ultimas-noticias-del-accidente-mientras-nid29102026/"
+  },
+  {
+   "medio": "Infobae",
+   "titulo": "Última hora del accidente de trenes en Toledo, en directo: ascienden a 69 las víctimas mortales por el choque en Urda",
+   "link": "https://www.infobae.com/espana/2026/10/29/ultima-hora-del-accidente-de-trenes-en-toledo-en-directo-la-guardia-civil-continua-trabajando-en-la-zona-en-busca-de-mas-posibles-victimas/"
+  },
+  {
+   "medio": "TN",
+   "titulo": "Suben a 74 las muertes por el choque de trenes en España: Pedro Sánchez pidió esclarecer las causas del accidente",
+   "link": "https://tn.com.ar/internacional/2026/10/28/dos-trenes-de-pasajeros-chocaron-en-toledo-y-por-el-impacto-dos-vagones-cayeron-por-un-terraplen/"
+  },
+  {
+   "medio": "Clarín",
+   "titulo": "Choque de trenes en España: un día después de la tragedia, perros entrenados buscan restos humanos entre los vagones y las morgues están desbordadas",
+   "link": "https://www.clarin.com/mundo/choque-trenes-espana-dia-despues-tragedia-perros-entrenados-buscan-restos-humanos-vagones-morgues-desbordadas_0_D8i3uyjg22.html"
+  }
+ ],
+ "imagen": {
+  "url": "https://upload.wikimedia.org/wikipedia/commons/f/f8/Renfe_Series_100_AVE_and_Iryo_Frecciarossa_at_Sevilla_Santa_Justa_%2853296528997%29.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "credito": "Jon Worth from Germany / Wikimedia Commons",
+  "licencia": "CC BY 2.0",
+  "enlace": "https://commons.wikimedia.org/wiki/File:Renfe_Series_100_AVE_and_Iryo_Frecciarossa_at_Sevilla_Santa_Justa_(53296528997).jpg"
+ }
+}
