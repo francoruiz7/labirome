@@ -62,9 +62,13 @@ def elegir_modelo(cliente):
 def pedir_json(cliente, modelo, sistema, usuario):
     """Llama al modelo pidiendo JSON. Reintenta una vez si la respuesta no se puede leer."""
     for intento in (1, 2):
+        extra = {}
+        if modelo.startswith(("gpt-5", "o")):  # menos razonamiento interno: mismo resultado, bastante más barato
+            extra["reasoning_effort"] = getattr(config, "ESFUERZO_RAZONAMIENTO", "low")
         respuesta = cliente.chat.completions.create(
             model=modelo,
             response_format={"type": "json_object"},
+            **extra,
             messages=[
                 {"role": "system", "content": sistema},
                 {"role": "user", "content": usuario},
@@ -869,4 +873,13 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    try:
+        main()
+    except Exception as error:
+        # Sin saldo en OpenAI: se avisa claro y la corrida termina bien, para que el sitio siga publicado
+        # y GitHub no mande un mail de error en cada corrida.
+        if "insufficient_quota" in str(error) or "no credits" in str(error).lower():
+            print("\n*** Sin saldo en OpenAI: no se generaron notas. Cargá crédito en "
+                  "https://platform.openai.com/settings/organization/billing ***")
+            sys.exit(0)
+        raise

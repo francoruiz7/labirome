@@ -32,6 +32,10 @@ SECCIONES = [
 # Las notas de cada corrida se reparten entre secciones, empezando por las que menos publicaron.
 N_NOTAS = 4
 
+# Cuánto "piensa" el modelo antes de responder (solo modelos gpt-5): "minimal", "low", "medium" o "high".
+# Más alto es más caro. "low" alcanza para todas las tareas de la redacción.
+ESFUERZO_RAZONAMIENTO = "low"
+
 # Cada cuántos días sale una efeméride ("un día como hoy"), armada a partir de Wikipedia. 0 la apaga.
 EFEMERIDE_CADA_DIAS = 7
 
@@ -125,8 +129,6 @@ FUENTES = [
     ("Infobae", "https://www.infobae.com/arc/outboundfeeds/rss/category/sociedad/policiales/", "Policiales"),
     ("Infobae", "https://www.infobae.com/arc/outboundfeeds/rss/category/america/", "Internacional"),
     ("Perfil", "https://www.perfil.com/feed/deportes", "Deportes"),
-    ("Perfil", "https://www.perfil.com/feed/espectaculos", "Espectáculos"),
-    ("Perfil", "https://www.perfil.com/feed/policia", "Policiales"),
     ("Perfil", "https://www.perfil.com/feed/internacional", "Internacional"),
     ("Ámbito", "https://www.ambito.com/rss/pages/deportes.xml", "Deportes"),
     ("Ámbito", "https://www.ambito.com/rss/pages/espectaculos.xml", "Espectáculos"),
