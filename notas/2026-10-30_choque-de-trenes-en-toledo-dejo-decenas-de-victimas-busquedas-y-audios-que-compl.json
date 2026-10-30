@@ -1,0 +1,47 @@
+{
+ "slug": "choque-de-trenes-en-toledo-dejo-decenas-de-victimas-busquedas-y-audios-que-compl",
+ "titulo": "Choque de trenes en Toledo dejó decenas de víctimas, búsquedas y audios que complican la investigación",
+ "bajada": "El siniestro entre un AVE de Renfe y un convoy de Iryo entre Urda y Los Yébenes provocó al menos decenas de muertos y heridas; fuentes difieren sobre el número exacto y siguen las tareas de identificación y búsqueda.",
+ "cuerpo": [
+  "Un choque por alcance entre un tren AVE de Renfe y un convoy de Iryo ocurrido el miércoles en un tramo entre Los Yébenes y Urda, en la provincia de Toledo, provocó decenas de muertos y más de un centenar de heridos, y mantiene activas las tareas de búsqueda y rescate, según informaron medios españoles y autoridades regionales.",
+  "Las cifras varían según las fuentes: la Junta de Castilla-La Mancha y algunos informes oficiales manejan 69 víctimas fatales, mientras que otro comunicado citado por TN aseguró que la cifra se mantiene en 74 y advirtió que podría aumentar por restos humanos aún sin identificar. El gobierno regional indicó además que hay denuncias de hasta 70 personas desaparecidas.",
+  "Entre los desaparecidos reportados por medios aparecen la compositora española Marisa Manchado Torres, de 70 años, cuya ausencia difundió la Asociación Mujeres en la Música, y la bióloga Marta Shahbazi Alonso, investigadora en el Laboratorio de Biología Molecular de Cambridge, según confirmó su hermano a El País y publicó Infobae. El hermano de Manchado viajó a Madrid para aportar muestras de ADN, según Clarín.",
+  "Los primeros informes técnicos y testimonios ponen el foco en una posible falla del sistema de seguridad y en decisiones del centro de control. Grabaciones difundidas por medios como Cadena SER y citadas por La Nación muestran conversaciones del centro operativo en las que se autorizó al maquinista del AVE a reanudar la marcha “con marcha normal” pese a que el mecanismo LZB indicaba que el sector estaba ocupado; ese maquinista murió en el siniestro.",
+  "El ministro de Transportes, Óscar Puente, ofreció una rueda de prensa en la que rechazó dimitir y anunció que pedirá comparecer en el Congreso para informar sobre lo ocurrido, mientras continúan los operativos sobre la vía y los servicios de atención a familias: los teléfonos citados por Infobae son 900 10 10 20 (Renfe) y 900 001 403 (Iryo)."
+ ],
+ "seccion": "Internacional",
+ "etiquetas": [
+  "Accidente ferroviario",
+  "Toledo"
+ ],
+ "fecha": "2026-10-30T14:01:36-03:00",
+ "importancia": 10,
+ "fuentes": [
+  {
+   "medio": "Clarín",
+   "titulo": "La compositora española Marisa Manchado está desaparecida tras el choque de trenes en Toledo",
+   "link": "https://www.clarin.com/espectaculos/compositora-espanola-marisa-manchado-desaparecida-choque-trenes-toledo_0_e0Aa6CoNXD.html"
+  },
+  {
+   "medio": "Infobae",
+   "titulo": "Última hora del accidente de trenes en Toledo, en directo | Óscar Puente pone su cargo a disposición de Pedro Sánchez y no sabe si hará campaña electoral",
+   "link": "https://www.infobae.com/espana/2026/10/30/ultima-hora-del-accidente-de-trenes-en-toledo-en-directo-continuan-las-labores-de-busqueda-en-urda-y-oscar-puente-ofrecera-una-rueda-de-prensa-este-viernes/"
+  },
+  {
+   "medio": "TN",
+   "titulo": "El gobierno español no descarta que pueda haber más muertos por el trágico choque de trenes: \"Hay 70 denuncias de desaparecidos\"",
+   "link": "https://tn.com.ar/internacional/2026/10/30/el-gobierno-espanol-no-descarta-que-pueda-haber-mas-muertos-por-el-tragico-choque-de-trenes-hay-70-denuncias-de-desaparecidos/"
+  },
+  {
+   "medio": "La Nación",
+   "titulo": "Salen a la luz los inquietantes audios de las llamadas que precedieron a la tragedia ferroviaria en España",
+   "link": "https://www.lanacion.com.ar/el-mundo/salen-a-la-luz-los-inquietantes-audios-de-las-llamadas-que-precedieron-a-la-tragedia-ferroviaria-en-nid30102026/"
+  }
+ ],
+ "imagen": {
+  "url": "https://images.unsplash.com/photo-1749464332466-49e5787e2fa6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDk1MTk0fDB8MXxzZWFyY2h8MXx8ZGVyYWlsZWQlMjB0cmFpbiUyMGNyYXNofGVufDF8MHx8fDE3OTMzNzk3MDR8MA&ixlib=rb-4.1.0&q=80&w=1080",
+  "credito": "Gowtham AGM / Unsplash",
+  "licencia": "",
+  "enlace": "https://unsplash.com/photos/a-train-lies-on-its-side-after-a-derailment-AJaRUJirtko"
+ }
+}
