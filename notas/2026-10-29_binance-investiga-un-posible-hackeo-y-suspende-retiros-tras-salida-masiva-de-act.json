@@ -1,0 +1,39 @@
+{
+ "slug": "binance-investiga-un-posible-hackeo-y-suspende-retiros-tras-salida-masiva-de-act",
+ "titulo": "Binance investiga un posible hackeo y suspende retiros tras salida masiva de activos",
+ "bajada": "La plataforma reportó un “problema de seguridad”, congelamiento de fondos por emisores de stablecoins y estimaciones que van de u$s2.000 a más de u$s5.000 en activos movidos.",
+ "cuerpo": [
+  "Binance informó que investiga un “posible problema de seguridad” luego de detectarse movimientos millonarios desde billeteras vinculadas a la plataforma y anunció la suspensión temporal de retiros y de la negociación en Binance Alpha, según comunicados difundidos por la empresa y reportes de medios. La firma aseguró que “los fondos de los usuarios están completamente seguros” y que cubrirá las pérdidas, mientras sus equipos de seguridad revisan la información y colaboran con las autoridades, de acuerdo con La Nación y Ámbito.",
+  "Las estimaciones sobre el volumen de activos transferidos varían ampliamente: TechCrunch y otros sitios que siguen la actividad en blockchain señalan cifras desde u$s2.000 millones hasta más de u$s5.000 millones, mientras que Binance y análisis de rastreadores blockchain verificaron por ahora u$s2.540 millones congelados, según La Nación y Ámbito. Tether y Circle anunciaron bloqueos preventivos de fondos vinculados al incidente; Circle informó el congelamiento de más de u$s800 millones y Tether comunicó montos que, según fuentes citadas por Ámbito e Infobae, suman más de u$s1.500 millones en conjunto. Changpeng Zhao, cofundador de Binance, publicó en X que “sí parece un hackeo” y celebró el congelamiento de activos por parte de los emisores de stablecoins, según Infobae. Las cifras mayores a u$s5.000 millones provienen de firmas como Decrypt, Arkham Intelligence y reportes de medios como Cointelegraph y CNBC, pero Infobae subraya que Binance no confirmó esos totales. La compañía pidió a los usuarios precaución ante posibles estafas y prometió actualizar la investigación por sus canales oficiales."
+ ],
+ "seccion": "Internacional",
+ "etiquetas": [
+  "Binance",
+  "criptomonedas"
+ ],
+ "fecha": "2026-10-29T21:59:44-03:00",
+ "importancia": 6,
+ "fuentes": [
+  {
+   "medio": "La Nación",
+   "titulo": "Binance investiga un posible hackeo tras la salida de miles de millones de dólares: “Problema de seguridad”",
+   "link": "https://www.lanacion.com.ar/economia/binance-investiga-un-posible-hackeo-tras-la-salida-de-casi-3000-millones-de-dolares-problema-de-nid29102026/"
+  },
+  {
+   "medio": "Ámbito",
+   "titulo": "Binance investiga un posible hackeo de hasta u$s5.700 millones y congela activos preventivamente",
+   "link": "https://www.ambito.com/finanzas/binance-investiga-un-posible-hackeo-us5700-millones-y-congelo-activos-preventivamente-n6339582"
+  },
+  {
+   "medio": "Infobae",
+   "titulo": "Binance investiga posible hackeo de más de USD 5.000 millones: bloqueos, retiros suspendidos y fuerte caída del precio de bitcoin",
+   "link": "https://www.infobae.com/economia/2026/10/30/binance-investiga-posible-hackeo-de-mas-de-usd-5000-millones-bloqueos-retiros-suspendidos-y-fuerte-caida-del-precio-de-bitcoin/"
+  }
+ ],
+ "imagen": {
+  "url": "https://images.unsplash.com/photo-1605792657660-596af9009e82?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDk1MTk0fDB8MXxzZWFyY2h8Mnx8Y3J5cHRvY3VycmVuY3klMjBleGNoYW5nZXxlbnwxfDB8fHwxNzkzMzIxOTk0fDA&ixlib=rb-4.1.0&q=80&w=1080",
+  "credito": "Pierre Borthiry - Peiobty / Unsplash",
+  "licencia": "",
+  "enlace": "https://unsplash.com/photos/bitcoin-and-ethereum-coins-on-laptop-vBCVcWUyvyM"
+ }
+}
