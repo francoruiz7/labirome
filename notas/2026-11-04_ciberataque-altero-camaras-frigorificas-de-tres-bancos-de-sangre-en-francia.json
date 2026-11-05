@@ -1,0 +1,44 @@
+{
+ "slug": "ciberataque-altero-camaras-frigorificas-de-tres-bancos-de-sangre-en-francia",
+ "titulo": "Ciberataque alteró cámaras frigoríficas de tres bancos de sangre en Francia",
+ "bajada": "El Establecimiento Francés de la Sangre informó que las alarmas detectaron variaciones de temperatura y que no hubo pérdidas; las pesquisas apuntan a fallas en proveedores y a grupos que reivindicaron ataques en supermercados europeos.",
+ "cuerpo": [
+  "El lunes 2 de noviembre tres centros del Establecimiento Francés de la Sangre (EFS) sufrieron una intrusión informática que modificó los sistemas de supervisión y control de las cámaras frigoríficas donde se guarda plasma, según informó el Ministerio de Salud francés y confirmó el propio EFS. Los umbrales de temperatura y descongelación se elevaron “a niveles extremadamente altos”, pero los sistemas de monitoreo y las alarmas permitieron actuar a tiempo y evitaron que se perdiera material, indicó el comunicado del organismo. El material afectado eran bolsas de plasma destinadas a transfusiones y a la fabricación de medicamentos, las cuales fueron trasladadas o puestas bajo custodia mientras se evalúan las condiciones para un reintegro seguro al servicio, informaron las fuentes.",
+  "Varios medios y organismos que cubrieron el caso relataron además que la intrusión no se habría producido directamente contra el EFS sino a través de un proveedor externo encargado de equipos de refrigeración: la empresa Coolworld reconoció que un número reducido de sus unidades se vio comprometido por un incidente ligado a un software de gestión suministrado por un tercero, informó Ámbito. El episodio se da en el marco de una ola de ataques informáticos contra sistemas de refrigeración en supermercados de Europa; dos grupos que actúan desde 2022 y 2024, NoName057 y Z‑Pentest, reivindicaron intervenciones contra frigoríficos y cadenas minoristas, según publicó Clarín, aunque las autoridades europeas no han confirmado responsabilidades y advierten que la reivindicación no prueba la autoría. El semanario Le Canard Enchaîné afirmó que los atacantes intentaron elevar temperaturas hasta 110 grados, dato que circuló en la cobertura, pero las autoridades se limitaron a reportar que los valores alcanzaron niveles muy altos sin confirmar esa cifra exacta. ANSSI y el Ministerio de Salud iniciaron investigaciones para determinar el método, el alcance y los equipos afectados, y para reforzar la vigilancia y prevenir nuevos incidentes."
+ ],
+ "seccion": "Sociedad",
+ "etiquetas": [
+  "ciberseguridad",
+  "salud"
+ ],
+ "fecha": "2026-11-04T22:31:37-03:00",
+ "importancia": 7,
+ "fuentes": [
+  {
+   "medio": "Clarín",
+   "titulo": "Hackers prorrusos se atribuyen ciberataques a supermercados europeos: arruinaron toneladas de comida al apagar las cámaras frigoríficas",
+   "link": "https://www.clarin.com/mundo/hackers-prorrusos-atribuyen-ciberataques-supermercados-europeos-arruinaron-toneladas-comida-apagar-camaras-frigorificas_0_Mwa8CVdzGa.html"
+  },
+  {
+   "medio": "La Nación",
+   "titulo": "El peligroso ciberataque que puso en riesgo las reservas de sangre en Francia",
+   "link": "https://www.lanacion.com.ar/el-mundo/el-peligroso-ciberataque-que-puso-en-riesgo-las-reservas-de-sangre-en-francia-nid04112026/"
+  },
+  {
+   "medio": "TN",
+   "titulo": "Francia: un ciberataque alteró la temperatura de las cámaras frigoríficas de tres bancos de sangre",
+   "link": "https://tn.com.ar/internacional/2026/11/04/francia-un-ciberataque-altero-la-temperatura-de-las-camaras-frigorificas-de-tres-bancos-de-sangre/"
+  },
+  {
+   "medio": "Ámbito",
+   "titulo": "Hackearon cámaras de frío de bancos de sangre en Francia y alteraron las temperaturas",
+   "link": "https://www.ambito.com/mundo/hackearon-camaras-frio-bancos-sangre-francia-y-alteraron-las-temperaturas-n6341708"
+  }
+ ],
+ "imagen": {
+  "url": "https://upload.wikimedia.org/wikipedia/commons/5/56/Camara_frigor%C3%ADfica_amoniaco.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "credito": "Neurotronix / Wikimedia Commons",
+  "licencia": "CC BY-SA 4.0",
+  "enlace": "https://commons.wikimedia.org/wiki/File:Camara_frigor%C3%ADfica_amoniaco.JPG"
+ }
+}
