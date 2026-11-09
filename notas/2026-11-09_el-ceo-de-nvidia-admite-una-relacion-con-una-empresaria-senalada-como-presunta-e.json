@@ -1,0 +1,45 @@
+{
+ "slug": "el-ceo-de-nvidia-admite-una-relacion-con-una-empresaria-senalada-como-presunta-e",
+ "titulo": "El CEO de Nvidia admite una relación con una empresaria señalada como presunta espía china",
+ "bajada": "Jensen Huang reconoció una infidelidad y la compañía abrió una investigación tras informes de inteligencia que vinculan a la mujer con servicios de Pekín; China rechazó las acusaciones y las acciones de Nvidia cayeron.",
+ "cuerpo": [
+  "El director ejecutivo de Nvidia, Jensen Huang, admitió haber mantenido una relación extramatrimonial con una empresaria china que, según informes de agencias de inteligencia de Estados Unidos, habría trabajado para Pekín y filtrado información, informaron Clarín, La Nación y TN. Huang envió un mensaje a empleados en el que dijo: \"Fui infiel a mi esposa. Mis acciones la lastimaron a ella y a nuestros hijos. No hay excusa para lo que hice. Lo lamento profundamente\", según Clarín y TN.",
+  "Los medios detallan que la mujer, identificada como Alice Huang o Huang Le, fue ejecutiva de Megaspeed, empresa con sede en Singapur que compró grandes volúmenes de chips de Nvidia y que está bajo investigación por presuntas maniobras para introducir procesadores restringidos en China, señalaron La Nación y Ámbito. The New York Times y otros reportes citados por los medios sostienen que la inteligencia estadounidense consideró a la mujer como reclutada por el Ministerio de Seguridad del Estado chino para obtener información sobre Huang y presionar por ventas de chips. Nvidia comunicó que creó un comité de directores independientes para investigar los hechos y afirmó que, hasta ahora, no tiene indicios de que se haya comprometido información confidencial o que exista daño a la seguridad nacional, según TN y La Nación.",
+  "El caso tuvo efectos en los mercados: las acciones de Nvidia registraron pérdidas, reportaron La Nación y Ámbito. El gobierno chino negó las acusaciones; el vocero del Ministerio de Relaciones Exteriores, Guo Jiakun, calificó la historia como \"una difamación y una calumnia infundada\", informaron Clarín y La Nación. Además, los reportes periodísticos indican que el episodio reaviva tensiones entre Washington y Pekín por el control de tecnología clave para la inteligencia artificial y pone foco en los vínculos de Huang con la Casa Blanca, cuestión que, según La Nación y Clarín, fue conocida por autoridades estadounidenses en meses previos."
+ ],
+ "seccion": "Internacional",
+ "etiquetas": [
+  "Nvidia",
+  "espionaje"
+ ],
+ "fecha": "2026-11-09T18:29:15-03:00",
+ "importancia": 9,
+ "fuentes": [
+  {
+   "medio": "Clarín",
+   "titulo": "Lo que se sabe del escándalo de espionaje que salpica al director ejecutivo de Nvidia",
+   "link": "https://www.clarin.com/estados-unidos/lo-que-se-sabe-del-escandalo-de-espionaje-que-salpica-al-director-ejecutivo-de-nvidia_0_Gjd2860jX3.html"
+  },
+  {
+   "medio": "La Nación",
+   "titulo": "El escándalo del presunto espionaje chino que salpica al CEO de Nvidia abre otro frente entre Washington y Pekín",
+   "link": "https://www.lanacion.com.ar/estados-unidos/el-escandalo-del-presunto-espionaje-chino-que-salpica-al-ceo-de-nvidia-abre-otro-frente-entre-nid09112026/"
+  },
+  {
+   "medio": "TN",
+   "titulo": "Escándalo con el CEO de Nvidia: confesó que le fue infiel a su esposa y la empresa investiga si tuvo un romance con una presunta espía china",
+   "link": "https://tn.com.ar/internacional/2026/11/09/escandalo-con-el-ceo-de-nvidia-confeso-que-le-fue-infiel-a-su-esposa-y-la-empresa-investiga-si-fue-con-una-presunta-espia-china/"
+  },
+  {
+   "medio": "Ámbito",
+   "titulo": "Quién es Alice Huang, la empresaria china acusada de espiar al CEO de Nvidia con quien habría tenido una relación",
+   "link": "https://www.ambito.com/mundo/quien-es-alice-huang-la-empresaria-china-acusada-espiar-al-ceo-nvidia-quien-habria-tenido-una-relacion-n6343235"
+  }
+ ],
+ "imagen": {
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Jensen_huang_stanford_2026-04-30_029.jpg/1280px-Jensen_huang_stanford_2026-04-30_029.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "credito": "Anderseidesvik / Wikimedia Commons",
+  "licencia": "CC BY-SA 4.0",
+  "enlace": "https://commons.wikimedia.org/wiki/File:Jensen_huang_stanford_2026-04-30_029.jpg"
+ }
+}
