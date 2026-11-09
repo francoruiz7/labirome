@@ -1,0 +1,44 @@
+{
+ "slug": "crisis-de-ueno-bank-sacude-a-paraguay-detenciones-devoluciones-y-una-acusacion-m",
+ "titulo": "Crisis de Ueno Bank sacude a Paraguay: detenciones, devoluciones y una acusación millonaria",
+ "bajada": "El Banco Central inició la devolución de depósitos mientras la Fiscalía imputó al expresidente Santiago Peña; la investigación calcula un perjuicio superior a US$809 millones, según la acusación.",
+ "cuerpo": [
+  "El Banco Central del Paraguay (BCP) comenzó a devolver los depósitos de clientes de Ueno Bank y prevé completar una primera ronda de acreditaciones días después de la intervención de la entidad, informó TN. El procedimiento, a cargo del Fondo de Garantía de Depósitos, ya alcanzó a casi 1,2 millones de titulares y habilitó pagos por hasta 40 salarios mínimos (unos 121 millones de guaraníes) en esta etapa, detalló el presidente interino del BCP, según la misma fuente. El organismo explicó que se priorizaron cuentas con saldos bajos y sin deudas; los montos mayores se pagarán en etapas posteriores y los excedentes por encima del límite legal dependerán de los fondos recuperados durante la liquidación. Clarín añadió que el Gobierno decidió “pesificar” los depósitos en dólares al tipo de cambio del día en que cerró el banco, el 2 de noviembre, y advirtió que la moneda local ya venía depreciándose: se había devaluado más de 10% desde principios de mes.",
+  "En paralelo, la Fiscalía avanzó con imputaciones y pedidos de prisión preventiva que complican a figuras vinculadas al caso. Ámbito informó que los fiscales estimaron un perjuicio patrimonial superior a US$809 millones y atribuyeron a distintos imputados delitos relacionados con operaciones, depósitos estatales y préstamos. La acusación alcanza al expresidente Santiago Peña y al extitular del BCP, según Ámbito; además, Clarín consignó que Peña quedó con prisión preventiva alojado en el Regimiento Escolta Presidencial y citó al coronel José Dayub: “no está en una celda... estará en una habitación, con acceso a su teléfono celular y visitas permitidas”. El informe reservado del BCP que reveló La Nación describe cómo, según la entidad reguladora, Ueno Bank habría financiado a empresas vinculadas al mismo grupo mediante créditos a largo plazo, ventas de activos entre firmas del grupo y maniobras contables que habrían expuesto al banco a riesgos no reportados. Las fuentes consultadas coinciden en que el caso desató una crisis política y económica que obliga al Gobierno a gestionar devoluciones, investigaciones y la resolución judicial de la entidad."
+ ],
+ "seccion": "Policiales",
+ "etiquetas": [
+  "Ueno Bank",
+  "Santiago Peña"
+ ],
+ "fecha": "2026-11-08T21:57:08-03:00",
+ "importancia": 7,
+ "fuentes": [
+  {
+   "medio": "Clarín",
+   "titulo": "El gobierno de Paraguay \"pesificará\" los depósitos en dólares atrapados en Ueno, pero el guaraní ya se devaluó un 10 por ciento",
+   "link": "https://www.clarin.com/mundo/paraguay-caida-pena-gobierno-rearma-pesificara-depositos-dolares-atrapados-ueno_0_tXX1EpwDZr.html"
+  },
+  {
+   "medio": "La Nación",
+   "titulo": "El expediente reservado del Banco Central: cómo Ueno se prestó plata a sí mismo y desató la crisis en Paraguay",
+   "link": "https://www.lanacion.com.ar/el-mundo/el-expediente-reservado-del-banco-central-como-ueno-se-presto-plata-a-si-mismo-y-desato-la-crisis-en-nid08112026/"
+  },
+  {
+   "medio": "Ámbito",
+   "titulo": "Escándalo de Ueno Bank en Paraguay: la Fiscalía estima un perjuicio de más de u$s809 millones y complica a Santiago Peña",
+   "link": "https://www.ambito.com/mundo/escandalo-ueno-bank-paraguay-la-fiscalia-estima-un-perjuicio-mas-us809-millones-y-complica-santiago-pena-n6342893"
+  },
+  {
+   "medio": "TN",
+   "titulo": "El Banco Central de Paraguay empezó a devolver los ahorros de Ueno Bank y continuará con los pagos hasta el miércoles",
+   "link": "https://tn.com.ar/internacional/2026/11/08/el-banco-central-de-paraguay-empezo-a-devolver-los-ahorros-de-ueno-bank-y-continuara-con-los-pagos-hasta-el-miercoles/"
+  }
+ ],
+ "imagen": {
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6d/Banco_Central_del_Paraguay_by_Felipe_M%C3%A9ndez.jpg/1280px-Banco_Central_del_Paraguay_by_Felipe_M%C3%A9ndez.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "credito": "FF MM / Wikimedia Commons",
+  "licencia": "CC BY-SA 3.0",
+  "enlace": "https://commons.wikimedia.org/wiki/File:Banco_Central_del_Paraguay_by_Felipe_M%C3%A9ndez.jpg"
+ }
+}
