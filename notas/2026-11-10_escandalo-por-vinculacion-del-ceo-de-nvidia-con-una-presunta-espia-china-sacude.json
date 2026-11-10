@@ -1,0 +1,44 @@
+{
+ "slug": "escandalo-por-vinculacion-del-ceo-de-nvidia-con-una-presunta-espia-china-sacude",
+ "titulo": "Escándalo por vinculación del CEO de Nvidia con una presunta espía china sacude a la empresa y los mercados",
+ "bajada": "La compañía perdió más de 400.000 millones de dólares en capitalización y sus acciones cayeron en Wall Street tras revelaciones sobre una relación extramarital y denuncias de posible transferencia de chips a China.",
+ "cuerpo": [
+  "Nvidia sufrió en los últimos días una fuerte caída en los mercados tras la confirmación por parte de su CEO, Jensen Huang, de una relación extramarital con una empresaria china que fuentes de inteligencia de Estados Unidos señalan como presunta agente de Pekín. Según informó Clarín, desde que estalló el caso la compañía perdió más de 400.000 millones de dólares en capitalización bursátil y la acción llegó a caer 6,81% en la Bolsa de Nueva York, hasta 166,51 dólares; La Nación consignó que las acciones cerraron con una baja superior al 4% el lunes. Perfil agregó que la filtración relegó a Nvidia entre las empresas de mayor valor de mercado, detrás de Apple y Microsoft. Los artículos señalan asimismo que el directorio abrió una investigación interna para determinar si Huang fue objeto de una operación de inteligencia extranjera.",
+  "El escándalo desató además acciones legales y nuevos cuestionamientos sobre las ventas de tecnología. Un procedimiento colectivo presentado por un bufete de Los Ángeles acusa a Nvidia y a Huang de no haber informado a los accionistas sobre la relación y de haber ocultado riesgos, según Clarín y Perfil. Por otra parte, la investigación publicada por The Information y reproducida por Reuters indicó que la relación con la empresaria habría facilitado el envío de chips de IA por al menos 7.500 millones de dólares a empresas chinas mediante una red de sociedades en Asia; Reuters puntualizó que no pudo verificar de forma independiente esos resultados. La compañía, citada por TN, declaró que comercializa sus procesadores destinados a centros de datos mediante aliados que están obligados a acatar las restricciones de exportación de Estados Unidos. Mientras tanto, La Nación consignó que el presidente Donald Trump afirmó que el FBI investiga el asunto y dijo haber dialogado con Huang, quien admitió haber sido \"infiel\" en un mensaje a empleados, según las fuentes."
+ ],
+ "seccion": "Internacional",
+ "etiquetas": [
+  "Nvidia",
+  "Jensen Huang"
+ ],
+ "fecha": "2026-11-10T15:43:14-03:00",
+ "importancia": 8,
+ "fuentes": [
+  {
+   "medio": "Clarín",
+   "titulo": "Nvidia cae más de 6% y pierde brevemente el segundo puesto mundial por valor bursátil",
+   "link": "https://www.clarin.com/estados-unidos/nvidia-cae-mas-de-6-y-pierde-brevemente-el-segundo-puesto-mundial-por-valor-bursatil_0_qq6RzWnHYY.html"
+  },
+  {
+   "medio": "Perfil",
+   "titulo": "Un escándalo de amantes y espionaje chino golpea al fabricante de chips Nvidia y sacude al mundo tecnológico",
+   "link": "https://perfil.com/protagonistas/una-trama-de-sexo-espionaje-e-inteligencia-artificial-golpea-a-nvidia-a50-aLBA62T2QN2u"
+  },
+  {
+   "medio": "La Nación",
+   "titulo": "Trump afirma que el FBI investiga al CEO de Nvidia mientras se profundiza la controversia por sus vínculos con China",
+   "link": "https://www.lanacion.com.ar/estados-unidos/trump-afirma-que-el-fbi-investiga-al-ceo-de-nvidia-mientras-se-profundiza-la-controversia-por-sus-nid10112026/"
+  },
+  {
+   "medio": "TN",
+   "titulo": "Escándalo en Nvidia: el romance de su CEO con una presunta espía habría facilitado la venta de chips a China por US$7500 millones",
+   "link": "https://tn.com.ar/internacional/2026/11/10/escandalo-en-nvidia-el-romance-de-su-ceo-con-una-presunta-espia-habria-facilitado-la-venta-de-chips-a-china-por-us7500-millones/"
+  }
+ ],
+ "imagen": {
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a7/Jensen_huang_stanford_2026-04-30_029.jpg/1280px-Jensen_huang_stanford_2026-04-30_029.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "credito": "Anderseidesvik / Wikimedia Commons",
+  "licencia": "CC BY-SA 4.0",
+  "enlace": "https://commons.wikimedia.org/wiki/File:Jensen_huang_stanford_2026-04-30_029.jpg"
+ }
+}
