@@ -1,0 +1,38 @@
+{
+ "slug": "el-smn-emitio-alertas-por-tormentas-naranja-y-amarilla-para-varias-provincias-de",
+ "titulo": "El SMN emitió alertas por tormentas (naranja y amarilla) para varias provincias del país",
+ "bajada": "Para este sábado 14 de noviembre rigen advertencias por tormentas en el norte y centro del país; las fuentes difieren sobre qué distritos están en alerta naranja.",
+ "cuerpo": [
+  "El Servicio Meteorológico Nacional (SMN) actualizó sus alertas por tormentas para este sábado 14 de noviembre y mantiene advertencias de distinto nivel para varias provincias del país, de acuerdo con los reportes periodísticos sobre los comunicados del organismo.",
+  "Las coberturas de las alertas difieren entre medios: TN informó que hay alertas amarillas por tormentas en Catamarca, Jujuy, Salta, Formosa, Misiones, Chaco, Corrientes, Santiago del Estero y Tucumán, y que en gran parte de Formosa rige una alerta naranja. En cambio, La Nación consignó que la alerta naranja afecta a Chaco, La Rioja, Santiago del Estero y Tucumán, y que la alerta amarilla alcanza a sectores de Catamarca, Corrientes, Formosa, Jujuy, Misiones, Salta, Santa Fe, Santiago del Estero y Tucumán. Señalamos la diferencia entre ambas coberturas porque las fuentes no coinciden exactamente en las provincias en nivel naranja y amarillo.",
+  "El SMN describe que, bajo alerta amarilla, las tormentas pueden ser aisladas algunas fuertes o puntualmente severas, con abundantes precipitaciones en cortos períodos, actividad eléctrica frecuente, ocasional caída de granizo y ráfagas; TN reportó estimaciones de acumulados entre 30 y 70 mm (con posibilidad de superar esos valores). Para las zonas con alerta naranja se esperan tormentas fuertes y algunas localmente severas, con abundantes precipitaciones, granizo de diversos tamaños, actividad eléctrica frecuente y ráfagas que pueden superar los 90 km/h; TN consignó acumulados entre 80 y 120 mm en esas áreas.",
+  "Ambas fuentes reproducen las recomendaciones del organismo: ante una alerta amarilla, evitar salir mientras dure la tormenta, no sacar la basura, limpiar desagües, desconectar electrodomésticos si ingresa agua, cerrar puertas y ventanas y buscar refugio en caso de estar al aire libre. Frente a una alerta naranja, el SMN aconseja seguir instrucciones de autoridades locales, permanecer en construcciones cerradas, evitar zonas inundables, asegurar objetos sueltos y preparar un kit de emergencia con agua, alimentos, botiquín, radio a pilas y linterna.",
+  "La Nación añadió además el pronóstico para la ciudad de Buenos Aires, donde el SMN prevé una máxima de 27°C y una mínima de 23°C, con cielo mayormente nublado y sin lluvias.",
+  "Ante la proximidad de fenómenos intensos, el organismo recomienda mantenerse informado por los canales oficiales y atender las indicaciones de protección civil y bomberos locales."
+ ],
+ "seccion": "Sociedad",
+ "etiquetas": [
+  "clima",
+  "SMN"
+ ],
+ "fecha": "2026-11-14T14:07:18-03:00",
+ "importancia": 4,
+ "fuentes": [
+  {
+   "medio": "TN",
+   "titulo": "Hay alerta naranja y amarilla por tormentas en 9 provincias para hoy, sábado 14 de noviembre",
+   "link": "https://tn.com.ar/sociedad/2026/11/14/hay-alerta-naranja-y-amarilla-por-tormentas-en-11-provincias-para-hoy-sabado-14-de-noviembre/"
+  },
+  {
+   "medio": "La Nación",
+   "titulo": "Hay alerta naranja y amarilla por tormentas para este sábado 14 de noviembre: las provincias afectadas",
+   "link": "https://www.lanacion.com.ar/sociedad/hay-alerta-naranja-y-amarilla-por-tormentas-para-este-sabado-14-de-noviembre-las-provincias-nid14112026/"
+  }
+ ],
+ "imagen": {
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/90/Sede_Central_del_Servicio_Meteorol%C3%B3gico_Nacional.jpg/1280px-Sede_Central_del_Servicio_Meteorol%C3%B3gico_Nacional.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "credito": "Horacio Cambeiro / Wikimedia Commons",
+  "licencia": "CC BY-SA 4.0",
+  "enlace": "https://commons.wikimedia.org/wiki/File:Sede_Central_del_Servicio_Meteorol%C3%B3gico_Nacional.jpg"
+ }
+}
