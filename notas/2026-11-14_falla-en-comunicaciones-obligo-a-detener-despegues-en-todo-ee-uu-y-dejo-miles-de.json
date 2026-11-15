@@ -1,0 +1,44 @@
+{
+ "slug": "falla-en-comunicaciones-obligo-a-detener-despegues-en-todo-ee-uu-y-dejo-miles-de",
+ "titulo": "Falla en comunicaciones obligó a detener despegues en todo EE. UU. y dejó miles de vuelos afectados",
+ "bajada": "La Administración Federal de Aviación suspendió los despegues tras una intervención de mantenimiento que provocó interrupciones; las cifras de cancelaciones varían según las fuentes y la normalización llevará días, advirtieron autoridades.",
+ "cuerpo": [
+  "Los despegues en aeropuertos de Estados Unidos se suspendieron de forma nacional tras una falla en el sistema de comunicaciones de la Administración Federal de Aviación (FAA) ocurrida durante trabajos de actualización del cableado, informaron medios y autoridades. El secretario de Transporte, Sean Duffy, explicó que un contratista estaba reemplazando una antigua línea de cobre por fibra óptica en una instalación remota y que ese trabajo generó intentos de conexión masivos que sobrecargaron equipos y causaron “problemas con nuestra comunicación con los aviones” y “cierta interrupción en nuestras señales de radar”, según informó Clarín y La Nación. Duffy advirtió que la recuperación de las operaciones normales llevará tiempo: “Nos llevará tiempo reanudar las operaciones normales... Nuestra máxima prioridad es la seguridad de usted y su familia cuando vuele”, consignó Infobae.",
+  "Las estimaciones sobre el alcance del caos difieren entre las fuentes. Infobae citó a la empresa de análisis Cirium y dijo que más de 5.000 vuelos fueron cancelados en la jornada del sábado; TN y La Nación reportaron cifras más altas: TN mencionó que podrían cancelarse entre 4.000 y 5.000 de los 41.000 vuelos programados ese día y también consignó reportes que hablan de más de 6.000 cancelaciones, mientras que La Nación indicó que el viernes se cancelaron cerca de 9.000 vuelos comerciales y unos 3.000 privados, y que en total cerca de 5.000 vuelos terminaron cancelados y 2.300 demorados de los 41.000 programados para el sábado. Las autoridades negaron que se tratara de un ciberataque, según TN, y la FAA reabrió el espacio aéreo el viernes por la noche, aunque advirtieron sobre demoras y nuevas cancelaciones mientras las aerolíneas reprograman aeronaves y tripulaciones, informó La Nación. Medios también consignaron que algunos aeropuertos, como los de Nueva York, registraron cientos de cancelaciones y que las terminales activaron operativos de asistencia a pasajeros, según Infobae y TN."
+ ],
+ "seccion": "Sociedad",
+ "etiquetas": [
+  "Aviación",
+  "Estados Unidos"
+ ],
+ "fecha": "2026-11-14T22:03:55-03:00",
+ "importancia": 9,
+ "fuentes": [
+  {
+   "medio": "Clarín",
+   "titulo": "Por qué un problema en tierra puede afectar vuelos a miles de kilómetros de distancia",
+   "link": "https://www.clarin.com/estados-unidos/por-que-un-problema-en-tierra-puede-afectar-vuelos-a-miles-de-kilometros-de-distancia_0_3itGJ0grOx.html"
+  },
+  {
+   "medio": "Infobae",
+   "titulo": "Suspensión de vuelos en Estados Unidos: más de 5.000 viajes fueron cancelados este sábado",
+   "link": "https://www.infobae.com/estados-unidos/2026/11/14/en-vivo-suspension-de-vuelos-en-eeuu/"
+  },
+  {
+   "medio": "TN",
+   "titulo": "Estados Unidos: tras la falla que paralizó los aeropuertos, prevén hasta 5000 vuelos cancelados este sábado",
+   "link": "https://tn.com.ar/internacional/2026/11/13/estados-unidos-ordeno-la-suspension-de-todos-sus-vuelos-por-una-falla-en-el-sistema-de-comunicaciones/"
+  },
+  {
+   "medio": "La Nación",
+   "titulo": "Caos aéreo en EE.UU.: revelan la falla que derivó en la paralización de los vuelos en todo el país",
+   "link": "https://www.lanacion.com.ar/estados-unidos/caos-aereo-en-eeuu-revelan-la-falla-que-derivo-en-la-paralizacion-de-los-vuelos-en-todo-el-pais-nid14112026/"
+  }
+ ],
+ "imagen": {
+  "url": "https://images.unsplash.com/photo-1725111503165-2f9f0db0f55d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDk1MTk0fDB8MXxzZWFyY2h8M3x8YWlycG9ydCUyMGRlcGFydHVyZXMlMjBjYW5jZWxsZWR8ZW58MXwwfHx8MTc5NDcwNDY0M3ww&ixlib=rb-4.1.0&q=80&w=1080",
+  "credito": "David / Unsplash",
+  "licencia": "",
+  "enlace": "https://unsplash.com/photos/an-airport-terminal-with-a-lot-of-electronic-screens-_QA8W30w8PQ"
+ }
+}
