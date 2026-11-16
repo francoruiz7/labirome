@@ -1,0 +1,44 @@
+{
+ "slug": "caos-aereo-en-estados-unidos-por-falla-en-routers-deja-miles-de-vuelos-cancelado",
+ "titulo": "Caos aéreo en Estados Unidos por falla en routers deja miles de vuelos cancelados y Trump reclama más fondos",
+ "bajada": "Una caída en la red de comunicaciones de la FAA tras la actualización de equipos provocó cancelaciones y demoras por tercer día; el secretario de Transporte pidió 50.000 millones de dólares y el presidente Trump responsabilizó a la administración anterior.",
+ "cuerpo": [
+  "El tráfico aéreo estadounidense seguía afectado por tercer día consecutivo tras una falla técnica que obligó a suspender despegues a nivel nacional el viernes durante casi cinco horas. La Administración Federal de Aviación (FAA) y funcionarios del gobierno atribuyeron la interrupción a problemas en routers instalados en centros de control en Arkansas y Texas, luego de tareas de mantenimiento y reemplazo de equipos, que generaron una sobrecarga de datos y obligaron a desactivar funcionalidades en múltiples dispositivos, según informó Ámbito y Perfil. Los efectos se sintieron en grandes hubs como Atlanta, Dallas, Phoenix y Filadelfia. Las cifras de afectados varían según la fuente: FlightAware consignó que entre domingo y las jornadas anteriores hubo miles de cancelaciones y demoras —Ámbito y Perfil detallaron más de 1.600 cancelaciones y casi 3.600 demoras sólo el domingo y dijeron que el sábado se habían registrado más de 6.400 cancelaciones y 8.000 retrasos—, mientras que Clarín informó que durante las jornadas del viernes y del sábado las cancelaciones superaron los 18.000 vuelos, con miles de retrasos adicionales. La FAA tomó medidas para aislar el problema, incluyendo la desactivación de alrededor de 60 routers similares, y los responsables dijeron que no hay indicios de ciberataque aunque aún no se conoce la causa definitiva.",
+  "En lo político, el secretario de Transporte, Sean Duffy, solicitó al Congreso un paquete de 50.000 millones de dólares destinado a la modernización de los sistemas de control del tráfico aéreo y adelantó que la normalización completa podría llegar el lunes, según publicaron La Nación y Ámbito. Duffy también rechazó garantizar que no vuelva a ocurrir un colapso similar hasta que se determine el origen del fallo. El presidente Donald Trump respaldó el pedido de fondos y acusó a la administración de su antecesor Joe Biden de ser responsable del deterioro de la infraestructura, según consignaron Clarín, La Nación y Perfil, y pidió al Congreso que apruebe los recursos “de una sola vez”. Legisladores de oposición expresaron dudas sobre la ampliación presupuestaria sin explicaciones sobre el uso de los montos ya aprobados, informó La Nación."
+ ],
+ "seccion": "Internacional",
+ "etiquetas": [
+  "aviación",
+  "Estados Unidos"
+ ],
+ "fecha": "2026-11-15T22:01:58-03:00",
+ "importancia": 8,
+ "fuentes": [
+  {
+   "medio": "Clarín",
+   "titulo": "Caos aéreo: Estados Unidos promete regularizar este lunes el tráfico luego de bloquear 20.000 vuelos",
+   "link": "https://www.clarin.com/mundo/caos-aereo-estados-unidos-promete-regularizar-lunes-trafico-luego-bloquear-20000-vuelos_0_TL4t5LdXme.html"
+  },
+  {
+   "medio": "Ámbito",
+   "titulo": "Tercer día de caos aéreo en EEUU: Donald Trump reclamó al Congreso más fondos para modernizar el control de vuelos",
+   "link": "https://www.ambito.com/mundo/tercer-dia-caos-aereo-eeuu-donald-trump-reclamo-al-congreso-mas-fondos-modernizar-el-control-vuelos-n6345445"
+  },
+  {
+   "medio": "Perfil",
+   "titulo": "Caos aéreo en Estados Unidos: una falla en los routers provocó miles de cancelaciones y Trump culpó a Biden",
+   "link": "https://perfil.com/internacional/caos-aereo-en-estados-unidos-una-falla-en-los-routers-provoco-miles-de-cancelaciones-y-trump-culpo-a-biden-agGM43o0FeNv"
+  },
+  {
+   "medio": "La Nación",
+   "titulo": "Caos aéreo en Estados Unidos: una falla en un router paralizó los vuelos y Trump culpó al gobierno de Biden",
+   "link": "https://www.lanacion.com.ar/el-mundo/caos-aereo-en-estados-unidos-una-falla-en-un-router-paralizo-los-vuelos-y-trump-culpo-al-gobierno-de-nid15112026/"
+  }
+ ],
+ "imagen": {
+  "url": "https://images.unsplash.com/photo-1724424362395-089675432137?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDk1MTk0fDB8MXxzZWFyY2h8M3x8YWlyJTIwdHJhZmZpYyUyMGNvbnRyb2wlMjB0b3dlcnxlbnwxfDB8fHwxNzk0NzkwOTM1fDA&ixlib=rb-4.1.0&q=80&w=1080",
+  "credito": "Luna Salome / Unsplash",
+  "licencia": "",
+  "enlace": "https://unsplash.com/photos/an-airport-control-tower-with-a-sky-background-IBXGkAdXwfM"
+ }
+}
