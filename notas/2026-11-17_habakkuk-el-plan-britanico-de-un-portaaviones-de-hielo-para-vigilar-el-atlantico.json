@@ -1,0 +1,34 @@
+{
+ "slug": "habakkuk-el-plan-britanico-de-un-portaaviones-de-hielo-para-vigilar-el-atlantico",
+ "titulo": "Habakkuk: el plan británico de un portaaviones de hielo para vigilar el Atlántico",
+ "bajada": "Durante la Segunda Guerra Mundial se estudió construir una base aérea flotante de 'pykrete' para cubrir el Atlántico medio; hubo pruebas en Canadá pero el proyecto se archivó.",
+ "cuerpo": [
+  "En plena Segunda Guerra Mundial, en el Atlántico Norte y medio los aliados buscaban una forma de proteger los convoyes del acecho de los submarinos alemanes. La idea de una plataforma aérea flotante surgió como solución a un problema concreto: existían tramos del Atlántico a los que los aparatos con base en tierra no llegaban y el acero necesario para construir portaaviones era escaso. Geoffrey Pyke, que trabajaba para el Cuartel General de Operaciones Combinadas, propuso entonces usar hielo como material básico para un gigantesco aeródromo flotante. La propuesta llegó hasta Lord Mountbatten y fue presentada ante Winston Churchill, que se mostró entusiasmado, según informó Wikipedia.",
+  "Los investigadores pronto hallaron una variante más resistente del hielo mezclando agua con pulpa o virutas de madera: el llamado pykrete. De acuerdo con La Nación, una composición del orden del 86% de agua y 14% de viruta producía un material mucho más fuerte que el hielo puro. Se hicieron pruebas a escala reducida y se construyó un prototipo en un lago de Alberta, Canadá, pero el plan —bautizado Habakkuk— terminó archivado. Wikipedia señala que pesaron en la decisión los crecientes costos, las exigencias técnicas adicionales y la aparición de aeronaves de mayor alcance y de portaaviones de escolta que llenaron el vacío en la cobertura aérea del Atlántico medio."
+ ],
+ "seccion": "Bizarras",
+ "etiquetas": [
+  "Segunda Guerra Mundial",
+  "tecnología militar"
+ ],
+ "fecha": "2026-11-17T00:54:00-03:00",
+ "importancia": 4,
+ "fuentes": [
+  {
+   "medio": "es.wikipedia.org",
+   "titulo": "Proyecto Habakkuk - Wikipedia, la enciclopedia libre",
+   "link": "https://es.wikipedia.org/wiki/Proyecto_Habakkuk"
+  },
+  {
+   "medio": "lanacion.com.ar",
+   "titulo": "Un portaaviones particular: el descabellado proyecto británico para combatir los submarinos nazis en la Segunda Guerra Mundial - LA NACION",
+   "link": "https://www.lanacion.com.ar/lifestyle/un-portaaviones-particular-el-descabellado-proyecto-britanico-para-combatir-los-submarinos-nazis-en-nid13112024/"
+  }
+ ],
+ "imagen": {
+  "url": "https://upload.wikimedia.org/wikipedia/commons/5/53/Ice_Dome_-_foto_Bart_van_Overbeeke_28484.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail_unscaled",
+  "credito": "Bart van Overbeeke Fotografie / Wikimedia Commons",
+  "licencia": "CC BY-SA 4.0",
+  "enlace": "https://commons.wikimedia.org/wiki/File:Ice_Dome_-_foto_Bart_van_Overbeeke_28484.jpg"
+ }
+}
