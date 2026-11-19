@@ -1,0 +1,36 @@
+{
+ "slug": "el-super-nino-trae-alertas-y-pronosticos-de-lluvias-intensas-para-noviembre",
+ "titulo": "El Súper Niño trae alertas y pronósticos de lluvias intensas para noviembre",
+ "bajada": "El Servicio Meteorológico nacional emitió alertas naranja y amarilla en diez provincias; la Bolsa de Cereales prevé el pico de tormentas para el 12 y 13 de noviembre con focos que superarían los 100 mm.",
+ "cuerpo": [
+  "El avance del fenómeno climático denominado Súper Niño motivó este miércoles la emisión de alertas meteorológicas y un informe con pronósticos de precipitaciones intensas para varias regiones del país. Según el Servicio Meteorológico Nacional (SMN), rigen alertas de nivel naranja y amarillo que afectan a diez provincias, con vigencia desde las 8 de hoy hasta las 5.59 del jueves 19.",
+  "El parte del SMN señaló que no hay alertas rojas en el territorio y que no registran avisos vigentes la Ciudad de Buenos Aires y la provincia de Buenos Aires. Las provincias bajo alerta naranja —donde se esperan los fenómenos más peligrosos— son Chaco, Corrientes, Formosa, Misiones y Santa Fe. En tanto, la categoría amarilla alcanza a Córdoba, La Pampa, Mendoza, San Luis y Santiago del Estero. El organismo recordó las consignas oficiales: \"Preparate\" para la naranja y \"Informate\" para la amarilla.",
+  "Por su parte, la Bolsa de Cereales de Buenos Aires (BCBA) publicó un informe agroclimático que anticipa la llegada de las tormentas al área agrícola hacia mediados de noviembre, con un inicio de la secuencia alrededor del 12 y 13 de noviembre. El documento, elaborado por el especialista Eduardo Sierra y difundido por la BCBA, prevé que amplias zonas del NOA, del Chaco, de la Mesopotamia, del este de Cuyo y de la región pampeana recibirían lluvias.",
+  "La BCBA destacó que el sur del NOA concentraría los registros más altos, con focos de tormentas que podrían superar los 100 milímetros. También advirtió sobre un episodio de descenso térmico por vientos del sur que dejaría riesgo de heladas en zonas serranas y cordilleranas del NOA y de Cuyo, en las sierras bonaerenses y en el centro de Uruguay. El mismo informe señala que, tras ese enfriamiento breve, ingresarán vientos del nordeste que elevarán las temperaturas en buena parte del área agrícola, con focos cálidos que podrían superar los 35°C en sectores del norte y centro del país."
+ ],
+ "seccion": "Sociedad",
+ "etiquetas": [
+  "Súper Niño",
+  "clima"
+ ],
+ "fecha": "2026-11-18T23:36:15-03:00",
+ "importancia": 7,
+ "fuentes": [
+  {
+   "medio": "La Nación",
+   "titulo": "Súper Niño 2026 en Argentina: cuándo se espera el pico de lluvias y cuáles serían las provincias más afectadas",
+   "link": "https://www.lanacion.com.ar/sociedad/super-nino-2026-en-argentina-cuando-se-espera-el-pico-de-lluvias-y-cuales-serian-las-provincias-mas-nid12112026/"
+  },
+  {
+   "medio": "Perfil",
+   "titulo": "Fuerte temporal por el Súper Niño: rigen alertas naranja y amarilla en diez provincias hoy",
+   "link": "https://perfil.com/ciencia-y-tecnologia/alerta-por-tormentas-en-argentina-que-provincias-estan-bajo-riesgo-este-jueves-a50-bgd-aMyv73s0M47I"
+  }
+ ],
+ "imagen": {
+  "url": "https://images.unsplash.com/photo-1595810033299-5a6fcda2aa71?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDk1MTk0fDB8MXxzZWFyY2h8MXx8c3Rvcm0lMjBjbG91ZHMlMjBmaWVsZHxlbnwxfDB8fHwxNzk1MDU1Nzg4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+  "credito": "Dave Hoefler / Unsplash",
+  "licencia": "",
+  "enlace": "https://unsplash.com/photos/storm-cloud-over-green-field-llEjCH71E9o"
+ }
+}
