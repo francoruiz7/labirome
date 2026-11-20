@@ -16,6 +16,9 @@ INDEXABLE = False
 
 # Leyenda al pie de cada nota y texto del pie de página.
 MAIL_PRENSA = "prensa@labirome.com"
+
+# Estadísticas de visitas (Cloudflare Web Analytics). Vacío lo apaga.
+CLOUDFLARE_ANALYTICS_TOKEN = "c5f644493b0843ffad6e4dc7d30c4f66"
 AVISO_IA = "Nota elaborada con inteligencia artificial a partir de las fuentes citadas."
 SOBRE = "Un medio digital que tiene como premisa la objetividad y el respaldo de cada dato. Las notas se elaboran con inteligencia artificial, contrastan al menos dos fuentes periodísticas y las citan al pie."
 

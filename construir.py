@@ -39,6 +39,16 @@ LUPA = ('<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="cur
 
 # ---------- Utilidades ----------
 
+
+def estadisticas():
+    """Código de Cloudflare Web Analytics (sin cookies). Se apaga dejando el token vacío en config.py."""
+    token = getattr(config, "CLOUDFLARE_ANALYTICS_TOKEN", "").strip()
+    if not token:
+        return ""
+    datos = json.dumps({"token": token})
+    return ("<script defer src='https://static.cloudflareinsights.com/beacon.min.js' "
+            f"data-cf-beacon='{datos}'></script>\n")
+
 def slugificar(texto):
     texto = texto.lower().translate(str.maketrans("áéíóúñü", "aeiounu"))
     return re.sub(r"[^a-z0-9]+", "-", texto).strip("-")
@@ -159,7 +169,7 @@ def pagina(titulo, cuerpo, ruta, ultimas, descripcion=None, imagen=None, seccion
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@400;500;700;900&family=Faustina:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{P}/estatico/estilo.css?v={version}">
-</head>
+{estadisticas()}</head>
 <body>
 <a class="saltar" href="#contenido">Ir al contenido</a>
 
