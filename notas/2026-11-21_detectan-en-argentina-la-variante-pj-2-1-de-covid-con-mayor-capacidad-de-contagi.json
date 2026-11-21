@@ -1,0 +1,33 @@
+{
+ "slug": "detectan-en-argentina-la-variante-pj-2-1-de-covid-con-mayor-capacidad-de-contagi",
+ "titulo": "Detectan en Argentina la variante PJ.2.1 de COVID, con mayor capacidad de contagio",
+ "bajada": "Científicos de la Universidad Nacional de La Plata secuenciaron tres casos del linaje PJ.2.1; la OMS la clasifica como variante bajo vigilancia y acumula 25 mutaciones, según publicaciones citadas.",
+ "cuerpo": [
+  "El equipo del Área Genómica y Molecular del Laboratorio de Salud Pública de la Universidad Nacional de La Plata (UNLP) confirmó la presencia en la Argentina del linaje PJ.2.1, una derivación de Ómicron que, según informó Ámbito y confirmó Clarín, se detectó en tres muestras de pacientes internados en la provincia de Buenos Aires. Dos de las muestras correspondían a bebés de uno y dos meses y la tercera a un hombre de 58 años; los tres casos fueron secuenciados y resultaron positivos para ese linaje, informó la UNLP, según los medios citados.\n\nPJ.2.1 fue incluida por la Organización Mundial de la Salud (OMS) en la categoría de variante bajo vigilancia y, de acuerdo con un trabajo citado en la revista Journal of Infection, acumula 25 modificaciones genéticas respecto a su antecesora, lo que la ubica entre las llamadas “variantes saltacionales”. Paola Resende, viróloga y miembro del comité asesor técnico de la OMS sobre la evolución de los virus, explicó que la variante “posee mutaciones en su genoma que le confieren mayor afinidad con los receptores de nuestras células, lo que aumenta su transmisibilidad”, citó Clarín. La OMS también indicó, según Clarín, que los sueros de personas vacunadas con formulaciones adaptadas a variantes previas lograron neutralizar PJ.2.1 en ensayos de laboratorio, aunque los datos clínicos comparativos son todavía insuficientes para determinar si causa una enfermedad más grave. En la región, la circulación de PJ.2.1 registra aumentos especialmente en Estados Unidos y Canadá y se reportaron detecciones recientes en Brasil, informó el Instituto Oswaldo Cruz y recogieron los medios. Entre los especialistas locales, Eduardo López, jefe del Departamento de Medicina del Hospital de Niños Ricardo Gutiérrez, describió un aumento de casos leves en pediatría, mientras que Roberto Debbag, presidente de la Sociedad Latinoamericana de Vacunología, advirtió sobre contagios crecientes y coinfecciones en lactantes, según informó Ámbito. Las vacunas disponibles en la Argentina mencionadas por los medios son una plataforma de ARN mensajero provista por el Estado y la vacuna nacional ARVAC; los síntomas informados para PJ.2.1 son similares a un resfrío o gripe: fiebre, tos, dolor de garganta y secreción nasal."
+ ],
+ "seccion": "Sociedad",
+ "etiquetas": [
+  "COVID-19",
+  "salud pública"
+ ],
+ "fecha": "2026-11-21T14:58:23-03:00",
+ "importancia": 8,
+ "fuentes": [
+  {
+   "medio": "Ámbito",
+   "titulo": "Una nueva variante del COVID llegó a la Argentina y tiene mayor capacidad de contagio",
+   "link": "https://www.ambito.com/informacion-general/una-nueva-variante-del-covid-llego-la-argentina-y-tiene-mayor-capacidad-contagio-n6347897"
+  },
+  {
+   "medio": "Clarín",
+   "titulo": "Confirman que llegó una nueva cepa más contagiosa del Covid a la Argentina y que ahora crecen los casos",
+   "link": "https://www.clarin.com/sociedad/confirman-llego-nueva-cepa-contagiosa-covid-argentina-ahora-crecen-casos_0_wsIkmaftlr.html"
+  }
+ ],
+ "imagen": {
+  "url": "https://images.unsplash.com/photo-1624957485560-47747511b32f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDk1MTk0fDB8MXxzZWFyY2h8NHx8dmlydXMlMjBsYWIlMjBzZXF1ZW5jaW5nfGVufDF8MHx8fDE3OTUyODM5Mjh8MA&ixlib=rb-4.1.0&q=80&w=1080",
+  "credito": "CDC / Unsplash",
+  "licencia": "",
+  "enlace": "https://unsplash.com/photos/scientist-holding-multi-well-plate-OZcQIhidMTw"
+ }
+}
