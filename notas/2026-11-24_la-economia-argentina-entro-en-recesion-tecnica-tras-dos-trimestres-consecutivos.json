@@ -1,0 +1,44 @@
+{
+ "slug": "la-economia-argentina-entro-en-recesion-tecnica-tras-dos-trimestres-consecutivos",
+ "titulo": "La economía argentina entró en recesión técnica tras dos trimestres consecutivos de caída",
+ "bajada": "El INDEC registró en septiembre una suba mensual del 1,1% pero una contracción interanual del 1,2%; sectores como industria, comercio y la intermediación financiera explican gran parte del retroceso.",
+ "cuerpo": [
+  "El Instituto Nacional de Estadística y Censos (INDEC) publicó el Estimador Mensual de la Actividad Económica (EMAE) de septiembre, que mostró un crecimiento desestacionalizado mensual del 1,1% pero una caída interanual del 1,2%, y dejó a la economía con dos trimestres seguidos de contracción, lo que configura una recesión técnica según la convención que se aplica al Producto Interno Bruto, según informó Ámbito y El Cronista. El INDEC aclaró que no es función del organismo determinar formalmente si la economía está en recesión y recomendó evaluar múltiples indicadores (empleo, ingresos reales, consumo y producción industrial) antes de dar un veredicto definitivo. La confirmación estadística del desempeño trimestral se conocerá con la publicación del informe de avance del PBI, prevista para el 16 de diciembre, consignaron Clarín y El Cronista.",
+  "El retroceso interanual estuvo concentrado en varios sectores: la industria manufacturera cayó 1,8% y la intermediación financiera mostró una baja de 11,5% interanual, consignó El Cronista; también registraron caídas comercio y otros rubros, mientras que explotación de minas y canteras y electricidad, gas y agua fueron los que más aportaron positivamente. Cámaras empresarias describen perspectivas negativas: ADIMRA advirtió sobre menos pedidos y utilización de capacidad cercana al 40% en metalúrgica, Pro Tejer dijo que seis de cada diez máquinas del sector textil están paradas y CAMARCO señaló que la obra pública nacional está prácticamente paralizada, según publicó Clarín. En el plano político, la oposición cuestionó al Gobierno por la caída: el diputado Diego Giuliano afirmó que “la actividad económica acumula dos trimestres de caída” y Sebastián Galmarini, Julia Strada, Anabel Fernández Gagasti y otros dirigentes criticaron la gestión, según La Nación; el expresidente Alberto Fernández también se pronunció en redes. El ministro de Economía, Luis Caputo, destacó la suba mensual de septiembre y señaló otros aspectos positivos del EMAE a través de su cuenta oficial, indicaron El Cronista y Clarín."
+ ],
+ "seccion": "Política",
+ "etiquetas": [
+  "economía",
+  "recesión técnica"
+ ],
+ "fecha": "2026-11-24T18:11:55-03:00",
+ "importancia": 9,
+ "fuentes": [
+  {
+   "medio": "Clarín",
+   "titulo": "Un cierre de año cuesta arriba para la industria: los sectores más golpeados no esperan una recuperación",
+   "link": "https://www.clarin.com/economia/cierre-ano-cuesta-arriba-industria-sectores-golpeados-esperan-recuperacion_0_sR2lCSvK8M.html"
+  },
+  {
+   "medio": "La Nación",
+   "titulo": "La oposición cargó contra el Gobierno por la recesión técnica de la economía: “No quieren aceptar lo obvio”",
+   "link": "https://www.lanacion.com.ar/politica/la-oposicion-cargo-contra-el-gobierno-por-la-recesion-tecnica-de-la-economia-no-quieren-aceptar-lo-nid24112026/"
+  },
+  {
+   "medio": "Ámbito",
+   "titulo": "La economía entró en recesión técnica: sumó dos trimestres seguidos de caída pese a crecer 1,1% mensual en septiembre",
+   "link": "https://www.ambito.com/la-economia-entro-recesion-tecnica-sumo-dos-trimestres-seguidos-caida-pese-crecer-11-mensual-septiembre-n6348824"
+  },
+  {
+   "medio": "El Cronista",
+   "titulo": "La actividad económica mejoró en septiembre, pero no alcanzó para evitar la recesión técnica",
+   "link": "https://www.cronista.com/economia-politica/actividad-economica-que-significa-y-que-tiene-que-pasar-para-que-la-argentina-entre-en-recesion-tecnica/"
+  }
+ ],
+ "imagen": {
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/3f/2018-09-INDECfachada_B.jpg/1280px-2018-09-INDECfachada_B.jpg?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "credito": "Prensa INDEC / Wikimedia Commons",
+  "licencia": "CC BY-SA 4.0",
+  "enlace": "https://commons.wikimedia.org/wiki/File:2018-09-INDECfachada_B.jpg"
+ }
+}
