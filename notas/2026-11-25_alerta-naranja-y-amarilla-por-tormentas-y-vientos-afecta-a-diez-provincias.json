@@ -1,0 +1,39 @@
+{
+ "slug": "alerta-naranja-y-amarilla-por-tormentas-y-vientos-afecta-a-diez-provincias",
+ "titulo": "Alerta naranja y amarilla por tormentas y vientos afecta a diez provincias",
+ "bajada": "El Servicio Meteorológico Nacional emitió avisos por fenómenos fuertes en el norte y vientos en la costa; en el AMBA se prevé tiempo estable y hasta 30°C.",
+ "cuerpo": [
+  "El Servicio Meteorológico Nacional (SMN) emitió para este miércoles 25 de noviembre alertas de nivel naranja y amarillo por tormentas y vientos que alcanzan a varias provincias del país, según informó La Nación y corroboraron TN y Ámbito. El aviso naranja por tormentas rige, de acuerdo con La Nación y TN, para Formosa y para sectores de la provincia de Salta: en esas áreas se esperan tormentas aisladas fuertes o severas, con abundantes precipitaciones, granizo de distintos tamaños, frecuente actividad eléctrica y ráfagas que podrían llegar a 90 km/h. TN precisó además que en Salta la alerta naranja estuvo vigente desde las 03:00 hasta las 08:59 y estimó precipitaciones acumuladas entre 70 y 100 mm, con posibilidad de valores superiores en forma puntual.",
+  "En tanto, el SMN mantiene alertas amarillas por tormentas para Salta, Jujuy, Corrientes, Catamarca y sectores de La Rioja y San Juan, describieron La Nación y Ámbito: se prevén tormentas aisladas, algunas fuertes o localmente severas, con abundantes precipitaciones en cortos períodos, actividad eléctrica, ocasional granizo y ráfagas intensas. Además, La Nación informó una alerta amarilla por vientos fuertes para las zonas costeras de las provincias de Buenos Aires, Santa Cruz y Tierra del Fuego, con ráfagas del oeste o sudoeste entre 40 y 70 km/h y bocanadas que pueden superar 90 km/h. Ante estas condiciones, el organismo recomendó medidas de prevención como evitar salir, asegurar objetos que puedan ser arrastrados, desconectar electrodomésticos si ingresa agua y cerrar puertas y ventanas. Por su parte, Ámbito destacó que el AMBA tendrá tiempo estable y sin lluvias durante la jornada, con una máxima prevista de 30°C y cielo mayormente despejado."
+ ],
+ "seccion": "Sociedad",
+ "etiquetas": [
+  "clima",
+  "tormentas"
+ ],
+ "fecha": "2026-11-25T01:11:47-03:00",
+ "importancia": 6,
+ "fuentes": [
+  {
+   "medio": "La Nación",
+   "titulo": "Hay alerta naranja y amarilla por tormentas y vientos para este miércoles 25 de noviembre: las provincias afectadas",
+   "link": "https://www.lanacion.com.ar/sociedad/hay-alerta-naranja-y-amarilla-por-tormentas-y-vientos-para-este-miercoles-25-de-noviembre-las-nid25112026/"
+  },
+  {
+   "medio": "TN",
+   "titulo": "Hay alerta naranja por tormentas para este miércoles 25 de noviembre en Salta: las zonas afectadas",
+   "link": "https://tn.com.ar/clima/alertas/2026/11/25/hay-alerta-naranja-por-tormentas-para-este-miercoles-25-de-noviembre-en-salta-las-zonas-afectadas/"
+  },
+  {
+   "medio": "Ámbito",
+   "titulo": "Buen tiempo en el AMBA y alertas en el resto del país: cómo estará el clima durante los próximos días",
+   "link": "https://www.ambito.com/informacion-general/alerta-amarilla-tormentas-y-fuertes-vientos-que-provincias-seran-afectadas-y-como-estara-el-clima-buenos-aires-n6348454"
+  }
+ ],
+ "imagen": {
+  "url": "https://images.unsplash.com/photo-1597952681778-21b365d312ca?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDk1MTk0fDB8MXxzZWFyY2h8MXx8c3Rvcm0lMjBjbG91ZHMlMjBjaXR5fGVufDF8MHx8fDE3OTU1Nzk5MzJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+  "credito": "Thula Na / Unsplash",
+  "licencia": "",
+  "enlace": "https://unsplash.com/photos/a-storm-is-coming-in-over-a-city-RM_kkw2LsMU"
+ }
+}

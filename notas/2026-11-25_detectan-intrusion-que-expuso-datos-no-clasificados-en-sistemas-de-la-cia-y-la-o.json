@@ -1,0 +1,44 @@
+{
+ "slug": "detectan-intrusion-que-expuso-datos-no-clasificados-en-sistemas-de-la-cia-y-la-o",
+ "titulo": "Detectan intrusión que expuso datos no clasificados en sistemas de la CIA y la ODNI",
+ "bajada": "El incidente afectó un sistema de análisis de fuentes abiertas y se conoció en medio de otras fallas e intrusiones en agencias federales, según medios estadounidenses.",
+ "cuerpo": [
+  "Según informó The New York Times citando a funcionarios estadounidenses, funcionarios dijeron que tanto la Agencia Central de Inteligencia (CIA) como la Oficina del Director de Inteligencia Nacional (ODNI) identificaron una intrusión en un punto vulnerable de sus sistemas que dejó expuesta información no clasificada, según informó The New York Times citando a funcionarios estadounidenses. El ciberataque habría afectado un sistema de análisis de inteligencia de fuentes abiertas, una red diseñada para recopilar y procesar datos públicos como redes sociales, imágenes satelitales y bases de datos comerciales; fuentes consultadas por los medios señalaron que la intrusión no comprometió material clasificado. El problema ya fue resuelto, agregó Associated Press, mientras que la CIA no hizo comentarios públicos sobre el hecho, de acuerdo con Clarín.",
+  "El episodio se conoció en medio de una serie de incidentes tecnológicos que afectaron a varias agencias federales: NBC News informó sobre una intrusión en el sistema de pagos del Departamento de Agricultura; CNN dijo que el FBI investigaba acceso a su base nacional de información criminal; y hubo una caída temporal en una red interna de la Agencia de Seguridad Nacional (NSA) que, según la propia agencia, respondió a mantenimiento rutinario, informaron Clarín y TN. Fuentes citadas por los medios advirtieron que, aunque la información expuesta no fuera clasificada, la inteligencia de fuentes abiertas puede incluir datos comerciales sumamente reveladores cuando se combinan con otros registros. El contexto de múltiples fallas e intrusiones alimentó la preocupación entre funcionarios, y en medios también se registraron declaraciones públicas sobre los incidentes: según Clarín, el presidente Donald Trump dijo en Fox News que “no es bueno” y que quizá se aprendan cosas a partir del hecho."
+ ],
+ "seccion": "Internacional",
+ "etiquetas": [
+  "ciberseguridad",
+  "Estados Unidos"
+ ],
+ "fecha": "2026-11-25T01:14:18-03:00",
+ "importancia": 8,
+ "fuentes": [
+  {
+   "medio": "Perfil",
+   "titulo": "Aseguran que la CIA y la Oficina de Inteligencia de Estados Unidos fueron víctimas de un ciberataque: qué consecuencias tuvo",
+   "link": "https://perfil.com/internacional/aseguran-que-la-cia-y-la-oficina-de-inteligencia-de-estados-unidos-fueron-victimas-de-un-ciberataque-que-consecuencias-tuvo-adDKt1q8N2cN"
+  },
+  {
+   "medio": "Clarín",
+   "titulo": "Crece la preocupación en Estados Unidos: tras el ataque al FBI, ahora detectan un hackeo a la CIA",
+   "link": "https://www.clarin.com/mundo/crece-preocupacion-estados-unidos-ataque-fbi-ahora-detectan-hackeo-cia_0_JfHDgBQZFP.html"
+  },
+  {
+   "medio": "TN",
+   "titulo": "Alerta en EE.UU.: un ciberataque expuso información no clasificada en sistemas de la CIA",
+   "link": "https://tn.com.ar/internacional/2026/11/24/alerta-en-eeuu-un-ciberataque-expuso-informacion-no-clasificada-en-sistemas-de-la-cia/"
+  },
+  {
+   "medio": "Ámbito",
+   "titulo": "Demócratas exigen que Jensen Huang declare en una audiencia pública por su regreso a Nvidia",
+   "link": "https://www.ambito.com/mundo/democratas-exigen-que-jensen-huang-declare-una-audiencia-publica-su-regreso-nvidia-n6348790"
+  }
+ ],
+ "imagen": {
+  "url": "https://images.unsplash.com/photo-1695668548342-c0c1ad479aee?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3wxMDk1MTk0fDB8MXxzZWFyY2h8MXx8Y3liZXIlMjBzZWN1cml0eSUyMHNlcnZlcnN8ZW58MXwwfHx8MTc5NTU4MDA4NHww&ixlib=rb-4.1.0&q=80&w=1080",
+  "credito": "Kevin Ache / Unsplash",
+  "licencia": "",
+  "enlace": "https://unsplash.com/photos/a-rack-of-servers-in-a-server-room-2JJ3wBHu4_0"
+ }
+}
