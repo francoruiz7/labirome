@@ -1,0 +1,39 @@
+{
+ "slug": "afp-y-fifa-confirmaron-ciberataques-que-afectaron-plataformas-y-robaron-datos",
+ "titulo": "AFP y FIFA confirmaron ciberataques que afectaron plataformas y robaron datos",
+ "bajada": "La agencia AFP suspendió el acceso a su plataforma AFP Forum y la FIFA informó la sustracción de más de 12 GB de archivos; ambas organizaciones iniciaron investigaciones.",
+ "cuerpo": [
+  "La agencia de noticias Agence France-Presse (AFP) fue blanco de un ataque informático en la madrugada de este jueves que obligó a suspender temporalmente AFP Forum, la plataforma que utilizan medios de todo el mundo para consultar y descargar contenidos, según informó la dirección de la agencia a través de sus comunicaciones. Al advertir la intrusión, los responsables de seguridad informática desconectaron el sistema afectado como medida de protección y pusieron a disposición de sus clientes vías alternativas para acceder a noticias, fotografías y videos. Con el objetivo de esclarecer lo ocurrido, AFP puso en marcha una investigación con la ayuda de especialistas externos en ciberseguridad; hasta ahora no se han identificado los responsables del ataque y la plataforma sigue fuera de servicio como medida de precaución, señaló la agencia.",
+  "Por separado, la FIFA confirmó que sufrió un ataque informático que ocasionó accesos no autorizados a cuentas internas y la sustracción de datos sensibles. Según informó la entidad en un comunicado y relevaron medios, los intrusos robaron más de 12 gigabytes de información que incluirían documentos personales, registros financieros, información ejecutiva y material de gobernanza. \"La FIFA confirma que ha sido víctima de un ciberataque criminal que ha resultado en el acceso no autorizado a un conjunto limitado de información personal y empresarial\", dijo un portavoz de la organización, según Ámbito. El grupo Handsome Boy Hacking Club (HBHC) se atribuyó la autoría y publicó en la red social X una captura de pantalla vinculada a la filtración. Fuentes citadas por la prensa indicaron que el acceso se consiguió mediante suplantación de identidad de empleados (phishing) y que la FIFA trabaja con autoridades y fuerzas de seguridad para investigar lo ocurrido; además, la organización condenó la obtención y publicación ilegal de información. Algunos medios señalaron que el incidente se produce a pocos meses de las elecciones presidenciales de la entidad."
+ ],
+ "seccion": "Internacional",
+ "etiquetas": [
+  "ciberseguridad",
+  "FIFA"
+ ],
+ "fecha": "2026-11-26T17:11:58-03:00",
+ "importancia": 8,
+ "fuentes": [
+  {
+   "medio": "TN",
+   "titulo": "La agencia de noticias AFP sufrió un ciberataque: suspendieron el acceso a una de sus principales plataformas",
+   "link": "https://tn.com.ar/tecno/novedades/2026/11/26/la-agencia-de-noticias-afp-sufrio-un-ciberataque-suspendieron-el-acceso-a-una-de-sus-principales-plataformas/"
+  },
+  {
+   "medio": "Perfil",
+   "titulo": "La FIFA confirmó que sufrió un ciberataque y denunció el robo de datos confidenciales",
+   "link": "https://www.perfil.com/deportes/la-fifa-confirmo-que-sufrio-un-ciberataque-y-denuncio-el-robo-de-datos-confidenciales-a63o34r5gfeW"
+  },
+  {
+   "medio": "Ámbito",
+   "titulo": "La FIFA sufrió un ciberataque y le robaron más de 12 gigabytes de información confidencial",
+   "link": "https://www.ambito.com/deportes/la-fifa-sufrio-un-ciberataque-y-le-robaron-mas-12-gigabytes-informacion-confidencial-n6349497"
+  }
+ ],
+ "imagen": {
+  "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/5c/FIFA_-_hoofdgebouw.JPG/1280px-FIFA_-_hoofdgebouw.JPG?utm_source=commons.wikimedia.org&utm_campaign=imageinfo&utm_content=thumbnail",
+  "credito": "Bic / Wikimedia Commons",
+  "licencia": "CC BY-SA 4.0",
+  "enlace": "https://commons.wikimedia.org/wiki/File:FIFA_-_hoofdgebouw.JPG"
+ }
+}
