@@ -1,7 +1,7 @@
 name: Publicar La Birome
 
 on:
-  # Horarios en UTC. Equivalen a las 7:15, 10:15, 13:15, 16:15, 19:15 y 22:15 de Argentina.
+  # Horarios en UTC. Equivalen a las 8:15, 13:15 y 18:15 de Argentina.
   schedule:
     - cron: "15 11,16,21 * * *"
   # Botón "Run workflow" de la pestaña Actions.
@@ -36,9 +36,9 @@ jobs:
       name: github-pages
       url: ${{ steps.despliegue.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
           cache: pip
@@ -71,9 +71,13 @@ jobs:
 
       - uses: actions/configure-pages@v5
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v4
         with:
           path: sitio
+
+      # A veces GitHub tarda unos segundos en registrar el sitio recién subido.
+      - name: Esperar a que GitHub registre el sitio
+        run: sleep 20
 
       - name: Publicar
         id: despliegue
